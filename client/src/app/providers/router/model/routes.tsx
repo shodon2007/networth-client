@@ -1,9 +1,10 @@
 import {RouteProps} from "react-router-dom";
+import { MainPage } from "src/pages/mainPage";
 
 const routes: RouteProps[] = [
 	{
 		path: "/",
-		element: <div>fuck you</div>,
+		element: <MainPage />,
 	},
 	{
 		path: "/f",

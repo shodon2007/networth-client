@@ -1,0 +1,10 @@
+@import 'reset.scss';
+@import './variables.scss';
+@import 'dark.scss';
+@import 'light.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
