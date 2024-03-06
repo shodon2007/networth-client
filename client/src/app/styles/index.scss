@@ -1,7 +1,7 @@
 @import 'reset.scss';
 @import './variables.scss';
-@import 'dark.scss';
-@import 'light.scss';
+@import './themes/dark.scss';
+@import './themes/light.scss';
 
 * {
     margin: 0;
