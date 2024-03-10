@@ -1,0 +1,19 @@
+.SubmitBtn{
+  border-radius: 14px;
+  padding: 0px 12px;
+  width: 400px;
+  height: 60px;
+
+  font-family: var(--font-main-Blin);
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--white-color);
+
+  background: rgba(0, 0, 0, 0.2);
+  transition: .5s;
+  &:hover{
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(0, 0, 0, 0.4);
+    // transform: scale(1);
+  }
+}
