@@ -1,10 +1,29 @@
 :root {
-    --font-size-l: 24px;
-    --font-size-m: 16px;
-    --font-size-s: 12px;
+    --font-size-ll-mobile: 22px;  // bold
+    --font-size-mm-mobile: 20px;  // bold
+    --font-size-l-mobile: 18px;
+    --font-size-m-mobile: 16px;
+    --font-size-s-mobile: 12px;
+
+
+    --font-size-ss-desktop: 28px;  // bold
+    --font-size-mm-desktop: 32px;  // bold
+    --font-size-ll-desktop: 48px;  // bold
+    --font-size-l-desktop: 26px;
+    --font-size-m-desktop: 24px;
+    --font-size-s-desktop: 20px;
+
+    --2large-border-radius: 24px;
+    --large-border-radius: 18px;
+    --medium-border-radius: 14px;
+    --small-border-radius: 7px;
+    --chat-message-border-radius: 30px;
 
     --main-black: #171717;
-    --our-gran-color: #909090;
+    --main-black-02: #17171737;
+    --main-black-04: #1717176a;
+    --our-gray-color: #909090;
+    --our-gray-color-05: #9090907b;
     --white-color: #f7f7f7;
     --red: #ff1313;
 
@@ -14,4 +33,6 @@
     --main-gradient: linear-gradient(180deg, #5347e5 0%, #7200e3 100%);
     --colorful-gradient: linear-gradient(135deg, #f03cff 0%, #00ffb2 100%);
     --main-cool-gradient: linear-gradient(132deg, #1d3eea 0%, #c818d7 100%);
+
+
 }
