@@ -1,11 +1,11 @@
 .AuthLink {
   font-family: var(--font-main-Blin);
   font-weight: 600;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.45);
+  font-size: var(--font-size-m-mobile);
+  color: var(--our-gray-color-05);
 
   transition: .3s;
   &:hover{
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--our-gray-color);
   }
 }

@@ -1,7 +1,7 @@
 import { FC, FormEvent } from "react";
 
 import cls from './AuthPage.module.scss';
-import Input from "src/shared/ui/inputs/authInput/authInput";
+import Input from "src/shared/ui/inputs/authInput/Input";
 import AuthForm from "src/widgets/authForm/ui/AuthForm";
 import { AuthTitle } from "src/pages/Login/ui/Title/AuthTitle";
 import { SubmitBtn } from "./SubmitBtn/SubmitBtn";

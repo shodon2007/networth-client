@@ -6,14 +6,13 @@
 
   font-family: var(--font-main-Blin);
   font-weight: 600;
-  font-size: 32px;
+  font-size: var(--font-size-mm-desktop);
   color: var(--white-color);
 
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--main-black-02);
   transition: .5s;
   &:hover{
     transform: translateY(-10px) scale(1.02);
-    background: rgba(0, 0, 0, 0.4);
-    // transform: scale(1);
+    background: var(--main-black-04);
   }
 }

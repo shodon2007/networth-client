@@ -18,7 +18,7 @@
   &::placeholder{
     font-family: var(--font-main-Blin);
     font-weight: 600;
-    font-size: 18px;
+    font-size: var(--font-size-l-mobile);
     color: rgba(255, 255, 255, 0.8);
   }
 }
