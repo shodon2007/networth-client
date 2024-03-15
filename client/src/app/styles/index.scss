@@ -3,6 +3,16 @@
 @import './themes/dark.scss';
 @import './themes/light.scss';
 
+
+.app {
+    min-height: 100svh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-black);
+}
+
 * {
     margin: 0;
     padding: 0;

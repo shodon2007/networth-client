@@ -1,14 +1,15 @@
 import {RouteProps} from "react-router-dom";
-import { MainPage } from "src/pages/mainPage";
+import AuthPage from "src/pages/Login/ui/AuthPage";
+import LoginPage from "src/pages/Login/ui/LoginPage";
 
 const routes: RouteProps[] = [
 	{
 		path: "/",
-		element: <MainPage />,
+		element: <AuthPage />,
 	},
 	{
-		path: "/f",
-		element: <div>hello f</div>,
+		path: "/login",
+		element: <LoginPage></LoginPage>,
 	},
 ];
 
