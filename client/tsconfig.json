@@ -19,9 +19,11 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
+		"baseUrl": "./",
 		"paths": {
-			"src/*": ["./src/*"]
-		}
+			"src/*": ["src/*"],
+			"@assets/*": ["src/shared/assets/*"]
+		},
 	},
 	"include": ["src"],
 	"references": [{"path": "./tsconfig.node.json"}]
