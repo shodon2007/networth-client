@@ -2,15 +2,17 @@
 @import './variables.scss';
 @import './themes/dark.scss';
 @import './themes/light.scss';
-
+@import 'src/shared/ui/styles/mixins/globalMixins.scss';
 
 .app {
+    @include grid-background();
     min-height: 100svh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-black);
+    color: var(--primary-color);
+    background-color: var(--main-bg-color);
 }
 
 * {
