@@ -1,12 +1,11 @@
-import { FC } from "react";
-import { useTheme } from "src/app/providers/themeProvider";
+import { FC, useContext } from "react";
+import { useTheme } from "src/shared"
 
 const Header: FC = () => {
-    const {toggleTheme} = useTheme();
+    const { toggleTheme } = useTheme();
 
     return <div>
-        <button onClick={() => toggleTheme()}>theme</button>
-        </div>
+    </div>
 }
 
 export default Header;

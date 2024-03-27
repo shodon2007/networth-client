@@ -1,0 +1,6 @@
+@mixin grid-background($grid-size: 200px, $grid-color: #3B3B3B) {
+  background-image:
+  linear-gradient(to right, transparent 0, transparent calc($grid-size - 1px), $grid-color $grid-size, $grid-color calc(#{$grid-size} * 2 - 1px), transparent calc(#{$grid-size} * 2)),
+  linear-gradient(to bottom, transparent 0, transparent calc($grid-size - 1px), $grid-color $grid-size, $grid-color calc(#{$grid-size} * 2 - 1px), transparent calc(#{$grid-size} * 2));
+background-size: $grid-size $grid-size;
+}
