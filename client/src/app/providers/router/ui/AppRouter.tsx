@@ -1,14 +1,13 @@
-import {Route, Routes} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 
-import routes from "../model/routes";
+import MainRouter from "../model/router";
+import { themeProvider as Theme } from "src/shared";
 
 const AppRouter = () => {
 	return (
-		<Routes>
-			{routes.map((route, index) => (
-				<Route key={index} path={route.path} element={route.element} />
-			))}
-		</Routes>
+		<Theme>
+			<RouterProvider router={MainRouter} />
+		</Theme>
 	);
 };
 

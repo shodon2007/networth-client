@@ -1,12 +1,14 @@
-import { InputHTMLAttributes, FC, ReactNode } from "react";
+import { InputHTMLAttributes, FC } from "react";
 import cls from './authInput.module.scss'
+import classNames from "src/shared/lib/classNames";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
-  children: string
+  children: string,
+  classname?: string,
 }
 
-const Input: FC<InputProps> = ({children, ...props}) => {
-  return <input className={cls.Input} {...props} placeholder={children} />
+const Input: FC<InputProps> = ({children, classname, ...props}) => {
+  return <input  className={classNames(cls.Input, {}, [])} {...props} placeholder={children} />
 }
 
 export default Input
