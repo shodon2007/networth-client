@@ -9,7 +9,9 @@ const app = express()
 const PORT = process.env.PORT ?? 9999;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  credentials: true,
+}));
 app.use(cookieParser());
 app.use('/api', router);
 app.use(errorMiddleware);
