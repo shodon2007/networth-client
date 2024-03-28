@@ -4,12 +4,12 @@ import { Themes, LOCAL_STORAGE_THEME_KEY } from "../../../../shared/context/them
 
 import themeContext from "../../../../shared/context/themeProvider/lib/themeContext";
 
-interface themeProviderProps { children: ReactNode }
+interface ThemeProviderProps { children: ReactNode }
 
 const defaultTheme =
 	localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes;
 
-export const themeProvider: FC<themeProviderProps> = ({ children }) => {
+export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 	const [theme, setTheme] = useState<Themes>(defaultTheme);
 
 	const defaultProps = {
