@@ -1,3 +1,12 @@
 .Button {
-    background-color: green;
+	font-size: var(--font-size-s-desktop);
+	padding: 18px 32px;
+	border-radius: var(--medium-border-radius);
+	background-color: var(--bg-secondary-color);
+	color: var(--primary-color);
+	cursor: pointer;
+}
+
+.Button:hover {
+	background-color: var(--bg-secondary-hover-color);
 }
