@@ -56,6 +56,27 @@ class UserService extends Database {
         await this.query('UPDATE user SET isActivated = 1 WHERE activationLink = ?', activateLink);
         return true;
     }
+
+    async refresh(refreshToken) {
+        if (!refreshToken) {
+            throw ApiError.UnauthorizedError();
+        }
+        const tokenIsValidate = tokenService.validateRefreshToken(refreshToken);
+        const user = await tokenService.findToken(refreshToken);
+        if (!tokenIsValidate || !user) {
+            throw ApiError.UnauthorizedError();
+        }
+
+        const userDto = new UserDto(user);
+        const tokens = tokenService.generateTokens({...userDto});
+
+        await tokenService.saveToken(userDto.id, tokens.refreshToken);
+        return {...tokens,user: userDto}
+    }
+
+    async getAllUsers() {
+        return await this.query('SELECT * FROM user');
+    }
 }
 
 module.exports = new UserService();
