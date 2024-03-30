@@ -1,34 +1,136 @@
 @import 'src/shared/ui/styles/mixins/globalMixins.scss';
 
 
-.aside{
+.aside {
   width: 150px;
   height: 100%;
 
-  transition: .2s;
+  transition: width .25s;
 }
-.asideActive{
+
+.asideActive {
   width: 500px;
   height: 100%;
-
-  transition: .2s;
+  transition: width .25s;
 }
-.AsideStroke{
+
+.AsideStroke {
   width: 100%;
   height: 100%;
   background-image: var(--main-gradient);
   padding-left: 2px;
+  overflow: hidden
 }
+
 .asideContent {
   @include grid-background();
   width: 100%;
   height: 100%;
   background-color: var(--main-black);
-}
-.navLink {
   display: flex;
+  flex-direction: column;
+  row-gap: 64px;
+  padding-top: 25px;
+}
+
+.asideHeader {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  column-gap: 36px;
+  align-items: center;
+
+  
+
+  &__title {
+    font-size: var(--font-size-l-desktop);
+    font-weight: bold;
+    font-family: var(--font-main-Blin);
+  }
+
+  &__avatar {
+    width: 75px;
+    height: 75px;
+    background: white;
+    border-radius: 100%;
+  }
+}
+
+.asideNav {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  transition: border 5s;
+}
+
+.navLinksActive {
+  width: min-content;
+  border-top: 1.5px var(--our-gray-color) solid;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 32px 24px;
+  row-gap: 18px;
+  transition:  400ms ease-in;
+}
+
+.navLinks {
+  width: 335px;
+  border-top: 1.5px var(--our-gray-color) solid;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 32px 24px;
+  row-gap: 18px;
+  transition:  400ms ease-in;
+}
+
+.navLink {
+  width: 100%;
+  font-family: var(--third-main-Leel);
+  background-image: var(--main-cool-gradient);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  user-select: none; // Prohibit highlighting or select a text for our links
+
+  &__radio {
+    display: none;
+  }
+
+  &__titleActive {
+    font-size: var(--font-size-ss-desktop);
+    font-weight: bold;
+    transition: .2s;
+  }
+
+  &__title {
+    font-size: var(--font-size-s-desktop);
+    transition: .2s;
+  }
+
+  &__title:hover {
+    font-size: var(--font-size-m-desktop);
+  }
 
   &__icon {
-
+    width: 46px;
+    height: 46px;
+    transition: .2s;
   }
+
+  &__iconActive {
+    width: 54px;
+    height: 54px;
+    transition: .2s;
+  }
+
+  transition: .3s;
 }

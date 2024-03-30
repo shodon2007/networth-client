@@ -23,7 +23,7 @@ const MainRouter = createBrowserRouter([
 		children: [
       {
 				path: "/main/feed",
-        element: <h1>Hello</h1>,
+        element: <FeedPage />,
 			},
 			{
 				path: "/main/profile",
