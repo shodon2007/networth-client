@@ -6,9 +6,8 @@ interface FeedEntityProps { }
 export const FeedEntity = ({ }: FeedEntityProps) => {
   
   return (
-    <>
+    <section className={cls.FeedSection}>
       <PostEntity />
-      <h2>Hello</h2>
-    </>
+    </section>
   )
 }
