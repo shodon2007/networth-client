@@ -6,7 +6,7 @@ interface PostEntityProps { InteractiveBtns: InteractiveBtn[] }
 
 // TODO: Solve the question with props and how to create the interactive btns
 
-export const PostEntity = ({ InteractiveBtns: InteractiveBtnList }: PostEntityProps) => {
+export const PostEntity = ({  }: PostEntityProps) => {
 
   return (
     <article className={cls.Article}>
