@@ -1,4 +1,4 @@
-import { LinksData } from 'src/entities/ui/aside/ui/NavbarTemplate'
+import { LinksData } from "../ui/NavbarTemplate"
 import ProfileIcon from "src/shared/assets/ProfileIcon.svg"
 import FriendsIcon from 'src/shared/assets/FriendsIcon.svg'
 import StoriesIcon from 'src/shared/assets/StoriesIcons.svg'

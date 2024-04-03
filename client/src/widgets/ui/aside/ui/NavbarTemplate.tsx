@@ -1,14 +1,15 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 import cls from './NavbarTemplate.module.scss'
+import { Links } from '../consts/LinksData';
 
 export interface LinksData {
   title: string;
   icon: string;
 }
 
-interface NavbarTemplateProps { links: LinksData[] }
+interface NavbarTemplateProps { }
 
-export const NavbarTemplate = ({ links }: NavbarTemplateProps) => {
+export const NavbarTemplate: FC<NavbarTemplateProps> = ({ }) => {
   const [isHover, setIsHover] = useState(false);
   const [selectedValue, setSelectedValue] = useState(0)
 
@@ -35,9 +36,9 @@ export const NavbarTemplate = ({ links }: NavbarTemplateProps) => {
           <nav className={cls.asideNav}>
             <ul className={isHover ? cls.navLinks : cls.navLinksActive}>
               {isHover  // Check if the aside is hovering
-                ? links.map((item: LinksData, index) => {  // Create a new link from the massive
+                ? Links.map((item: LinksData, index) => {  // Create a new link from the massive
                   return <li className={cls.navLink} key={index}>
-                    <img src={item.icon} className={cls.navLink__icon}/>
+                    <img src={item.icon} className={cls.navLink__icon} />
                     <label className={cls.navLink__label}>
                       <input
                         type='radio'
@@ -53,7 +54,7 @@ export const NavbarTemplate = ({ links }: NavbarTemplateProps) => {
                   </li>;
                 })
                 :
-                links.map((item, index) => {  
+                Links.map((item, index) => {
                   return <li className={cls.navLink} key={index}><img src={item.icon} className={cls.navLink__icon} key={index} /></li>
                 })
               }

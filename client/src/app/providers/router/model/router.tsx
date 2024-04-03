@@ -1,32 +1,34 @@
-import {Navigate, createBrowserRouter} from "react-router-dom";
 
-import {Layout} from "src/shared/ui/Layout";
+import { createBrowserRouter } from "react-router-dom";
 
-import {ProfilePage} from "src/pages/Profile/ui/ProfilePage";
-import {LoginPage} from "src/pages/Auth/Login";
+import { ProfilePage } from "src/pages/Profile/ui/ProfilePage";
+import { LoginPage } from "src/pages/Auth/Login";
+import { MainLayout } from "src/widgets";
+import { FeedPage } from "src/pages/Feed";
+import AuthWidget from "src/widgets/ui/auth/ui/AuthWidget";
 
 const MainRouter = createBrowserRouter([
 	{
+		path: "/login",
+		element: <LoginPage />,
+	},
+	{
 		path: "/",
-		element: <Layout />,
+		element: <AuthWidget />,
+	},
+	{
+		path: "/main",
+		element: <MainLayout />,
 		children: [
-      {
-				path: "/main/feed",
-        element: <FeedPage />,
+			{
+				path: '/main/feed',
+				element: <FeedPage />
 			},
 			{
-				path: "login",
-				element: <LoginPage />,
-			},
-			{
-				path: "main/feed",
-				element: <h1>Hello</h1>,
-			},
-			{
-				path: "main/profile",
-				element: <ProfilePage />,
-			},
-		],
+				path: '/main/profile',
+				element: <ProfilePage />
+			}
+		]
 	},
 ]);
 
