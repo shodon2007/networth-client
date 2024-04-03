@@ -5,14 +5,14 @@ import AuthForm from "../../authForm/ui/AuthForm";
 import cls from './AuthTemplate.module.scss';
 import { SubmitBtn } from "src/shared/ui/AuthSubmitBtn/AuthSubmitBtn";
 import { AuthLink } from "src/shared/ui/Links/loginLinks/AuthLink";
-import { AuthTitle } from "src/shared/ui/Title/AuthTitle";
+import { Title } from "src/shared/ui/Title/Title";
 
 interface AuthWidgetProps { }
 
 const AuthWidget: FC<AuthWidgetProps> = ({ }) => {
 
 	return <section className={cls.AuthPage}>
-		<AuthTitle>Authentication</AuthTitle>
+		<Title>Authentication</Title>
 		{/* <p className={cls.errorMsg}>{auth.msgErr}</p> */}
 		{/* // TODO: Create auth funciton in 'features folder' and give it to 'onSubmit' property */}
 		<AuthForm

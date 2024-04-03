@@ -5,14 +5,14 @@ import AuthForm from "../../authForm/ui/AuthForm";
 import cls from './AuthTemplate.module.scss';
 import { SubmitBtn } from "src/shared/ui/AuthSubmitBtn/AuthSubmitBtn";
 import { AuthLink } from "src/shared/ui/Links/loginLinks/AuthLink";
-import { AuthTitle } from "src/shared/ui/Title/AuthTitle";
+import { Title } from "src/shared/ui/Title/Title";
 
 interface LoginWidgetProps { }
 
 const LoginWidget: FC<LoginWidgetProps> = ({ }) => {
 
 	return <section className={cls.AuthPage}>
-		<AuthTitle>Authentication</AuthTitle>
+		<Title>Authentication</Title>
 		{/* <p className={cls.errorMsg}>{auth.msgErr}</p> */}
 		<AuthForm
 			onSubmit={() => new Promise((resolve, reject) => { resolve(console.log('hello')) })}

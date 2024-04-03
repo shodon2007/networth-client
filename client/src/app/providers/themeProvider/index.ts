@@ -1,3 +1,5 @@
-import { ThemeProvider } from "./ui/themeProvider";
+import {ThemeProvider} from "./ui/themeProvider.tsx";
 
-export { ThemeProvider }
+export {
+    ThemeProvider
+}

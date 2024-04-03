@@ -1,3 +1,7 @@
-import Profile from './Profile.tsx'
+import { AlbumSectionCard } from "./AlbumSectionCard/AlbumSectionCard"
+import { UserDataCard } from "./UserDataCard/UserDataCard"
 
-export { Profile }
+export {
+  UserDataCard,
+  AlbumSectionCard
+}

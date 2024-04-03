@@ -1,10 +1,12 @@
-type Mods = Record<string, boolean> 
+type Mods = Record<string, boolean>;
 
-function classNames(cls: string, mods: Mods, additional: string[]) {
+function classNames(cls: string, mods: Mods = {}, additional: string[] = []) {
 	return [
 		cls,
-		...Object.entries(mods).filter(([key]) => key),
-		...additional,
+		...Object.entries(mods)
+			.filter(([, value]) => value)
+			.map(([key]) => key),
+		...additional.filter((el) => el),
 	].join(" ");
 }
 

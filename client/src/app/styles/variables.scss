@@ -1,10 +1,16 @@
 :root {
-    --font-size-ll-mobile: 22px;  // bold
-    --font-size-mm-mobile: 20px;  // bold
-    --font-size-l-mobile: 18px;
-    --font-size-m-mobile: 16px;
-    --font-size-s-mobile: 12px;
+	--font-size-ll-mobile: 22px; // bold
+	--font-size-mm-mobile: 20px; // bold
+	--font-size-l-mobile: 18px;
+	--font-size-m-mobile: 16px;
+	--font-size-s-mobile: 12px;
 
+	--font-size-ss-desktop: 28px; // bold
+	--font-size-mm-desktop: 32px; // bold
+	--font-size-ll-desktop: 48px; // bold
+	--font-size-l-desktop: 26px;
+	--font-size-m-desktop: 24px;
+	--font-size-s-desktop: 20px;
 
     --font-size-ss-desktop: 28px;  // bold
     --font-size-mm-desktop: 32px;  // bold
@@ -23,4 +29,6 @@
     --font-main-Blin: "Blinker", sans-serif;
     --third-main-Leel: "Leelawadee", sans-serif;
 
+	--font-main-Blin: "Blinker", sans-serif;
+	--third-main-Leel: "Leelawadee", sans-serif;
 }

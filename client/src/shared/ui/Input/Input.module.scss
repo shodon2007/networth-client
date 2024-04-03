@@ -1,0 +1,24 @@
+.Input {
+	border-radius: var(--medium-border-radius);
+	padding: 0px 12px;
+	width: 400px;
+	height: 60px;
+	color: var(--white-color);
+
+	background: var(--bg-secondary-color);
+	transition: 0.2s;
+	&:hover {
+		background: var(--bg-secondary-hover-color);
+	}
+
+	&:focus {
+		background: var(--bg-secondary-focus-color);
+	}
+
+	&::placeholder {
+		font-family: var(--font-main-Blin);
+		font-weight: 600;
+		font-size: var(--font-size-l-mobile);
+		color: rgba(255, 255, 255, 0.8);
+	}
+}
