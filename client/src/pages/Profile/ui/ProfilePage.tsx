@@ -4,7 +4,7 @@ export const ProfilePage = () => {
   
   return (
     <>
-    hello
+    <h1>Profile Page</h1>
     </>
   )
 }

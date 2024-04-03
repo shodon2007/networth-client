@@ -1,3 +1,1 @@
-import { FeedEntity } from "./ui";
-
-export { FeedEntity }
+export * from './model'

@@ -10,10 +10,9 @@ const MainRouter = createBrowserRouter([
 		path: "/",
 		element: <Layout />,
 		children: [
-			{
-				path: "",
-				element: <Navigate to={"login"} />,
-				index: true,
+      {
+				path: "/main/feed",
+        element: <FeedPage />,
 			},
 			{
 				path: "login",
