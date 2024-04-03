@@ -1,3 +1,3 @@
-import { FeedEntity } from "./ui";
+import { FeedWidget } from "./ui";
 
-export { FeedEntity }
+export { FeedWidget }
