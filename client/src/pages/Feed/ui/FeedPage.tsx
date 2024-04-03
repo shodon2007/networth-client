@@ -1,12 +1,13 @@
+import { FeedWidget } from "src/widgets/ui/Feed/ui/FeedWidget"
 
-import { FeedEntity } from 'src/entities'
+
 
 
 export const FeedPage = () => {
 
   return (
     <>
-      <FeedEntity />
+      <FeedWidget/>
     </>
   )
 
