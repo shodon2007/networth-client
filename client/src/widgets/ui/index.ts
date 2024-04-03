@@ -1,0 +1,6 @@
+export * from './Feed'
+export * from './Maintemplate'
+export * from './aside'
+export * from './auth/ui'
+export * from './header'
+export * from './post'
