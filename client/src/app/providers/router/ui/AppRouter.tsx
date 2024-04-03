@@ -5,9 +5,7 @@ import { themeProvider as Theme } from "src/shared";
 
 const AppRouter = () => {
 	return (
-		<Theme>
 			<RouterProvider router={MainRouter} />
-		</Theme>
 	);
 };
 
