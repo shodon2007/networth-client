@@ -1,0 +1,33 @@
+@import "src/shared/ui/styles/mixins/globalMixins.scss";
+
+.sidebar {
+	width: var(--sidebar-close-width);
+	height: 100%;
+	padding: 25px 42px;
+	overflow: hidden;
+	transition: all 0.5s ease;
+	background-image: var(--main-black);
+}
+
+.sidebar:hover {
+	width: var(--sidebar-open-width);
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.username {
+	font-size: var(--font-size-ll);
+}
+
+.navbar {
+	display: flex;
+	flex-direction: column;
+}
+
+.navLink {
+	font-size: var(--font-size-m);
+	background-color: var(--main-gradient);
+}

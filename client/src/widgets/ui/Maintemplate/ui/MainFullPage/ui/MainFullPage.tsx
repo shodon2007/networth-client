@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import cls from './MainFullPage.module.scss'
 
 import { HeaderTemplate, NavbarTemplate } from 'src/widgets'
+import Sidebar from 'src/widgets/Sidebar/ui/Sidebar'
 interface MainFullPageProps { children: ReactNode }
 
 export const MainFullPage = ({ children }: MainFullPageProps) => {
@@ -15,7 +16,8 @@ export const MainFullPage = ({ children }: MainFullPageProps) => {
         {children}
       </main>
       <aside className={cls.aside} >
-        <NavbarTemplate />
+        {/* <NavbarTemplate /> */}
+        <Sidebar />
       </aside>
     </div>
   )

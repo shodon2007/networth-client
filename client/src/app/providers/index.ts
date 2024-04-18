@@ -1,4 +1,3 @@
-import { AppRouter } from "./router";
-import { ThemeProvider } from "./themeProvider";
+import {AppRouter} from "./router";
 
-export { ThemeProvider, AppRouter }
+export {AppRouter};
