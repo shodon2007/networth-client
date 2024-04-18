@@ -1,31 +1,13 @@
-import {FC} from "react";
-import Input from "src/shared/ui/Input/Input";
-import cls from "./LoginPage.module.scss";
-import Button from "src/shared/ui/Buttons/authSubmitBtn/Button";
-import loginSubmit from "src/shared/lib/Auth/Buttons/loginSubmit";
-import Block from "src/shared/ui/Block/Block";
-import {Title} from "src/shared/ui/Title/Title";
-import MyLink from "src/shared/ui/Link/Link";
+import { FC } from "react";
+import LoginWidget from "src/widgets/ui/auth/ui/LoginWidget";
 
-interface LoginPageProps {}
 
-const LoginPage: FC<LoginPageProps> = () => {
-	const email = "work@shodon.ru";
-	const password = "shodon2007";
+const LoginPage: FC = () => {
+
+	// It's incorrect to write any other code in page folder
+	// exclude the widgets in our proejct that is wrong
 	return (
-		<Block>
-			<form className={cls.page}>
-				<Title>Login</Title>
-				<div className={cls.inputs}>
-					<Input placeholder="введите email" />
-					<Input placeholder="введите пароль" />
-				</div>
-				<div className={cls.bottom}>
-					<Button onClick={() => loginSubmit({email, password})}>Войти</Button>
-					<MyLink to="/registration">Создать аккаунт</MyLink>
-				</div>
-			</form>
-		</Block>
+		<LoginWidget />
 	);
 };
 

@@ -1,0 +1,29 @@
+.mBtn {
+  border-radius: var(--medium-border-radius);
+  padding: 0.44rem 0.62rem;
+
+  background-color: var(--our-gray-color);
+  cursor: pointer;
+  font-weight: 400;
+
+  color: var(--white-color-04);
+  font-size: var(--font-size-m-desktop);
+  font-family: var(--font-main-Blin);
+  font-weight: semibold;
+  letter-spacing: 0.05em;
+
+  transition: .2s;
+  &:hover {
+    color: var(--main-black);
+    background-color: var(--white-color);
+  }
+}
+.Primary {
+  background: var(--bg-secondary-black-color);
+
+  transition: .2s;
+  &:hover {
+    color: var(--white-color);
+    background-color: var(--bg-secondary-black-focus-color);
+  }
+}

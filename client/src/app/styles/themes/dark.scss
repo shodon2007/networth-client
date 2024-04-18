@@ -6,9 +6,12 @@
 	--main-black: #171717;
 	--main-black-02: #17171737;
 	--main-black-04: #1717176a;
-	--our-gray-color: #909090;
-	--our-gray-color-05: #9090907b;
-	--white-color: #f7f7f7;
+	--our-gray-color: rgba(144, 144, 144, 0.2);
+	--our-gray-color-03: rgba(144, 144, 144, 0.3);
+	--our-gray-color-05: rgba(144, 144, 144, 0.5);
+	--white-color: rgb(247, 247, 247);
+	--white-color-04: rgba(247, 247, 247, 0.4);
+	--white-color-02: rgba(247, 247, 247, 0.2);
 	--red: #ff1313;
 	--primary-color: white;
 
@@ -16,7 +19,7 @@
 	--colorful-gradient: linear-gradient(135deg, #f03cff 0%, #00ffb2 100%);
 	--main-cool-gradient: linear-gradient(132deg, #1d3eea 0%, #c818d7 100%);
 
-	--bg-secondary-color: rgba(0, 0, 0, 0.2);
-	--bg-secondary-hover-color: rgba(0, 0, 0, 0.3);
-	--bg-secondary-focus-color: rgba(0, 0, 0, 0.5);
+	--bg-secondary-black-color: rgba(0, 0, 0, 0.2);
+	--bg-secondary-black-hover-color: rgba(0, 0, 0, 0.3);
+	--bg-secondary-black-focus-color: rgba(0, 0, 0, 0.5);
 }

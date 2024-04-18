@@ -1,0 +1,1 @@
+export {CreatePostCard} from './CreatePostCard'

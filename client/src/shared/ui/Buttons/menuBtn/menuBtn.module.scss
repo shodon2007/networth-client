@@ -1,0 +1,31 @@
+.empty {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  column-gap: 3px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.Empty {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  column-gap: 4px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.border {
+  border: 3px solid var(--white-color);
+  border-radius: 100%;
+}
+
+.point {
+  width: 4px;
+  height: 4px;
+  background: var(--white-color);
+  border-radius: 100%;
+}

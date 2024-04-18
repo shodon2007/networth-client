@@ -1,18 +1,18 @@
 .Input {
-  border-radius: 14px;
+  border-radius: var(--medium-border-radius);
   padding: 0px 12px;
   width: 400px;
   height: 60px;
   color: var(--white-color);
 
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--bg-secondary-black-color);
   transition: .2s;
   &:hover{
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--bg-secondary-black-hover-color);
   }
   
   &:focus{
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--bg-secondary-black-focus-color);
   }
 
   &::placeholder{

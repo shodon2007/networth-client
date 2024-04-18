@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useTheme } from "src/shared/context/themeProvider/lib/useTheme";
+import { useTheme } from "src/shared/context/themeProvider/useTheme";
 import { AppRouter } from "./providers/router";
 import classNames from "src/shared/lib/classNames";
 
