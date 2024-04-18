@@ -1,7 +1,8 @@
-import toggleTheme from "../utils/toggleTheme";
 import {useAppSelector} from "src/shared/lib/store";
 import {getTheme} from "src/app/providers/themeProvider";
 import {Themes} from "../const/theme";
+import {useDispatch} from "react-redux";
+import {setTheme} from "src/app/providers";
 
 interface UseThemeResult {
 	theme: Themes;
@@ -9,10 +10,12 @@ interface UseThemeResult {
 }
 
 export const useTheme = (): UseThemeResult => {
-	const {theme} = useAppSelector(getTheme);
+	const theme = useAppSelector(getTheme);
+	const dispatch = useDispatch();
 
-	console.log(theme);
-	// const {theme, setTheme} = useContext<ThemeContextProps>(themeContext);
+	function toggleTheme() {
+		dispatch(setTheme(theme === Themes.DARK ? Themes.LIGHT : Themes.DARK));
+	}
 
 	return {
 		theme,
