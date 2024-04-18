@@ -5,6 +5,7 @@ import cls from './AuthTemplate.module.scss';
 import { SubmitBtn } from "src/shared/ui/Buttons/AuthSubmitBtn/AuthSubmitBtn";
 import { AuthLink } from "src/shared/ui/Links/AuthLinks/AuthLink";
 import { Title } from "src/shared/ui/Title/Title";
+import Button, { ThemeButton } from "src/shared/ui/Button/Button";
 
 interface LoginWidgetProps { }
 
@@ -21,7 +22,7 @@ const LoginWidget: FC<LoginWidgetProps> = ({ }) => {
 			<Input type="text" id="password">Password</Input>
 		</form>
 		<div className={cls.AuthPageFooter}>
-			<SubmitBtn>Log In</SubmitBtn>
+			<Button theme={ThemeButton.SUBMIT_BUTTON}>Log In</Button>
 			<AuthLink href='/'>Create account</AuthLink>
 		</div>
 	</section>;

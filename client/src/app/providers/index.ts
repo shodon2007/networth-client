@@ -1,4 +1,4 @@
-import { AppRouter } from "./router";
-import { ThemeProvider } from "./themeProvider";
+import {AppRouter} from "./router";
+import {setTheme} from "./themeProvider/model/slice/themeSlice";
 
-export { ThemeProvider, AppRouter }
+export {AppRouter, setTheme};

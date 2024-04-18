@@ -1,10 +1,10 @@
 import { FC } from "react";
 
-import Input from "src/shared/ui/inputs/authInput/Input";
-import cls from './AuthTemplate.module.scss';
-import { SubmitBtn } from "src/shared/ui/Buttons/AuthSubmitBtn/AuthSubmitBtn";
+import Button, { ThemeButton } from "src/shared/ui/Button/Button";
 import { AuthLink } from "src/shared/ui/Links/AuthLinks/AuthLink";
 import { Title } from "src/shared/ui/Title/Title";
+import Input from "src/shared/ui/inputs/authInput/Input";
+import cls from './AuthTemplate.module.scss';
 
 interface AuthWidgetProps { }
 
@@ -26,7 +26,7 @@ const AuthWidget: FC<AuthWidgetProps> = ({ }) => {
 			<Input type="text" id="phoneNumber">Phone Number</Input>
 		</form>
 		<div className={cls.AuthPageFooter}>
-			<SubmitBtn>Sign Up</SubmitBtn>
+			<Button theme={ThemeButton.SUBMIT_BUTTON}>Sign Up</Button>
 			<AuthLink href='/login'>Log In</AuthLink>
 		</div>
 	</section>;

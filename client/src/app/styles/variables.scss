@@ -1,9 +1,9 @@
 :root {
-	--font-size-ll-mobile: 22px; // bold
-	--font-size-mm-mobile: 20px; // bold
-	--font-size-l-mobile: 18px;
-	--font-size-m-mobile: 16px;
-	--font-size-s-mobile: 12px;
+	// --font-size-ll-mobile: 22px; // bold
+	// --font-size-mm-mobile: 20px; // bold
+	// --font-size-l-mobile: 18px;
+	// --font-size-m-mobile: 16px;
+	// --font-size-s-mobile: 12px;
 
     --font-size-ss-desktop: 28px;  // bold
     --font-size-mm-desktop: 32px;  // bold
@@ -13,14 +13,25 @@
     --font-size-s-desktop: 20px;
     --font-size-smallest-desktop: 14px;
 
-    --2large-border-radius: 24px;
-    --large-border-radius: 18px;
-    --medium-border-radius: 14px;
-    --small-border-radius: 7px;
-    --chat-message-border-radius: 30px;
+	--font-size-ll: 48px;
+	--font-size-l: 32px;
+	--font-size-m: 28px;
+	--font-size-s: 18px;
+	--font-size-ss: 12px;
 
-    --font-main-Blin: "Blinker", sans-serif;
-    --third-main-Leel: "Leelawadee", sans-serif;
+	--2large-border-radius: 24px;
+	--large-border-radius: 18px;
+	--medium-border-radius: 14px;
+	--small-border-radius: 7px;
+	--chat-message-border-radius: 30px;
+
+	--sidebar-close-width: 150px;
+	--sidebar-open-width: 500px;
+
+	--global-margin: 178px;
+
+	--font-main-Blin: "Blinker", sans-serif;
+	--third-main-Leel: "Leelawadee", sans-serif;
 
 	--font-main-Blin: "Blinker", sans-serif;
 	--third-main-Leel: "Leelawadee", sans-serif;

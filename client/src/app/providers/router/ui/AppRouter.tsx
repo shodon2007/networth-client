@@ -4,7 +4,7 @@ import MainRouter from "../model/router";
 
 const AppRouter = () => {
 	return (
-			<RouterProvider router={MainRouter} />
+		<RouterProvider router={MainRouter} />
 	);
 };
 

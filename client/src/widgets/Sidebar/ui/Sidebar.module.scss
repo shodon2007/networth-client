@@ -1,0 +1,93 @@
+@import "src/shared/ui/styles/mixins/globalMixins.scss";
+
+.sidebar {
+	width: var(--sidebar-close-width);
+	height: 100%;
+	padding: 25px 10px;
+	overflow: hidden;
+	transition: all 0.5s ease;
+	background: var(--main-bg-color);
+	@include grid-background();
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	align-items: center;
+}
+
+.header {
+	display: flex;
+	gap: 10px;
+}
+
+.username {
+	display: none;
+	font-size: var(--font-size-ll);
+}
+
+.navbar {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+	transition: 0.3s ease;
+}
+
+.title {
+	display: none;
+}
+
+.navLink {
+	display: flex;
+	gap: 10px;
+	font-family: var(--third-main-Leel);
+	font-size: var(--font-size-m);
+	background-color: var(--main-gradient);
+	user-select: none;
+	background-image: var(--main-cool-gradient);
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	transition: all 0.3s ease;
+	align-items: center;
+}
+
+.navLinkActive {
+	font-size: var(--font-size-l);
+
+	& .logo > * {
+		width: 75px !important;
+		height: 75px !important;
+	}
+}
+
+.avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+
+.logo > * {
+	width: 45px;
+	height: 45px;
+	fill: var(--primary-color);
+	transition: all 0.5s ease;
+}
+
+.sidebar:hover {
+	padding: 25px 42px;
+	width: var(--sidebar-open-width);
+	align-items: start;
+
+	.username {
+		display: flex;
+	}
+
+	.title {
+		display: flex;
+	}
+
+	.navbar {
+		align-items: start;
+	}
+}

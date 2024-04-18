@@ -1,10 +1,12 @@
-import { FC } from "react";
-import { useTheme } from "src/shared/context/themeProvider/useTheme";
-import { AppRouter } from "./providers/router";
+import {FC} from "react";
+import {AppRouter} from "./providers/router";
 import classNames from "src/shared/lib/classNames";
+import {useTheme} from "src/shared/lib/theme/hooks/useTheme";
 
 const App: FC = () => {
-	const { theme } = useTheme();
+	const {theme} = useTheme();
+
+	console.log(theme);
 
 	return (
 		<div className={classNames("app", {}, [theme])}>
