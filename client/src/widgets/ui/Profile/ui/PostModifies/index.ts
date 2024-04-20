@@ -1,1 +1,1 @@
-export {PostModifies} from './PostModifies'
+export {PostModifies} from './ui/PostModifies'

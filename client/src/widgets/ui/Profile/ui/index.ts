@@ -1,5 +1,5 @@
-import { AlbumSectionCard } from "./AlbumSectionCard/AlbumSectionCard"
-import { UserDataCard } from "./UserDataCard/UserDataCard"
+import { AlbumSectionCard } from "./AlbumSectionCard/ui/AlbumSectionCard"
+import { UserDataCard } from "./UserDataCard/ui/UserDataCard"
 
 export {
   UserDataCard,

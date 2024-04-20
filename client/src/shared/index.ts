@@ -1,4 +1,4 @@
-export * from './context/themeProvider'
+export * from './manager/themeProvider'
 export * from './ui'
  
 

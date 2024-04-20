@@ -14,7 +14,7 @@ const MainRouter = createBrowserRouter([
 			{
 				path: "/",
 				element: <FeedPage />,
-				index: true,
+				// index: true,
 			},
 			{
 				path: "/registration",

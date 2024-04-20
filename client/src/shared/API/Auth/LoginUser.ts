@@ -1,21 +1,17 @@
-import { useAuth } from "src/shared/context/AuthProvider/useAuth";
 import { UserLogData } from "src/shared/types/UserTypes/UserLogType";
+import { UserType } from "src/shared/types/UserTypes/userType";
 
-export const LoginUser = async (user: UserLogData) => {
+export const LoginUser = async (user: UserLogData): Promise<void | UserType> => {
 
-  const auth = useAuth()
 
   const req = await fetch('/api', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(user)
   })
-  
-  const res = await req.json()
-  if (!req.ok) return console.error(`Login is failed - ${res.msgErr}`);
 
-  return (
-    auth.token = res.token,
-    auth.user = res.data
-  )
+  const res: UserType | { msgErr: string } = await req.json()
+  if (!req.ok) return console.error(`Login is failed - ${res}`);
+
+  return res as UserType
 }

@@ -1,8 +1,8 @@
 import { UserRegType } from "src/shared/types/UserTypes/UserRegType";
-import { useAuth } from "src/shared/context/AuthProvider/useAuth";
 
-export const RegistrationUser = async (user: UserRegType) => {
-  const auth = useAuth()
+import { UserType } from "src/shared/types/UserTypes/userType";
+
+export const RegistrationUser = async (user: UserRegType): Promise<void | UserType> => {
 
   const req = await fetch('/', {
     method: 'POST',
@@ -13,8 +13,5 @@ export const RegistrationUser = async (user: UserRegType) => {
   const res = await req.json()
   if (!req.ok) return console.error(`Registration is failed - ${res.msgErr}`);
 
-  return (
-    auth.token = res.token,
-    auth.user = res.user
-  )
+  return res as UserType
 }

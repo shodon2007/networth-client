@@ -1,14 +1,18 @@
-export const ButtonsList: { title: string }[] = [
+export const ButtonsList: { title: string, href: string }[] = [
   {
-    title: 'Photos'
+    title: 'Photos',
+    href: '/photos/',
   },
   {
-    title: 'Albums'
+    title: 'Albums',
+    href: '/Albums/',
   },
   {
-    title: 'Music'
+    title: 'Music',
+    href: '/Music/',
   },
   {
-    title: 'Stories'
+    title: 'Stories',
+    href: '/Stories/',
   }
 ]
