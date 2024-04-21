@@ -3,7 +3,7 @@ import { LoginUser } from "src/shared/API/Auth/LoginUser";
 import { AuthData } from "src/shared/types/AuthTypes/AuthType";
 import { UserLogData } from "src/shared/types/UserTypes/UserLogType";
 import { UserType } from "src/shared/types/UserTypes/userType";
-
+import { UserRegType } from "src/shared/types/UserTypes/UserRegType";
 
 
 
@@ -17,44 +17,8 @@ import { LogoutUser } from "src/shared/API/Auth/LogoutUser";
 import { useState } from "react";
 // import { UserType } from "src/shared/types/UserTypes/userType";
 import { Roles } from 'src/shared/types/ChannelTypes/ChannelType'
+import { UserData } from "./testUser";
 
-export const UserData = (): AuthData => {
-  const [user, setUser] = useState<UserType>({
-    id: 1231,
-    name: 'asd',
-    email: 'dasad',
-    password: '',
-    friendsList: [],
-    musicList: ['sdfgsdfg', 'sdf'],
-    videoList: ['sdf', 'sfddfsf'],
-    avatar: '',
-    settingsList: ['fgfg', 'fg'],
-    phoneNumber: 3434,
-    channelList: [
-      {
-        title: 'Hellowin',
-        participants: [
-          {
-            id: '123',
-            role: Roles.Admin,
-          }
-        ],
-        id: "asdasd"
-      }
-    ],
-
-  })
-
-  const provideValues: AuthData = {
-    user,
-    auth: RegistrationUser,
-    login: LoginUser,
-    logout: LogoutUser,
-    token: ''
-  }
-
-  return provideValues;
-}
 // // --------------------------------------------------------------
 
 // const initialState: AuthData = UserData;
@@ -63,13 +27,25 @@ const AuthSlice = createSlice({
   name: 'auth',
   initialState: UserData,
   reducers: {
-    login: (state, action: {payload: UserLogData}) => {
+    login: (state, action: { payload: UserLogData }) => {
       const req = LoginUser(action.payload)
       state.user = req as unknown as UserType
+    },
+    logout: (state) => {
+      state.user = {} as UserType
+      state.token = ''
+    },
+    registration: (state, aciton: { payload: UserRegType }) => {
+      const req: Promise<void | { user: UserType, token: string }> = RegistrationUser(aciton.payload)
+      // ! This is need in something, it seems like this is shit's code :)
+      if ('user' in req && 'token' in req) {
+        state.user = req.user as UserType
+        state.token = req.token as string
+      }
     }
   }
 })
 
-export const { login } = AuthSlice.actions
+export const { login, logout, registration } = AuthSlice.actions
 
 export default AuthSlice.reducer
