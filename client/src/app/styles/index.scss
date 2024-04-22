@@ -1,22 +1,23 @@
-@import 'reset.scss';
-@import './variables.scss';
-@import './themes/dark.scss';
-@import './themes/light.scss';
-@import 'src/shared/ui/styles/mixins/globalMixins.scss';
+@import "reset.scss";
+@import "./variables.scss";
+@import "./themes/dark.scss";
+@import "./themes/light.scss";
+@import "src/shared/ui/styles/mixins/globalMixins.scss";
+@import "react-toastify/dist/ReactToastify.css";
 
 .app {
-    @include grid-background();
-    min-height: 100svh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--primary-color);
-    background-color: var(--main-bg-color);
+	@include grid-background();
+	min-height: 100svh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--primary-color);
+	background-color: var(--main-bg-color);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }

@@ -6,8 +6,6 @@ import {useTheme} from "src/shared/lib/theme/hooks/useTheme";
 const App: FC = () => {
 	const {theme} = useTheme();
 
-	console.log(theme);
-
 	return (
 		<div className={classNames("app", {}, [theme])}>
 			<AppRouter />
