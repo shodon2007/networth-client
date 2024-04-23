@@ -13,7 +13,7 @@ export const RegistrationUser = async (user: UserRegType): Promise<void | {user:
   // * Overthing typisation in this code
 
   const res = await req.json()
-  if (!req.ok) return console.error(`Registration is failed - ${res.msgErr}`);
+  if (!req.ok) throw new Error(`Registration is failed - ${res.msgErr}`);
 
 
   return {
