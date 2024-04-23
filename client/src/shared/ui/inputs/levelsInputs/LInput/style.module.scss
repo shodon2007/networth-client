@@ -1,0 +1,25 @@
+.LInput {
+  border-radius: var(--large-border-radius);
+  padding: 0.62rem 0.94rem;
+  width: 100%;
+  height: 100%;
+
+  background: var(--bg-secondary-black-color);
+  
+  color: var(--white-color);
+  font-size: var(--font-size-l-desktop);
+  font-family: var(--third-main-Leel);
+
+  transition: .2s;
+
+  &::placeholder {
+    color: var(--white-color-04);
+  }
+  &:hover{
+    background: var(--bg-secondary-black-hover-color);
+  }
+  &:focus{
+    background: var(--bg-secondary-black-focus-color);
+  }
+
+}

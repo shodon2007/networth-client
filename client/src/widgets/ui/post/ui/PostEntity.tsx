@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { InteractiveBtn, InteractiveBtnList } from '../consts/InteractiveBtnsList'
 import cls from './Post.module.scss'
 import watchIcon from 'src/shared/assets/EyeIcon.svg'
+import { MenuBtn } from 'src/shared/ui/Buttons/menuBtn/MenuBtn'
 
 interface PostEntityProps { }
 
@@ -27,11 +28,7 @@ export const PostEntity = ({ }: PostEntityProps) => {
           </span>
         </div>
         <span className={cls.Header__more}>  {/* //TODO add the 'more' menu */}
-          <button className={cls.Header__moreBtn}>
-            <div className={cls.Header__moreDot} />
-            <div className={cls.Header__moreDot} />
-            <div className={cls.Header__moreDot} />
-          </button>
+          <MenuBtn border={false} />
         </span>
       </header>
       <main className={cls.Main}>

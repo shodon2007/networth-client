@@ -1,4 +1,4 @@
-import { LinksData } from "../ui/NavbarTemplate"
+import { LinkData } from "src/widgets/ui/aside/types/LinksData"
 import ProfileIcon from "src/shared/assets/ProfileIcon.svg"
 import FriendsIcon from 'src/shared/assets/FriendsIcon.svg'
 import StoriesIcon from 'src/shared/assets/StoriesIcons.svg'
@@ -9,7 +9,7 @@ import Messengericon from 'src/shared/assets/ChatIcon.svg'
 import SettingsIcon from 'src/shared/assets/SettingsIcon.svg'
 import Gameicon from 'src/shared/assets/GameIcongamepad.svg'
 
-export const Links: LinksData[] = [
+export const Links: LinkData[] = [
   {
     title: "Feed",
     icon: ProfileIcon,
