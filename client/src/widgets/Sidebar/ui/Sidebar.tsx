@@ -4,8 +4,8 @@ import {NavLink} from "react-router-dom";
 import classNames from "src/shared/lib/classNames";
 
 import cls from "./Sidebar.module.scss";
-import { useAppSelector } from "src/shared/lib/store";
-import { RootState } from "src/app/providers/storeProvider";
+import { RootState } from "@reduxjs/toolkit/query";
+import { useAppSelector } from "src/shared/lib/Redux/model";
 
 export interface LinksData {
 	title: string;
@@ -18,7 +18,7 @@ const baronImg =
 interface NavbarTemplateProps {}
 
 const Sidebar: FC<NavbarTemplateProps> = () => {
-	const user = useAppSelector((state: RootState) => state.user)
+	const user = useAppSelector(state => state.auth)
 	return (
 		<aside className={cls.sidebar}>
 			<header className={cls.header}>
