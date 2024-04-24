@@ -4,7 +4,6 @@ import {NavLink} from "react-router-dom";
 import classNames from "src/shared/lib/classNames";
 
 import cls from "./Sidebar.module.scss";
-import { RootState } from "@reduxjs/toolkit/query";
 import { useAppSelector } from "src/shared/lib/Redux/model";
 
 export interface LinksData {

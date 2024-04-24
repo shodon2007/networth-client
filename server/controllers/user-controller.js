@@ -69,6 +69,16 @@ class UserController {
             next(e);
         }
     }
+
+    async getUser(req, res, next) {
+        try {
+            const {newData, changeFiled} = req.body 
+            const user = await userService.getUser(newData, changeFiled);
+            return res.json(user);
+        } catch (e) {
+            next(e);
+        }
+    }
 }
 
 module.exports = new UserController();
