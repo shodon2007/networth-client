@@ -1,4 +1,6 @@
-import { createContext } from "react";
-import { AuthContextData } from "src/shared/types/contextTypes/AuthContextType";
+import {createContext} from "react";
+import {AuthContextData} from "src/shared/types/context/AuthContextType";
 
-export const AuthContext = createContext<AuthContextData >({} as AuthContextData);
+export const AuthContext = createContext<AuthContextData>(
+	{} as AuthContextData,
+);

@@ -1,11 +1,11 @@
 import {FC} from "react";
 import links from "../model/Links";
-import {NavLink} from "react-router-dom";
+import {NavLink, Navigate} from "react-router-dom";
 import classNames from "src/shared/lib/classNames";
 
 import cls from "./Sidebar.module.scss";
-import { useAppSelector } from "src/shared/lib/store";
-import { RootState } from "src/app/providers/storeProvider";
+import {useAppSelector} from "src/shared/lib/store";
+import {RootState} from "src/app/providers/storeProvider";
 
 export interface LinksData {
 	title: string;
@@ -18,13 +18,18 @@ const baronImg =
 interface NavbarTemplateProps {}
 
 const Sidebar: FC<NavbarTemplateProps> = () => {
-	const user = useAppSelector((state: RootState) => state.user)
+	const user = useAppSelector((state: RootState) => state.user.user);
+
+	if (!user) {
+		return <Navigate to={"/login"} />;
+	}
+
 	return (
 		<aside className={cls.sidebar}>
 			<header className={cls.header}>
 				{/*TODO: add avatr from the auth context to here*/}
 				<img src={baronImg} alt="avatar" className={cls.avatar} />
-				<h1 className={cls.username}>{user.user?.email ?? 'Этого имени не должно быть т.к. user не зареган'}</h1>
+				<h1 className={cls.username}>{[user.name, user.surname].join(" ")}</h1>
 			</header>
 			<nav className={cls.navbar}>
 				{links.map((link) => {

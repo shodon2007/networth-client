@@ -16,5 +16,12 @@ export const userApi = createApi({
 				body: data,
 			}),
 		}),
+		fetchRegistration: build.mutation<AuthResponse, AuthRequest>({
+			query: (data) => ({
+				url: "registration",
+				method: "POST",
+				body: data,
+			}),
+		}),
 	}),
 });
