@@ -1,6 +1,6 @@
-import {UserRegType} from "src/shared/types/UserTypes/UserRegType";
+import {UserTypes} from "src/shared/types/user/userTypes";
 
-export interface UserType extends UserRegType {
+export interface UserType extends UserTypes {
 	// TODO: create friends list type and gives it like the type
 	friendsList: string[];
 

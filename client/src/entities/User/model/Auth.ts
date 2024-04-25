@@ -1,7 +1,6 @@
 import {UserType} from "./userType";
 
 export interface AuthResponse {
-	// Я этот name по рофлу поставил, name будет внутри user.
 	isAuth: boolean;
 	accessToken: string | null;
 	refreshToken: string | null;
@@ -10,5 +9,7 @@ export interface AuthResponse {
 
 export interface AuthRequest {
 	email: string;
+	name: string;
+	surname: string;
 	password: string;
 }

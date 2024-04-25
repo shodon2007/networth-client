@@ -1,6 +1,5 @@
 import {FC} from "react";
 import Input from "src/shared/ui/Input/Input";
-import cls from "./LoginPage.module.scss";
 import Button from "src/shared/ui/Buttons/authSubmitBtn/Button";
 import Block from "src/shared/ui/Block/Block";
 import {Title} from "src/shared/ui/Title/Title";
@@ -10,19 +9,28 @@ import {Controller, SubmitHandler, useForm} from "react-hook-form";
 import {AuthRequest} from "src/entities/User/model/Auth";
 import {toast} from "react-toastify";
 import {useAppDispatch} from "src/shared/lib/store";
+import {RegistrationRequest} from "src/shared/types/auth/registrationTypes";
 
-const LoginPage: FC = () => {
-	const [loginUser] = userApi.useFetchLoginMutation();
+import cls from "./RegistrationPage.module.scss";
+
+const RegistrationPage: FC = () => {
+	const [registrationUser] = userApi.useFetchRegistrationMutation();
 	const dispatch = useAppDispatch();
-	const {control, handleSubmit} = useForm<AuthRequest>({
+	const {control, handleSubmit} = useForm<RegistrationRequest>({
 		defaultValues: {
 			email: "",
 			password: "",
+			avatar: "",
+			name: "",
+			surname: "",
+			phoneNumber: "",
 		},
 	});
 
 	const submit: SubmitHandler<AuthRequest> = async (data) => {
-		const resp = await loginUser(data);
+		// тут
+		const resp = await registrationUser(data);
+		console.log(resp);
 		if ("error" in resp) {
 			//@ts-ignore
 			toast.error(resp.error.data.message, {
@@ -36,30 +44,44 @@ const LoginPage: FC = () => {
 	return (
 		<form onSubmit={handleSubmit(submit)}>
 			<Block className={cls.page}>
-				<Title>Login</Title>
+				<Title>Registration</Title>
 				<div className={cls.inputs}>
+					<Controller
+						control={control}
+						name="name"
+						render={({field}) => {
+							return <Input placeholder="Имя (необязательно)" {...field} />;
+						}}
+					/>
+					<Controller
+						control={control}
+						name="surname"
+						render={({field}) => {
+							return <Input placeholder="Фамилия (необязательно)" {...field} />;
+						}}
+					/>
 					<Controller
 						control={control}
 						name="email"
 						render={({field}) => {
-							return <Input placeholder="Введите email" {...field} />;
+							return <Input placeholder="Почта" {...field} />;
 						}}
 					/>
 					<Controller
 						control={control}
 						name="password"
 						render={({field}) => {
-							return <Input placeholder="Введите пароль" {...field} />;
+							return <Input placeholder="Пароль" {...field} />;
 						}}
 					/>
 				</div>
 				<div className={cls.bottom}>
-					<Button type="submit">Войти</Button>
-					<MyLink to="/registration">Создать аккаунт</MyLink>
+					<Button type="submit">Зарегестрироваться</Button>
+					<MyLink to="/login">Войти</MyLink>
 				</div>
 			</Block>
 		</form>
 	);
 };
 
-export default LoginPage;
+export default RegistrationPage;
