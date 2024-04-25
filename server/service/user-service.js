@@ -84,7 +84,7 @@ class UserService extends Database {
     }
 
     // Create the @getUser method for recieving a user from the db
-    async getUser(userKey, method) {
+    async getUserByParam(userKey, method) {
         const getUserQuery = `SELECT * FROM user WHERE ${method} = ?`
         return await this.query(getUserQuery, userKey)
     }

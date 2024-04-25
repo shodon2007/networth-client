@@ -1,17 +1,17 @@
 const userService = require('../service/user-service');
-const {validationResult} = require('express-validator')
+const { validationResult } = require('express-validator')
 const ApiError = require('../exceptions/api-error');
 
 class UserController {
     async registration(req, res, next) {
         try {
             const errors = validationResult(req);
-            if(!errors.isEmpty()) {
+            if (!errors.isEmpty()) {
                 return next(ApiError.BadRequest('Ошибка у тебя', errors.array()));
             }
-            const {email, password} = req.body;
+            const { email, password } = req.body;
             const userData = await userService.registration(email, password);
-            res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true});
+            res.cookie('refreshToken', userData.refreshToken, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true });
             return res.json(userData);
         } catch (e) {
             next(e);
@@ -20,9 +20,9 @@ class UserController {
 
     async login(req, res, next) {
         try {
-            const {email, password} = req.body;
+            const { email, password } = req.body;
             const userData = await userService.login(email, password);
-            res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true});
+            res.cookie('refreshToken', userData.refreshToken, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true });
             return res.json(userData);
         } catch (e) {
             next(e);
@@ -31,10 +31,10 @@ class UserController {
 
     async logout(req, res, next) {
         try {
-            const {refreshToken} = req.cookies;
+            const { refreshToken } = req.cookies;
             await userService.logout(refreshToken);
             res.clearCookie('refreshToken');
-            return res.status(200).json({message: 'Вы успешно вышли из аккаунта'});
+            return res.status(200).json({ message: 'Вы успешно вышли из аккаунта' });
         } catch (e) {
             next(e);
         }
@@ -44,7 +44,7 @@ class UserController {
         try {
             const { refreshToken } = req.cookies;
             const userData = await userService.refresh(refreshToken);
-            res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true});
+            res.cookie('refreshToken', userData.refreshToken, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true });
             return res.json(userData);
         } catch (e) {
             next(e);
@@ -55,7 +55,7 @@ class UserController {
         try {
             const activationLink = req.params.link;
             await userService.activate(activationLink);
-            return res.json({status: 200, message: 'Вы успешно потдвердили свой аккаунт'});
+            return res.json({ status: 200, message: 'Вы успешно потдвердили свой аккаунт' });
         } catch (e) {
             next(e);
         }
@@ -70,11 +70,21 @@ class UserController {
         }
     }
 
-    async getUser(req, res, next) {
+    async getUserByParam(req, res, next) {
         try {
-            const {newData, changeFiled} = req.body 
-            const user = await userService.getUser(newData, changeFiled);
+            const { userKey, changingField } = req.body
+            const user = await userService.getUserByParam(userKey, changingField);
             return res.json(user);
+        } catch (e) {
+            next(e);
+        }
+    }
+
+    async changeUserData(req, res, next) {
+        try {
+            const { newUserData, changingField, accessToken } = req.body
+            const changeUser = userService.
+                changeUserData(accessToken, changingField, newUserData)
         } catch (e) {
             next(e);
         }
