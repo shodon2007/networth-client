@@ -1,11 +1,7 @@
 import { ChangeEvent, FC, useState } from 'react';
 import cls from './NavbarTemplate.module.scss'
 import { Links } from '../consts/LinksData';
-
-export interface LinksData {
-  title: string;
-  icon: string;
-}
+import { LinkData } from 'src/widgets/ui/aside/types/LinksData';
 
 interface NavbarTemplateProps { }
 
@@ -36,7 +32,7 @@ export const NavbarTemplate: FC<NavbarTemplateProps> = ({ }) => {
           <nav className={cls.asideNav}>
             <ul className={isHover ? cls.navLinks : cls.navLinksActive}>
               {isHover  // Check if the aside is hovering
-                ? Links.map((item: LinksData, index) => {  // Create a new link from the massive
+                ? Links.map((item: LinkData, index: number) => {  // Create a new link from the massive
                   return <li className={cls.navLink} key={index}>
                     <img src={item.icon} className={cls.navLink__icon} />
                     <label className={cls.navLink__label}>

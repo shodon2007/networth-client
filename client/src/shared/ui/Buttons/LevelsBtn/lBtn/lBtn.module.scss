@@ -1,0 +1,30 @@
+.LBtn {
+  border-radius: var(--large-border-radius);
+  padding: 0.62rem 1.25rem;
+
+  background-color: var(--our-gray-color);
+  cursor: pointer;
+
+  color: var(--white-color-04);
+  font-size: var(--font-size-l-desktop);
+  font-family: var(--font-main-Blin);
+  font-weight: bold;
+  letter-spacing: 0.05em;
+
+  transition: .2s;
+  &:hover {
+    color: var(--main-black);
+    background-color: var(--white-color);
+  }
+}
+.Primary {
+  background: var(--bg-secondary-black-color);
+  
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--bg-secondary-black-focus-color);
+    color: var(--white-color);
+  }
+}

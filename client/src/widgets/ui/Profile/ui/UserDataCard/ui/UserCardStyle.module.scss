@@ -1,0 +1,40 @@
+.UserCard {
+  background: var(--main-gradient);
+  border-radius: inherit;
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 24px;
+  height: min-content;
+  &__info {
+    display: flex;
+    column-gap: 24px;
+    
+  }
+
+  &__userInfo {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  
+  &__avatar {
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 100%;
+  }
+
+  &__name {
+    font-family: var(--font-main-Blin);
+    font-size: var(--font-size-ll-desktop);
+    font-weight: bold;
+    color: var(--white-color);
+  }
+  &__detail {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-s-desktop);
+    font-family: var(--third-main-Leel);
+    column-gap: 6px;
+  }
+}

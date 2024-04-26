@@ -1,4 +1,4 @@
-import {SearchBar} from "src/shared/ui/searchbar/SearchBar";
+import { SearchBar } from "src/shared/ui/inputs/searchbar/SearchBar";
 import cls from "./Header.module.scss";
 import NetWorth from "src/shared/assets/NetWorthLogo.svg";
 import magnifier from "src/shared/assets/magnifier.svg";

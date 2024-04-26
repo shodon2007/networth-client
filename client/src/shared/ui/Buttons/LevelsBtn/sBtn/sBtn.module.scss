@@ -1,0 +1,28 @@
+.sBtn {
+  border-radius: var(--small-border-radius);
+  padding: 0.31rem 0.44rem;
+
+  background-color: var(--our-gray-color);
+  cursor: pointer;
+
+  color: var(--white-color-04);
+  font-size: var(--font-size-s-desktop);
+  font-family: var(--font-main-Blin);
+  font-weight: normal;
+
+  transition: .2s;
+  &:hover {
+    color: var(--main-black);
+    background-color: var(--white-color);
+  }
+}
+.Primary {
+  background: var(--bg-secondary-black-color);
+  
+  
+  transition: .2s;
+  &:hover {
+    color: var(--white-color);
+    background-color: var(--bg-secondary-black-focus-color);
+  }
+}

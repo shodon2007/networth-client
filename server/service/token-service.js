@@ -24,8 +24,8 @@ class TokenService extends Database {
             const userData = jwt.verify(token, process.env.JWT_ACCESS_SECRET);
             console.log(userData);
             return userData;
-        } catch(e) {
-            return null;
+        } catch (e) {
+            return { err: e };
         }
     }
 
@@ -33,8 +33,8 @@ class TokenService extends Database {
         try {
             const userData = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
             return userData;
-        } catch(e) {
-            return null;
+        } catch (e) {
+            return { err: e };
         }
     }
 

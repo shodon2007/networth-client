@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {FC} from "react";
 import Input from "src/shared/ui/Input/Input";
 import cls from "./LoginPage.module.scss";
@@ -36,33 +37,18 @@ const LoginPage: FC = () => {
 			navigate('/');
 		}
 	};
+=======
+import { FC } from "react";
+import LoginWidget from "src/widgets/ui/auth/ui/LoginWidget";
 
+
+const LoginPage: FC = () => {
+>>>>>>> 29a9f31aa60bc7666e5c63b6708740f05ec3009d
+
+	// It's incorrect to write any other code in page folder
+	// exclude the widgets in our proejct that is wrong
 	return (
-		<form onSubmit={handleSubmit(submit)}>
-			<Block className={cls.page}>
-				<Title>Login</Title>
-				<div className={cls.inputs}>
-					<Controller
-						control={control}
-						name="email"
-						render={({field}) => {
-							return <Input placeholder="Введите email" {...field} />;
-						}}
-					/>
-					<Controller
-						control={control}
-						name="password"
-						render={({field}) => {
-							return <Input placeholder="Введите пароль" {...field} />;
-						}}
-					/>
-				</div>
-				<div className={cls.bottom}>
-					<Button type="submit">Войти</Button>
-					<MyLink to="/registration">Создать аккаунт</MyLink>
-				</div>
-			</Block>
-		</form>
+		<LoginWidget />
 	);
 };
 
