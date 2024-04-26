@@ -12,10 +12,12 @@ import {useAppDispatch} from "src/shared/lib/store";
 import {RegistrationRequest} from "src/shared/types/auth/registrationTypes";
 
 import cls from "./RegistrationPage.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const RegistrationPage: FC = () => {
 	const [registrationUser] = userApi.useFetchRegistrationMutation();
 	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 	const {control, handleSubmit} = useForm<RegistrationRequest>({
 		defaultValues: {
 			email: "",
@@ -38,6 +40,7 @@ const RegistrationPage: FC = () => {
 			});
 		} else {
 			dispatch(setUser(resp.data));
+			navigate('/');
 		}
 	};
 

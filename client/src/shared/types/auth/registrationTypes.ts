@@ -1,3 +1,5 @@
+import { UserTypes } from "../user/userTypes";
+
 // TODO: Decide which type of data apply for id and phoneNumber.
 export interface RegistrationRequest {
 	name: string;
