@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {RootState} from "src/app/providers/storeProvider";
 import Block from "src/shared/ui/Block/Block";
 
-const NotActivePage: FC = () => {
+const ActivationPage: FC = () => {
 	const user = useSelector((state: RootState) => state.user);
 	return (
 		<Block>
@@ -14,4 +14,4 @@ const NotActivePage: FC = () => {
 	);
 };
 
-export default NotActivePage;
+export default ActivationPage;

@@ -17,9 +17,18 @@ const CheckPermission: FC<CheckPermissionProps> = ({children}) => {
 	if (user.isAuth && authPaths.includes(pathname)) {
 		toast('Вы уже вошли в аккаунт')
 		return <Navigate to={'/'} />;
-	} else if (!user.isAuth && !authPaths.includes(pathname)) {
+	} 
+	if (!user.isAuth && !authPaths.includes(pathname)) {
 		toast('Сначала авторизуйся а потом по сайту катайся!')
 		return <Navigate to={'/login'} />;
+	}
+	if (user.isAuth && user.user?.isActivated === 0) {
+		toast('Пожалуйста, активируйте аккаунт!')
+		return <Navigate to={'/activation'} />
+	}
+	if (pathname === '/activation' && (!user || user.user?.isActivated)) {
+		toast('Вы уже активировали аккаунт!')
+		return <Navigate to={'/'} />
 	}
 
 	return children;

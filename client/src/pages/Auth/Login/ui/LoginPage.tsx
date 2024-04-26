@@ -10,10 +10,12 @@ import {Controller, SubmitHandler, useForm} from "react-hook-form";
 import {AuthRequest} from "src/entities/User/model/Auth";
 import {toast} from "react-toastify";
 import {useAppDispatch} from "src/shared/lib/store";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage: FC = () => {
 	const [loginUser] = userApi.useFetchLoginMutation();
 	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 	const {control, handleSubmit} = useForm<AuthRequest>({
 		defaultValues: {
 			email: "",
@@ -24,12 +26,14 @@ const LoginPage: FC = () => {
 	const submit: SubmitHandler<AuthRequest> = async (data) => {
 		const resp = await loginUser(data);
 		if ("error" in resp) {
+			console.log(resp);
 			//@ts-ignore
 			toast.error(resp.error.data.message, {
 				autoClose: 2000,
 			});
 		} else {
 			dispatch(setUser(resp.data));
+			navigate('/');
 		}
 	};
 
