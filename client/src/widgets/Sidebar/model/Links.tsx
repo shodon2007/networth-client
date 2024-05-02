@@ -16,52 +16,54 @@ interface Link {
 
 const links: Link[] = [
 	{
-		title: "Feed",
+		title: "sidebar.feed",
 		icon: <ProfileIcon />,
 		to: "/",
 	},
 	{
-		title: "My profile",
+		title: "sidebar.myProfile",
 		icon: <ProfileIcon />,
 		to: "/profile",
 	},
 	{
-		title: "Friends",
+		title: "Friends", // Попробуй тут заменить на sidebar.friends :), Типа из сервера достаем
 		icon: <FriendsIcon />,
 		to: "/friends",
 	},
 	{
-		title: "Stories",
+		title: "sidebar.stories",
 		icon: <StoriesIcon />,
 		to: "/stories",
 	},
 	{
-		title: "Channels",
+		title: "sidebar.channels",
 		icon: <Channelicon />,
 		to: "/channels",
 	},
 	{
-		title: "Music",
+		title: "sidebar.music",
 		icon: <Musicicon />,
 		to: "/music",
 	},
 	{
-		title: "Notifications",
+		title: "sidebar.notifications",
 		icon: <NotificationIcon />,
 		to: "/notification",
 	},
 	{
-		title: "Messenger",
+		title: "sidebar.messanger",
 		icon: <Messengericon />,
 		to: "/messanger",
 	},
 	{
-		title: "Settings",
+		/* Вот этот sidebar.settings на сервере нет, файлы переводов находятся в папке translations
+		на сервере. Попробуй сам его добавить и потом напиши в консоле pm2 restart all*/
+		title: "sidebar.settings",
 		icon: <SettingsIcon />,
 		to: "/settings",
 	},
 	{
-		title: "Games",
+		title: "sidebar.games",
 		icon: <GameIcon />,
 		to: "/games",
 	},

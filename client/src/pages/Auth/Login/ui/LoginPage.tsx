@@ -10,10 +10,13 @@ import {Controller, SubmitHandler, useForm} from "react-hook-form";
 import {AuthRequest} from "src/entities/User/model/Auth";
 import {toast} from "react-toastify";
 import {useAppDispatch} from "src/shared/lib/store";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import {ApiError} from "src/shared/types/error/errorTypes";
+import {useTranslation} from "react-i18next";
 
 const LoginPage: FC = () => {
 	const [loginUser] = userApi.useFetchLoginMutation();
+	const {t} = useTranslation();
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 	const {control, handleSubmit} = useForm<AuthRequest>({
@@ -26,40 +29,41 @@ const LoginPage: FC = () => {
 	const submit: SubmitHandler<AuthRequest> = async (data) => {
 		const resp = await loginUser(data);
 		if ("error" in resp) {
-			console.log(resp);
-			//@ts-ignore
-			toast.error(resp.error.data.message, {
+			const error = resp.error as ApiError;
+			toast.error(error.data.message, {
 				autoClose: 2000,
 			});
 		} else {
 			dispatch(setUser(resp.data));
-			navigate('/');
+			navigate("/");
 		}
 	};
 
 	return (
 		<form onSubmit={handleSubmit(submit)}>
 			<Block className={cls.page}>
-				<Title>Login</Title>
+				<Title>{t("login.title")}</Title>
 				<div className={cls.inputs}>
 					<Controller
 						control={control}
 						name="email"
 						render={({field}) => {
-							return <Input placeholder="Введите email" {...field} />;
+							return <Input placeholder={t("login.emailInput")} {...field} />;
 						}}
 					/>
 					<Controller
 						control={control}
 						name="password"
 						render={({field}) => {
-							return <Input placeholder="Введите пароль" {...field} />;
+							return (
+								<Input placeholder={t("login.passwordInput")} {...field} />
+							);
 						}}
 					/>
 				</div>
 				<div className={cls.bottom}>
-					<Button type="submit">Войти</Button>
-					<MyLink to="/registration">Создать аккаунт</MyLink>
+					<Button type="submit">{t("login.submitButton")}</Button>
+					<MyLink to="/registration">{t("login.registrationButton")}</MyLink>
 				</div>
 			</Block>
 		</form>

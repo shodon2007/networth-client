@@ -1,40 +1,86 @@
-import {createBrowserRouter} from "react-router-dom";
-
 import {ProfilePage} from "src/pages/Profile/ui/ProfilePage";
 import {LoginPage} from "src/pages/Auth/Login";
 import {Layout} from "src/shared/ui/Layout/Layout";
 import {FeedPage} from "src/pages/Feed";
 import RegistrationPage from "src/pages/Auth/Registration/ui/RegistrationPage";
 import ActivationPage from "src/pages/Auth/Activation/ActivationPage";
+import {ReactNode} from "react";
+import {Route} from "react-router-dom";
+import CheckPermission from "src/app/hoc/CheckPermission";
 
-const MainRouter = createBrowserRouter([
+export enum AppRoutes {
+	REGISTRATION = "registration",
+	LOGIN = "login",
+	ACTIVATION = "activation",
+
+	MAIN = "main",
+	PROFILE = "profile",
+}
+
+export const routePath: Record<AppRoutes, string> = {
+	[AppRoutes.MAIN]: "",
+	[AppRoutes.PROFILE]: "/profile",
+	[AppRoutes.LOGIN]: "/login",
+	[AppRoutes.REGISTRATION]: "/registration",
+	[AppRoutes.ACTIVATION]: "/activation",
+};
+
+interface RouteItem {
+	path: string;
+	element: ReactNode;
+	index?: boolean;
+	children?: RouteItem[];
+}
+
+const privateRoutes: RouteItem[] = [
 	{
-		path: "/",
+		path: routePath.main,
 		element: <Layout />,
 		children: [
 			{
-				path: "/",
+				path: routePath.main,
 				element: <FeedPage />,
 				index: true,
 			},
 			{
-				path: "/profile",
+				path: routePath.profile,
 				element: <ProfilePage />,
 			},
 		],
 	},
-	{
-		path: "/registration",
-		element: <RegistrationPage />,
-	},
-	{
-		path: "/login",
-		element: <LoginPage />,
-	},
-	{
-		path: "/activation",
-		element: <ActivationPage />,
-	},
-]);
+];
 
-export default MainRouter;
+const publicRoutes: RouteItem[] = [
+	{
+		path: routePath.main,
+		element: <Layout />,
+		children: [
+			{
+				path: routePath.registration,
+				element: <RegistrationPage />,
+			},
+			{
+				path: routePath.login,
+				element: <LoginPage />,
+			},
+			{
+				path: routePath.activation,
+				element: <ActivationPage />,
+			},
+		],
+	},
+];
+
+const renderRoutes = (routes: RouteItem[]) => {
+	return routes.map(({element, path, children}) => (
+		<Route
+			key={path}
+			element={<CheckPermission>{element}</CheckPermission>}
+			path={path}
+		>
+			{children && <>{renderRoutes(children)}</>}
+		</Route>
+	));
+};
+
+export {publicRoutes, privateRoutes, renderRoutes};

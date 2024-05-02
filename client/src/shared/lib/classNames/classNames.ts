@@ -1,6 +1,11 @@
 type Mods = Record<string, boolean>;
+type additional = string | undefined;
 
-function classNames(cls: string, mods: Mods = {}, additional: string[] = []) {
+function classNames(
+	cls: string,
+	mods: Mods = {},
+	additional: additional[] = [],
+) {
 	return [
 		cls,
 		...Object.entries(mods)
