@@ -19,6 +19,11 @@
 	gap: 10px;
 }
 
+.header_links {
+	display: none;
+	flex-direction: column;
+}
+
 .username {
 	display: none;
 	font-size: var(--font-size-ll);
@@ -80,6 +85,10 @@
 	align-items: start;
 
 	.username {
+		display: flex;
+	}
+
+	.header_links {
 		display: flex;
 	}
 

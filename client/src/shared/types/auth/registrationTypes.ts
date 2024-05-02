@@ -16,3 +16,8 @@ export interface RegistrationResponse {
 	refreshToken: string | null;
 	user?: UserTypes;
 }
+
+export interface RegistrationError {
+	error: number;
+	message: string;
+}

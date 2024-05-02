@@ -12,10 +12,13 @@ import {useAppDispatch} from "src/shared/lib/store";
 import {RegistrationRequest} from "src/shared/types/auth/registrationTypes";
 
 import cls from "./RegistrationPage.module.scss";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import {ApiError} from "src/shared/types/error/errorTypes";
+import {useTranslation} from "react-i18next";
 
 const RegistrationPage: FC = () => {
 	const [registrationUser] = userApi.useFetchRegistrationMutation();
+	const {t} = useTranslation();
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 	const {control, handleSubmit} = useForm<RegistrationRequest>({
@@ -30,57 +33,59 @@ const RegistrationPage: FC = () => {
 	});
 
 	const submit: SubmitHandler<AuthRequest> = async (data) => {
-		// тут
 		const resp = await registrationUser(data);
-		console.log(resp);
 		if ("error" in resp) {
-			//@ts-ignore
-			toast.error(resp.error.data.message, {
+			const error = resp.error as ApiError;
+			toast.error(error.data.message, {
 				autoClose: 2000,
 			});
 		} else {
 			dispatch(setUser(resp.data));
-			navigate('/');
+			navigate("/");
 		}
 	};
 
 	return (
 		<form onSubmit={handleSubmit(submit)}>
 			<Block className={cls.page}>
-				<Title>Registration</Title>
+				<Title>{t("registration.title")}</Title>
 				<div className={cls.inputs}>
 					<Controller
 						control={control}
 						name="name"
 						render={({field}) => {
-							return <Input placeholder="Имя (необязательно)" {...field} />;
+							return <Input placeholder={t("registration.name")} {...field} />;
 						}}
 					/>
 					<Controller
 						control={control}
 						name="surname"
 						render={({field}) => {
-							return <Input placeholder="Фамилия (необязательно)" {...field} />;
+							return (
+								<Input placeholder={t("registration.surname")} {...field} />
+							);
 						}}
 					/>
 					<Controller
 						control={control}
 						name="email"
 						render={({field}) => {
-							return <Input placeholder="Почта" {...field} />;
+							return <Input placeholder={t("registration.email")} {...field} />;
 						}}
 					/>
 					<Controller
 						control={control}
 						name="password"
 						render={({field}) => {
-							return <Input placeholder="Пароль" {...field} />;
+							return (
+								<Input placeholder={t("registration.password")} {...field} />
+							);
 						}}
 					/>
 				</div>
 				<div className={cls.bottom}>
-					<Button type="submit">Зарегестрироваться</Button>
-					<MyLink to="/login">Войти</MyLink>
+					<Button type="submit">{t("registration.submitButton")}</Button>
+					<MyLink to="/login">{t("registration.loginButton")}</MyLink>
 				</div>
 			</Block>
 		</form>

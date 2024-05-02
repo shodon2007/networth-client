@@ -1,11 +1,13 @@
 import {FC} from "react";
 import links from "../model/Links";
-import {NavLink, Navigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import classNames from "src/shared/lib/classNames";
 
 import cls from "./Sidebar.module.scss";
 import {useAppSelector} from "src/shared/lib/store";
 import {RootState} from "src/app/providers/storeProvider";
+import MyLink from "src/shared/ui/Link/Link";
+import {useTranslation} from "react-i18next";
 
 export interface LinksData {
 	title: string;
@@ -18,18 +20,23 @@ const baronImg =
 interface NavbarTemplateProps {}
 
 const Sidebar: FC<NavbarTemplateProps> = () => {
+	const {t} = useTranslation();
 	const user = useAppSelector((state: RootState) => state.user.user);
-
-	if (!user) {
-		return <Navigate to={"/login"} />;
-	}
 
 	return (
 		<aside className={cls.sidebar}>
 			<header className={cls.header}>
-				{/*TODO: add avatr from the auth context to here*/}
 				<img src={baronImg} alt="avatar" className={cls.avatar} />
-				<h1 className={cls.username}>{[user.name, user.surname].join(" ")}</h1>
+				{user ? (
+					<h1 className={cls.username}>
+						{[user.name, user.surname].join(" ")}
+					</h1>
+				) : (
+					<div className={cls.header_links}>
+						<MyLink to={"/login"}>Войти</MyLink>
+						<MyLink to={"/login"}>Зарегестрироваться</MyLink>
+					</div>
+				)}
 			</header>
 			<nav className={cls.navbar}>
 				{links.map((link) => {
@@ -42,7 +49,10 @@ const Sidebar: FC<NavbarTemplateProps> = () => {
 							}
 						>
 							<div className={cls.logo}>{link.icon}</div>
-							<span className={cls.title}>{link.title}</span>
+							{/* Вот тут не просто "link.title", а "t(link.title)". 
+							Это чтобы жизнь медом не казалось, а еще чтобы перевести это
+							*/}
+							<span className={cls.title}>{t(link.title)}</span>
 						</NavLink>
 					);
 				})}

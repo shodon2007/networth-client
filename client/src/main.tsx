@@ -1,13 +1,14 @@
 import ReactDOM from "react-dom/client";
 import App from "./app/App";
 import "./app/styles/index.scss";
-import {AuthProvider} from "./shared/context/AuthProvider/AuthProvider";
 import {StoreProvider} from "./app/providers/storeProvider";
+import {BrowserRouter} from "react-router-dom";
+import "src/shared/config/i18n/i18n";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<AuthProvider>
-		<StoreProvider>
+	<StoreProvider>
+		<BrowserRouter>
 			<App />
-		</StoreProvider>
-	</AuthProvider>,
+		</BrowserRouter>
+	</StoreProvider>,
 );

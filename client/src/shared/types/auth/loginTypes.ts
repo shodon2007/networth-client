@@ -12,3 +12,8 @@ export interface LoginResponse {
 	refreshToken: string | null;
 	user?: UserTypes;
 }
+
+export interface LoginError {
+	error: number;
+	message: string;
+}
