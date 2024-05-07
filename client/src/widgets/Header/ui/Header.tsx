@@ -24,7 +24,7 @@ export const Header = () => {
 	return (
 		<div className={cls.header}>
 			<img src={NetWorth} className={cls.header__Logo} />
-			<SearchBar icon={magnifier}>Find . . .</SearchBar>
+			<SearchBar>Find . . .</SearchBar>
 			<Button onClick={toggleTheme}>{theme}</Button>
 			<Button onClick={toggleLanguage}>{i18n.language}</Button>
 		</div>
