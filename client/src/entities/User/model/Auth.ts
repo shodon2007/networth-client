@@ -1,4 +1,4 @@
-import {UserType} from "./userType";
+import {UserType} from "./UserType";
 
 export interface AuthResponse {
 	isAuth: boolean;

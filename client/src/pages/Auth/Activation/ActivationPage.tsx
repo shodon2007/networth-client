@@ -7,6 +7,7 @@ const ActivationPage: FC = () => {
 	const user = useSelector((state: RootState) => state.user);
 	return (
 		<Block>
+			<h1>Hello</h1> 
 			<span>
 				На почту {user.user?.email} отправлена ссылка для подтветждения
 			</span>
