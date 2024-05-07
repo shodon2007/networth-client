@@ -26,7 +26,7 @@ const links: Link[] = [
 		to: "/profile",
 	},
 	{
-		title: "Friends", // Попробуй тут заменить на sidebar.friends :), Типа из сервера достаем
+		title: "sidebar.friends", // Попробуй тут заменить на sidebar.friends :), Типа из сервера достаем
 		icon: <FriendsIcon />,
 		to: "/friends",
 	},

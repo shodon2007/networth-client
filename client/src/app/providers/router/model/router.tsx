@@ -7,6 +7,7 @@ import ActivationPage from "src/pages/Auth/Activation/ActivationPage";
 import {ReactNode} from "react";
 import {Route} from "react-router-dom";
 import CheckPermission from "src/app/hoc/CheckPermission";
+import MessengerPage from "src/pages/Messenger/ui/MessengerPage";
 
 export enum AppRoutes {
 	REGISTRATION = "registration",
@@ -15,6 +16,7 @@ export enum AppRoutes {
 
 	MAIN = "main",
 	PROFILE = "profile",
+	MESSENGER = "messenger",
 }
 
 export const routePath: Record<AppRoutes, string> = {
@@ -23,6 +25,7 @@ export const routePath: Record<AppRoutes, string> = {
 	[AppRoutes.LOGIN]: "/login",
 	[AppRoutes.REGISTRATION]: "/registration",
 	[AppRoutes.ACTIVATION]: "/activation",
+	[AppRoutes.MESSENGER]: "/messanger",
 };
 
 interface RouteItem {
@@ -45,7 +48,13 @@ const privateRoutes: RouteItem[] = [
 			{
 				path: routePath.profile,
 				element: <ProfilePage />,
+				index: true,
 			},
+			{
+				path: routePath.messenger,
+        element: <MessengerPage />,
+				index: true,
+			}
 		],
 	},
 ];

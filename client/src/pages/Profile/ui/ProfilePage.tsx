@@ -5,6 +5,7 @@
 export const ProfilePage = () => {
 	return (
 		<>
+			hello
 			{/* <UserDataCard /> */}
 			{/* <AlbumSectionCard /> */}
 		</>
