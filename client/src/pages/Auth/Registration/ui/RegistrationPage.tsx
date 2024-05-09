@@ -41,7 +41,7 @@ const RegistrationPage: FC = () => {
 			});
 		} else {
 			dispatch(setUser(resp.data));
-			navigate("/");
+			navigate("/activation");
 		}
 	};
 

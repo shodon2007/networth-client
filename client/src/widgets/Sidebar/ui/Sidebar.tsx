@@ -8,6 +8,7 @@ import {useAppSelector} from "src/shared/lib/store";
 import {RootState} from "src/app/providers/storeProvider";
 import MyLink from "src/shared/ui/Link/Link";
 import {useTranslation} from "react-i18next";
+import {getUser} from "src/entities/User";
 
 export interface LinksData {
 	title: string;
@@ -21,7 +22,7 @@ interface NavbarTemplateProps {}
 
 const Sidebar: FC<NavbarTemplateProps> = () => {
 	const {t} = useTranslation();
-	const user = useAppSelector((state: RootState) => state.user.user);
+	const user = useAppSelector(getUser);
 
 	return (
 		<aside className={cls.sidebar}>
@@ -49,9 +50,6 @@ const Sidebar: FC<NavbarTemplateProps> = () => {
 							}
 						>
 							<div className={cls.logo}>{link.icon}</div>
-							{/* Вот тут не просто "link.title", а "t(link.title)". 
-							Это чтобы жизнь медом не казалось, а еще чтобы перевести это
-							*/}
 							<span className={cls.title}>{t(link.title)}</span>
 						</NavLink>
 					);
