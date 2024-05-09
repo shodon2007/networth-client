@@ -1,9 +1,6 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {AuthRequest, AuthResponse} from "../model/Auth";
-
-interface AuthError {
-	message: string;
-}
+import {UserType} from "../model/UserType";
 
 export const userApi = createApi({
 	reducerPath: "userApi",
@@ -21,6 +18,15 @@ export const userApi = createApi({
 				url: "registration",
 				method: "POST",
 				body: data,
+			}),
+		}),
+		fetchUserInfo: build.query<UserType, string>({
+			query: (accessToken) => ({
+				url: "user_info",
+				method: "GET",
+				headers: {
+					Authorization: `Bearer ${accessToken}`,
+				},
 			}),
 		}),
 	}),
