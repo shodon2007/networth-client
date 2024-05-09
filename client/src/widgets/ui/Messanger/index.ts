@@ -1,3 +1,3 @@
-import { ChatList } from "./ui/ChatList"
+import { ChatList } from "./ui/ChatList/ChatList"
 
 export { ChatList }  

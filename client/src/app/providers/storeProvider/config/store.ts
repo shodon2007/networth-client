@@ -1,5 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {rootReducer} from "./reducer";
+import {rootReducer} from "../../../../shared/lib/store/config/reducer";
 import {userApi} from "src/entities";
 import {setupListeners} from "@reduxjs/toolkit/query";
 

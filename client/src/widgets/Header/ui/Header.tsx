@@ -8,12 +8,6 @@ import {useTranslation} from "react-i18next";
 
 export const Header = () => {
 	const {theme, toggleTheme} = useTheme();
-	/*
-		Кароче попробуй для SearchBar (внизу) сам добавить перевод.
-		1. надо t из useTranslation достать и внизу написать типа t("header.search").
-		2. На сервере написать файлы переводов, там интуитивно понятно (наверное).
-		3. Удали крч потом эти коментарии бро,
-	*/
 	const {i18n} = useTranslation();
 
 	const toggleLanguage = () => {
@@ -24,7 +18,7 @@ export const Header = () => {
 	return (
 		<div className={cls.header}>
 			<img src={NetWorth} className={cls.header__Logo} />
-			<SearchBar>Find . . .</SearchBar>
+			<SearchBar>find . . .</SearchBar>
 			<Button onClick={toggleTheme}>{theme}</Button>
 			<Button onClick={toggleLanguage}>{i18n.language}</Button>
 		</div>
