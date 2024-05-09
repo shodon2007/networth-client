@@ -5,7 +5,6 @@ import classNames from "src/shared/lib/classNames";
 
 import cls from "./Sidebar.module.scss";
 import {useAppSelector} from "src/shared/lib/store";
-import {RootState} from "src/app/providers/storeProvider";
 import MyLink from "src/shared/ui/Link/Link";
 import {useTranslation} from "react-i18next";
 import {getUser} from "src/entities/User";
