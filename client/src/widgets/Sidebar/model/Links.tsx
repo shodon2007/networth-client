@@ -8,6 +8,7 @@ import NotificationIcon from "src/shared/assets/NotificationActiveicon.svg?react
 import Messengericon from "src/shared/assets/ChatIcon.svg?react";
 import SettingsIcon from "src/shared/assets/SettingsIcon.svg?react";
 import GameIcon from "src/shared/assets/GameIcongamepad.svg?react";
+
 interface Link {
 	icon: ReactNode;
 	title: string;
@@ -26,7 +27,7 @@ const links: Link[] = [
 		to: "/profile",
 	},
 	{
-		title: "sidebar.friends", // Попробуй тут заменить на sidebar.friends :), Типа из сервера достаем
+		title: "sidebar.friends",
 		icon: <FriendsIcon />,
 		to: "/friends",
 	},
@@ -56,8 +57,6 @@ const links: Link[] = [
 		to: "/messanger",
 	},
 	{
-		/* Вот этот sidebar.settings на сервере нет, файлы переводов находятся в папке translations
-		на сервере. Попробуй сам его добавить и потом напиши в консоле pm2 restart all*/
 		title: "sidebar.settings",
 		icon: <SettingsIcon />,
 		to: "/settings",

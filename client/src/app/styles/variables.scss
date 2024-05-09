@@ -33,7 +33,7 @@
 	--chat-message-border-radius: 30px;
 
 	--sidebar-close-width: 150px;
-	--sidebar-open-width: 500px;
+	--sidebar-open-width: 400px;
 
 	--global-margin: 178px;
 
@@ -42,4 +42,17 @@
 
 	--font-main-Blin: "Blinker", sans-serif;
 	--third-main-Leel: "Leelawadee", sans-serif;
+}
+
+@media (max-width: 1440px) {
+	:root {
+		--font-size-ll: 32px;
+		--font-size-l: 28px;
+		--font-size-m: 20px;
+		--font-size-s: 16px;
+		--font-size-ss: 12px;
+		--sidebar-close-width: 70px;
+		--sidebar-open-width: 250px;
+		--global-margin: 100px;
+	}
 }
