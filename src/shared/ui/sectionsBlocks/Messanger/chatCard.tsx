@@ -1,7 +1,6 @@
 import {ReactSVGElement} from "react";
 import {Link} from "react-router-dom";
 import cls from "./ChatCard.module.scss";
-import classNames from "src/shared/lib/classNames";
 
 interface ChatCardProps {
 	nikcname: string;
