@@ -1,6 +1,6 @@
-import {ReactSVGElement} from "react";
 import {Link} from "react-router-dom";
 import cls from "./ChatCard.module.scss";
+import {SettingsButton} from "../../Buttons/SettingsBtn/SettingsButton";
 
 interface ChatCardProps {
 	nikcname: string;
@@ -16,10 +16,10 @@ export const ChatCard = ({nikcname, icon, href}: ChatCardProps) => {
 					<img className={cls.user__avatar} src={icon} alt="avatar" />
 					<h1 className={cls.user__nickname}>{nikcname}</h1>
 				</div>
-				{/* Settings button */}
+				<SettingsButton border={true} />
 			</header>
 			<footer className={cls.ChatCard__footer}>
-				{/*  Last messaeg ?? start chat button */}
+				{/*  Last message ?? start chat button */}
 			</footer>
 		</Link>
 	);
