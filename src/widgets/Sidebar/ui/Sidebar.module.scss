@@ -25,6 +25,7 @@
 }
 
 .username {
+	white-space: nowrap;
 	display: none;
 	font-size: var(--font-size-ll);
 }
@@ -42,6 +43,7 @@
 }
 
 .navLink {
+	white-space: nowrap;
 	justify-content: center;
 	text-align: center;
 	margin: 0 auto;
@@ -92,6 +94,7 @@
 
 	.username {
 		display: flex;
+		align-items: center;
 	}
 
 	.header_links {
