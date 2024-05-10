@@ -1,0 +1,31 @@
+.Button {
+	width: 32px;
+	height: 32px;
+	display: flex;
+	column-gap: 3px;
+	align-items: center;
+	justify-content: center;
+
+	background-color: transparent;
+	transition: 0.3s all;
+  cursor: pointer;
+
+	&__point {
+		border-radius: 100%;
+		width: 4px;
+		height: 4px;
+		background-color: var(--white-color);
+	}
+
+	&__border {
+		border: 2px solid var(--white-color);
+		border-radius: 100%;
+	}
+
+	&:hover {
+		transform: scale(1.2);
+		&__border {
+			border: 3px solid var(--our-gray-color);
+		}
+	}
+}
