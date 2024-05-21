@@ -1,0 +1,12 @@
+.MainBlock {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 12px;
+}
+
+.LinksList{
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px;
+}
