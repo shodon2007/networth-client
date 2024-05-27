@@ -2,13 +2,41 @@ import {InputHTMLAttributes, FC} from "react";
 import cls from "./Input.module.scss";
 import classNames from "src/shared/lib/classNames";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-	classname?: string;
+export enum InputSize {
+	big = "BIG",
+	small = "SMALL",
+	medium = "MEDIUM",
 }
 
-const Input: FC<InputProps> = ({children, classname = "", ...props}) => {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+	classname?: string;
+	fontSize?: InputSize;
+	placeholderOutside?: boolean;
+}
+
+const Input: FC<InputProps> = ({
+	classname = "",
+	fontSize = InputSize.medium,
+	placeholderOutside = false,
+	...props
+}) => {
+	if (placeholderOutside) {
+		return (
+			<div>
+				<div>{props.name}</div>
+				<input
+					className={classNames(cls.Input, {}, [classname, cls[fontSize]])}
+					{...props}
+				/>
+			</div>
+		);
+	}
+
 	return (
-		<input className={classNames(cls.Input, {}, [classname])} {...props} />
+		<input
+			className={classNames(cls.Input, {}, [classname, cls[fontSize]])}
+			{...props}
+		/>
 	);
 };
 

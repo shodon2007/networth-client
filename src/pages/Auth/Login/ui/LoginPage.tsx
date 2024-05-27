@@ -30,7 +30,7 @@ const LoginPage: FC = () => {
 		const resp = await loginUser(data);
 		if ("error" in resp) {
 			const error = resp.error as ApiError;
-			toast.error(error.data.message, {
+			toast.error(error.data?.message, {
 				autoClose: 2000,
 			});
 		} else {
