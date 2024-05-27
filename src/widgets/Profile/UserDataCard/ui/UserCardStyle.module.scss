@@ -1,0 +1,78 @@
+.UserCard {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	height: min-content;
+	&__info {
+		display: flex;
+		column-gap: 24px;
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__userInfo {
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+	}
+
+	&__name {
+		font-family: var(--font-main-Blin);
+		font-size: var(--font-size-ll-desktop);
+		font-weight: bold;
+		color: var(--white-color);
+	}
+	&__detail {
+		display: flex;
+		align-items: center;
+		font-size: var(--font-size-s-desktop);
+		font-family: var(--third-main-Leel);
+		column-gap: 6px;
+	}
+}
+
+.inputs {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.avatar {
+	position: relative;
+
+	&__img {
+		width: 150px;
+		height: 150px;
+		background: white;
+		border-radius: 100%;
+	}
+}
+
+.avatar__menu {
+	opacity: 0;
+	position: absolute;
+	transition: opacity 0.3s ease;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	gap: 10px;
+	justify-content: center;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 10px;
+	&:hover {
+		opacity: 1;
+	}
+
+	& > button {
+		width: 100%;
+	}
+}
