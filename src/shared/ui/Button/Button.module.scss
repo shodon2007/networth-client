@@ -4,7 +4,7 @@
 	color: var(--primary-color);
 	transition: all 0.3s ease;
 	padding: 8px 14px;
-	border-radius: 14px;
+	border-radius: var(--small-border-radius);
 
 	&:hover {
 		background: var(--main-black-04);

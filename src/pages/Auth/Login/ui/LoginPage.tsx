@@ -56,7 +56,11 @@ const LoginPage: FC = () => {
 						name="password"
 						render={({field}) => {
 							return (
-								<Input placeholder={t("login.passwordInput")} {...field} />
+								<Input
+									placeholder={t("login.passwordInput")}
+									type="password"
+									{...field}
+								/>
 							);
 						}}
 					/>
