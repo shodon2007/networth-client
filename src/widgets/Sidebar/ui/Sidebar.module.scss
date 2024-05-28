@@ -25,8 +25,9 @@
 }
 
 .username {
-	white-space: nowrap;
 	display: none;
+	align-items: center;
+	flex-direction: column;
 	font-size: var(--font-size-ll);
 }
 
@@ -94,7 +95,6 @@
 
 	.username {
 		display: flex;
-		align-items: center;
 	}
 
 	.header_links {
@@ -122,6 +122,8 @@
 }
 
 @media (max-width: 1440px) {
+	.username {
+	}
 	.sidebar {
 		gap: 30px;
 	}
