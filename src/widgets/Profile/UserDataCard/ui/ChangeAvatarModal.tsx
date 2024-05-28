@@ -11,6 +11,7 @@ import {useAppDispatch} from "src/shared/lib/store";
 import {setUserInfo} from "src/entities/User/services/userSlice";
 import Button, {ThemeButton} from "src/shared/ui/Button/Button";
 import {useDropzone} from "react-dropzone";
+import {useTranslation} from "react-i18next";
 
 interface EditUserModalProps {
 	close: () => void;
@@ -24,6 +25,7 @@ const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 	const {refetch} = userApi.useFetchUserInfoQuery(user);
 	const [file, setFile] = useState<File | null>(null);
 	const imgRef = useRef<HTMLImageElement>(null);
+	const {t} = useTranslation();
 
 	const onDrop = useCallback((files: File[]) => {
 		setFile(files[0]);
@@ -72,9 +74,9 @@ const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 					<img src={SelectFileIcon} ref={imgRef} className={cls.img} />
 				</div>
 				{isDragActive ? (
-					<p>Drop the files here ...</p>
+					<p>{t("profile.updatePhotoOnFile")}</p>
 				) : (
-					<p>Drag and drop some files here, or click to select files</p>
+					<p>{t("profile.updatePhotoText")}</p>
 				)}
 				{file ? (
 					<Button
@@ -87,7 +89,7 @@ const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 						}}
 						theme={ThemeButton.SUBMIT_BUTTON}
 					>
-						Change avatar
+						{t("profile.editButton")}
 					</Button>
 				) : null}
 				<Button
@@ -96,7 +98,7 @@ const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 						close();
 					}}
 				>
-					Cancel
+					{t("profile.cancelButton")}
 				</Button>
 			</div>
 		</Modal>

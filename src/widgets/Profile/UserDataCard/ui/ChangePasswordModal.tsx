@@ -15,6 +15,7 @@ import {userApi} from "src/entities";
 import {useAppDispatch} from "src/shared/lib/store";
 import {setUserInfo} from "src/entities/User/services/userSlice";
 import {ResponseErrorType} from "src/shared/types/response/responseType";
+import {t} from "i18next";
 
 interface ChangePasswordModalProps {
 	close: () => void;
@@ -67,7 +68,7 @@ const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close, isOpen}) => {
 	return (
 		<Modal isOpen={isOpen} close={close}>
 			<Block>
-				<Title type={TitleType.small}>Изменить пароль</Title>
+				<Title type={TitleType.small}>{t("profile.editPassword")}</Title>
 				<Divider />
 				<form onSubmit={handleSubmit(submit)} className={cls.inputs}>
 					<Controller
@@ -77,6 +78,7 @@ const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close, isOpen}) => {
 							return (
 								<Input
 									fontSize={InputSize.small}
+									placeholder={t("profile.oldPassword")}
 									type="password"
 									{...field}
 									placeholderOutside
@@ -91,6 +93,7 @@ const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close, isOpen}) => {
 							return (
 								<Input
 									fontSize={InputSize.small}
+									placeholder={t("profile.newPassword")}
 									type="password"
 									{...field}
 									placeholderOutside
@@ -98,7 +101,7 @@ const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close, isOpen}) => {
 							);
 						}}
 					/>
-					<Button type="submit">Изменить</Button>
+					<Button type="submit">{t("profile.editButton")}</Button>
 				</form>
 			</Block>
 		</Modal>

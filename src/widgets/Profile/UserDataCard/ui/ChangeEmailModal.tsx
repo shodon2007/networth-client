@@ -16,6 +16,7 @@ import {useAppDispatch} from "src/shared/lib/store";
 import {setUserInfo} from "src/entities/User/services/userSlice";
 import {ResponseErrorType} from "src/shared/types/response/responseType";
 import {ApiError} from "src/shared/types/error/errorTypes";
+import {t} from "i18next";
 
 interface ChangeEmailModalProps {
 	close: () => void;
@@ -67,34 +68,30 @@ const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close, isOpen}) => {
 	return (
 		<Modal isOpen={isOpen} close={close}>
 			<Block>
-				<Title type={TitleType.small}>Изменить почту</Title>
+				<Title type={TitleType.small}>{t("profile.editEmail")}</Title>
 				<Divider />
 				<form className={cls.inputs} onSubmit={(e) => e.preventDefault()}>
 					<span>
-						Ваша текущаю почта{" "}
+						{t("profile.editEmailPrevText")}
 						<span style={{fontWeight: "bold"}}>{user.email}</span>
-					</span>
-					<span>
-						Внимание, если много раз будете тыкать sendCode, то вам пизда от
-						админов т.к. мы в спам попадем
 					</span>
 					<div style={{display: "flex", gap: "10px"}}>
 						<Input
 							fontSize={InputSize.small}
-							placeholder="Enter new Email"
+							placeholder={t("profile.newEmailInput")}
 							style={{flex: "0 1 auto"}}
 							value={newEmail}
 							onChange={(e) => setNewEmail(e.target.value)}
 						/>
-						<Button onClick={sendCode}>Send code</Button>
+						<Button onClick={sendCode}>{t("profile.sendCode")}</Button>
 					</div>
 					<Input
 						fontSize={InputSize.small}
-						placeholder="Enter code"
+						placeholder={t("profile.codeInput")}
 						value={code}
 						onChange={(e) => setCode(e.target.value)}
 					/>
-					<Button onClick={changeEmail}>Изменить</Button>
+					<Button onClick={changeEmail}>{t("profile.editButton")}</Button>
 				</form>
 			</Block>
 		</Modal>

@@ -14,6 +14,7 @@ import {toast} from "react-toastify";
 import {userApi} from "src/entities";
 import {useAppDispatch} from "src/shared/lib/store";
 import {setUserInfo} from "src/entities/User/services/userSlice";
+import {useTranslation} from "react-i18next";
 
 interface EditUserModalProps {
 	close: () => void;
@@ -25,6 +26,7 @@ const EditUserModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 	const [changeUserData] = profileApi.useFetchChangeUserMutation();
 	const {refetch} = userApi.useFetchUserInfoQuery(user);
 	const dispatch = useAppDispatch();
+	const {t} = useTranslation();
 	const {control, handleSubmit} = useForm<UserType>({
 		defaultValues: {
 			name: user?.name,
@@ -64,7 +66,7 @@ const EditUserModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 	return (
 		<Modal isOpen={isOpen} close={close}>
 			<Block>
-				<Title type={TitleType.small}>Изменить профиль</Title>
+				<Title type={TitleType.small}>{t("profile.editProfile")}</Title>
 				<Divider />
 				<form onSubmit={handleSubmit(submit)} className={cls.inputs}>
 					<Controller
@@ -73,6 +75,7 @@ const EditUserModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 						render={({field}) => {
 							return (
 								<Input
+									placeholder={t("profile.editName")}
 									fontSize={InputSize.small}
 									{...field}
 									placeholderOutside
@@ -86,6 +89,7 @@ const EditUserModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 						render={({field}) => {
 							return (
 								<Input
+									placeholder={t("profile.editSurname")}
 									fontSize={InputSize.small}
 									{...field}
 									placeholderOutside
@@ -93,7 +97,7 @@ const EditUserModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 							);
 						}}
 					/>
-					<Button type="submit">Изменить</Button>
+					<Button type="submit">{t("profile.editButton")}</Button>
 				</form>
 			</Block>
 		</Modal>

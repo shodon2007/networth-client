@@ -23,7 +23,7 @@ const Input: FC<InputProps> = ({
 	if (placeholderOutside) {
 		return (
 			<>
-				<div>{props.name}</div>
+				<div>{props.placeholder}</div>
 				<input
 					className={classNames(cls.Input, {}, [classname, cls[fontSize]])}
 					{...props}
