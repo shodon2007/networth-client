@@ -6,7 +6,8 @@ export interface LoginRequest {
 	password: string;
 }
 
-export interface LoginResponse {
+export interface LoginResponse 
+{
 	isAuth: boolean;
 	accessToken: string | null;
 	refreshToken: string | null;
