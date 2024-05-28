@@ -1,6 +1,15 @@
-.title {
+.title,
+.MIDDLE {
 	font-family: var(--font-main-Blin);
 	font-weight: 600;
-	font-size: 64px;
+	font-size: 42px;
 	color: var(--white-color);
+}
+
+.SMALL {
+	font-size: 26px;
+}
+
+.BIG {
+	font-size: 64px;
 }

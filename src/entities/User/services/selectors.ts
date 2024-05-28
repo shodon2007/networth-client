@@ -5,5 +5,5 @@ export const getAccessToken = (state: RootState) => {
 };
 
 export const getUser = (state: RootState) => {
-	return state.user.user;
+	return state.user;
 };

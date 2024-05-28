@@ -1,22 +1,35 @@
 .Button {
-    cursor: pointer;
+	cursor: pointer;
+	background: var(--main-black-02);
+	color: var(--primary-color);
+	transition: all 0.3s ease;
+	padding: 8px 14px;
+	border-radius: var(--small-border-radius);
+
+	&:hover {
+		background: var(--main-black-04);
+	}
 }
 
-.Button.submit_button{
-    border-radius: 14px;
-    padding: 0px 12px;
-    width: 400px;
-    height: 60px;
-  
-    font-family: var(--font-main-Blin);
-    font-weight: 600;
-    font-size: var(--font-size-mm-desktop);
-    color: var(--white-color);
-  
-    background: var(--main-black-02);
-    transition: .5s;
-    &:hover{
-      transform: translateY(-10px) scale(1.02);
-      background: var(--main-black-04);
-    }
-  }
+.Button.submit_button {
+	border-radius: 14px;
+	padding: 0px 12px;
+	width: 400px;
+	height: 60px;
+
+	font-family: var(--font-main-Blin);
+	font-weight: 600;
+	font-size: var(--font-size-mm-desktop);
+	color: var(--white-color);
+
+	background: var(--main-black-02);
+	transition: 0.5s;
+	&:hover {
+		transform: translateY(-10px) scale(1.02);
+		background: var(--main-black-04);
+	}
+}
+
+.Button.red {
+	background-color: #ff0000;
+}
