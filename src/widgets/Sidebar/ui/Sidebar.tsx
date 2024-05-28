@@ -25,7 +25,8 @@ const Sidebar: FC<NavbarTemplateProps> = () => {
 				<img src={user?.avatar} alt="avatar" className={cls.avatar} />
 				{user ? (
 					<h1 className={cls.username}>
-						{[user.name, user.surname].join(" ")}
+						<span>{user.name}</span>
+						<span>{user.surname}</span>
 					</h1>
 				) : (
 					<div className={cls.header_links}>
