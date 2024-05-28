@@ -27,9 +27,7 @@ const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 
 	const onDrop = useCallback((files: File[]) => {
 		setFile(files[0]);
-		console.log(imgRef);
 		if (imgRef && imgRef.current) {
-			console.log(URL.createObjectURL(files[0]));
 			imgRef.current.src = URL.createObjectURL(files[0]);
 		}
 	}, []);
@@ -37,7 +35,7 @@ const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 	const {getRootProps, getInputProps, isDragActive} = useDropzone({
 		onDrop,
 		accept: {
-			"image/png": [".png"],
+			"image/*": [],
 		},
 	});
 
@@ -53,7 +51,6 @@ const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 			formData.append("file", file);
 		}
 		changeAvatar(formData).then(async (res) => {
-			console.log(res);
 			if ("error" in res) {
 				return toast.error("Не удалось изменить фото профиля");
 			}

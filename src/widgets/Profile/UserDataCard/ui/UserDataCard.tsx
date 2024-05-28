@@ -10,6 +10,8 @@ import Block from "src/shared/ui/Block/Block";
 import EditUserModal from "./EditUserModal";
 import {useState} from "react";
 import ChangeAvatarModal from "./ChangeAvatarModal";
+import ChangePasswordModal from "./ChangePasswordModal";
+import ChangeEmailModal from "./ChangeEmailModal";
 // import { useAppSelector } from 'src/shared/lib/Redux/model'
 // import { MBtn } from "src/shared/ui/Buttons/LevelsBtn/mBtn/MBtn"
 
@@ -17,6 +19,8 @@ export const UserDataCard = () => {
 	const {user, isAuth} = useAppSelector(getUser);
 	const [editModalOpen, setEditModalOpen] = useState(false);
 	const [changeAvatarModalOpen, setChangeAvatarModalOpen] = useState(false);
+	const [changePasswordModalOpen, setChangePasswordModalOpen] = useState(false);
+	const [changeEmailModalOpen, setChangeEmailModalOpen] = useState(false);
 	const {t} = useTranslation();
 
 	if (!user || !isAuth) {
@@ -35,7 +39,6 @@ export const UserDataCard = () => {
 						<Button onClick={() => setChangeAvatarModalOpen(true)}>
 							Обновить фотографию
 						</Button>
-						<Button theme={ThemeButton.RED}>Удалить</Button>
 					</div>
 				</div>
 
@@ -60,8 +63,18 @@ export const UserDataCard = () => {
 				>
 					Изменить профиль
 				</Button>
-				<Button theme={ThemeButton.SMALL}>Поменять Пароль</Button>
-				<Button theme={ThemeButton.SMALL}>Поменять Почту</Button>
+				<Button
+					theme={ThemeButton.SMALL}
+					onClick={() => setChangePasswordModalOpen(true)}
+				>
+					Изменить Пароль
+				</Button>
+				<Button
+					theme={ThemeButton.SMALL}
+					onClick={() => setChangeEmailModalOpen(true)}
+				>
+					Изменить Почту
+				</Button>
 			</div>
 			<EditUserModal
 				isOpen={editModalOpen}
@@ -70,6 +83,14 @@ export const UserDataCard = () => {
 			<ChangeAvatarModal
 				isOpen={changeAvatarModalOpen}
 				close={() => setChangeAvatarModalOpen(false)}
+			/>
+			<ChangePasswordModal
+				isOpen={changePasswordModalOpen}
+				close={() => setChangePasswordModalOpen(false)}
+			/>
+			<ChangeEmailModal
+				isOpen={changeEmailModalOpen}
+				close={() => setChangeEmailModalOpen(false)}
 			/>
 		</Block>
 	);

@@ -22,13 +22,13 @@ const Input: FC<InputProps> = ({
 }) => {
 	if (placeholderOutside) {
 		return (
-			<div>
+			<>
 				<div>{props.name}</div>
 				<input
 					className={classNames(cls.Input, {}, [classname, cls[fontSize]])}
 					{...props}
 				/>
-			</div>
+			</>
 		);
 	}
 
