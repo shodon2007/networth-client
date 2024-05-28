@@ -37,7 +37,7 @@ export const UserDataCard = () => {
 					<img src={user.avatar} alt="Avatar" className={cls.avatar__img} />
 					<div className={cls.avatar__menu}>
 						<Button onClick={() => setChangeAvatarModalOpen(true)}>
-							Обновить фотографию
+							{t("profile.updateAvatar")}
 						</Button>
 					</div>
 				</div>
@@ -61,19 +61,19 @@ export const UserDataCard = () => {
 					theme={ThemeButton.SMALL}
 					onClick={() => setEditModalOpen(true)}
 				>
-					Изменить профиль
+					{t("profile.editProfile")}
 				</Button>
 				<Button
 					theme={ThemeButton.SMALL}
 					onClick={() => setChangePasswordModalOpen(true)}
 				>
-					Изменить Пароль
+					{t("profile.editPassword")}
 				</Button>
 				<Button
 					theme={ThemeButton.SMALL}
 					onClick={() => setChangeEmailModalOpen(true)}
 				>
-					Изменить Почту
+					{t("profile.editEmail")}
 				</Button>
 			</div>
 			<EditUserModal
