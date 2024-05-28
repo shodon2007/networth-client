@@ -1,6 +1,17 @@
 .block {
-	background: var(--bg-gradient-color);
-	padding: 48px 80px;
+	padding: 40px 24px;
 	height: max-content;
 	border-radius: 24px;
+}
+
+.block.default {
+	background: var(--bg-gradient-color);
+}
+
+.block.brighter {
+	background: var(--colorful-gradient);
+}
+
+.block * {
+	color: var(--white-color);
 }
