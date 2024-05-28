@@ -4,7 +4,7 @@ import {UserType} from "../model/UserType";
 
 export const userApi = createApi({
 	reducerPath: "userApi",
-	baseQuery: fetchBaseQuery({baseUrl: "https://networth.shodon.ru/api/auth/"}),
+	baseQuery: fetchBaseQuery({baseUrl: "https://networth.shodon.ru/api/user/"}),
 	endpoints: (build) => ({
 		fetchLogin: build.mutation<AuthResponse, AuthRequest>({
 			query: (data) => ({
