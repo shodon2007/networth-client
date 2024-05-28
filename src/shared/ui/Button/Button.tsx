@@ -1,4 +1,3 @@
-
 import {ButtonHTMLAttributes, FC, ReactNode} from "react";
 import classNames from "src/shared/lib/classNames";
 
@@ -8,6 +7,7 @@ enum ThemeButton {
 	CLEAR = "clear",
 	SMALL = "small",
 	SUBMIT_BUTTON = "submit_button",
+	RED = "red",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

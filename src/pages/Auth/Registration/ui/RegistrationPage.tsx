@@ -78,7 +78,11 @@ const RegistrationPage: FC = () => {
 						name="password"
 						render={({field}) => {
 							return (
-								<Input placeholder={t("registration.password")} {...field} />
+								<Input
+									type="password"
+									placeholder={t("registration.password")}
+									{...field}
+								/>
 							);
 						}}
 					/>
