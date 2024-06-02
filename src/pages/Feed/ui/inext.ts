@@ -1,3 +1,3 @@
 import { FeedPage } from "./FeedPage";
 
-export { FeedPage }
+export { FeedPage };

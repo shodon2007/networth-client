@@ -1,7 +1,7 @@
-import { useAppSelector } from "../selector/useAppSelector"
+import { useAppSelector } from "../selector/useAppSelector";
 
 export const useUserData = () => {
-  const user = useAppSelector(state => state.user.user)
-  return user
+	const user = useAppSelector(state => state.user.user);
+	return user;
 
-}
+};

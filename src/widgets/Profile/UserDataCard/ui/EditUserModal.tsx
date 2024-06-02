@@ -1,20 +1,21 @@
 import {FC} from "react";
 import {Controller, SubmitHandler, useForm} from "react-hook-form";
+import {useTranslation} from "react-i18next";
 import {useSelector} from "react-redux";
+import {toast} from "react-toastify";
+import {userApi} from "src/entities";
+import {profileApi} from "src/entities/Profile";
 import {UserType, getUser} from "src/entities/User";
-import cls from "./UserCardStyle.module.scss";
+import {setUserInfo} from "src/entities/User/services/userSlice";
+import {useAppDispatch} from "src/shared/lib/store";
 import Block from "src/shared/ui/Block/Block";
+import Button from "src/shared/ui/Button/Button";
 import Divider from "src/shared/ui/Divider/Divider";
 import Input, {InputSize} from "src/shared/ui/Input/Input";
 import Modal from "src/shared/ui/Modal/Modal";
 import {Title, TitleType} from "src/shared/ui/Title/Title";
-import Button from "src/shared/ui/Button/Button";
-import {profileApi} from "src/entities/Profile";
-import {toast} from "react-toastify";
-import {userApi} from "src/entities";
-import {useAppDispatch} from "src/shared/lib/store";
-import {setUserInfo} from "src/entities/User/services/userSlice";
-import {useTranslation} from "react-i18next";
+
+import cls from "./UserCardStyle.module.scss";
 
 interface EditUserModalProps {
 	close: () => void;

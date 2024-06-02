@@ -1,1 +1,1 @@
-export { ChannelsListCard } from './ui/ChannelsListCard'
+export { ChannelsListCard } from "./ui/ChannelsListCard";

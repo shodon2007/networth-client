@@ -1,3 +1,4 @@
+import { FC } from "react";
 import ChannelIcon from "src/shared/assets/ChannleIcon.svg";
 import cls from "./ChannelsLsitCard.module.scss";
 // import Button from "src/shared/ui/Button/Button";
@@ -5,7 +6,7 @@ import cls from "./ChannelsLsitCard.module.scss";
 
 interface ChannelsListCardProps {}
 
-export const ChannelsListCard = ({}: ChannelsListCardProps) => {
+export const ChannelsListCard: FC<ChannelsListCardProps> = () => {
 	// const {user} = useAppSelector((state) => state.user);
 
 	return (

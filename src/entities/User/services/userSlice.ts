@@ -1,12 +1,12 @@
 import {PayloadAction, createSlice} from "@reduxjs/toolkit";
+import { UserTypes } from "src/shared/types/user/userTypes";
 import {AuthResponse} from "../model/Auth";
-import {UserType} from "../model/UserType";
 
 interface InitialState {
 	accessToken: string | null;
 	refreshToken: string | null;
 	isAuth: boolean;
-	user: UserType | undefined;
+	user: UserTypes | undefined;
 }
 
 const initialState: InitialState = {

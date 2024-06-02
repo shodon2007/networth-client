@@ -1,1 +1,1 @@
-export {CreatePostCard} from './ui/CreatePostCard'
+export {CreatePostCard} from "./ui/CreatePostCard";

@@ -1,17 +1,17 @@
-import {useAppSelector} from "src/shared/lib/store";
-import cls from "./UserCardStyle.module.scss";
+import {useState} from "react";
+import {useTranslation} from "react-i18next";
 import {getUser} from "src/entities/User";
 import DetailIcon from "src/shared/assets/DetailIcon.svg";
 import Mailicon from "src/shared/assets/MailIcon.svg";
-import Button, {ThemeButton} from "src/shared/ui/Button/Button";
-import {useTranslation} from "react-i18next";
+import {useAppSelector} from "src/shared/lib/store";
 import Block from "src/shared/ui/Block/Block";
+import Button, {ThemeButton} from "src/shared/ui/Button/Button";
 
-import EditUserModal from "./EditUserModal";
-import {useState} from "react";
 import ChangeAvatarModal from "./ChangeAvatarModal";
-import ChangePasswordModal from "./ChangePasswordModal";
 import ChangeEmailModal from "./ChangeEmailModal";
+import ChangePasswordModal from "./ChangePasswordModal";
+import EditUserModal from "./EditUserModal";
+import cls from "./UserCardStyle.module.scss";
 // import { useAppSelector } from 'src/shared/lib/Redux/model'
 // import { MBtn } from "src/shared/ui/Buttons/LevelsBtn/mBtn/MBtn"
 

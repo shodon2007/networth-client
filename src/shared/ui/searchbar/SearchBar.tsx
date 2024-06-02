@@ -1,6 +1,7 @@
 import {useTranslation} from "react-i18next";
-import cls from "./SearchBar.module.scss";
 import MagnifierIcon from "src/shared/assets/magnifier.svg";
+
+import cls from "./SearchBar.module.scss";
 
 interface SearchBarProps {
 	children: string;

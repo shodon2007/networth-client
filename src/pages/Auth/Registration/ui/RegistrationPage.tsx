@@ -1,20 +1,21 @@
 import {FC} from "react";
-import Input from "src/shared/ui/Input/Input";
-import Button from "src/shared/ui/Buttons/authSubmitBtn/Button";
-import Block from "src/shared/ui/Block/Block";
-import {Title} from "src/shared/ui/Title/Title";
-import MyLink from "src/shared/ui/Link/Link";
-import {setUser, userApi} from "src/entities";
 import {Controller, SubmitHandler, useForm} from "react-hook-form";
-import {AuthRequest} from "src/entities/User/model/Auth";
+import {useTranslation} from "react-i18next";
+import {useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
+import {setUser, userApi} from "src/entities";
+import {AuthRequest} from "src/entities/User/model/Auth";
 import {useAppDispatch} from "src/shared/lib/store";
 import {RegistrationRequest} from "src/shared/types/auth/registrationTypes";
+import Block from "src/shared/ui/Block/Block";
+import Button from "src/shared/ui/Buttons/authSubmitBtn/Button";
+import Input from "src/shared/ui/Input/Input";
+import MyLink from "src/shared/ui/Link/Link";
+import {Title} from "src/shared/ui/Title/Title";
 
-import cls from "./RegistrationPage.module.scss";
-import {useNavigate} from "react-router-dom";
 import {ApiError} from "src/shared/types/error/errorTypes";
-import {useTranslation} from "react-i18next";
+import cls from "./RegistrationPage.module.scss";
+
 
 const RegistrationPage: FC = () => {
 	const [registrationUser] = userApi.useFetchRegistrationMutation();

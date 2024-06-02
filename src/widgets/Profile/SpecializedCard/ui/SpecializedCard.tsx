@@ -1,10 +1,10 @@
-import cls from './style.module.scss'
+import { FC } from "react";
 
 interface SpecializedCardProps { }
 
-export const SpecializedCard = ({ }: SpecializedCardProps) => {
+export const SpecializedCard: FC<SpecializedCardProps> = () => {
   
-  return (
-    <div></div>
-  )
-}
+	return (
+		<div></div>
+	);
+};

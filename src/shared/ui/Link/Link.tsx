@@ -1,8 +1,8 @@
 import {FC, ReactNode} from "react";
-
-import cls from "./Link.module.scss";
 import {NavLink, NavLinkProps} from "react-router-dom";
 import classNames from "src/shared/lib/classNames";
+
+import cls from "./Link.module.scss";
 
 interface LinkProps extends NavLinkProps {
 	children: ReactNode;

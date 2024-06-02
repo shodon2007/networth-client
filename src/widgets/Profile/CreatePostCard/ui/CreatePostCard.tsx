@@ -1,4 +1,5 @@
 // import { MInput } from 'src/shared/ui/inputs/levelsInputs/mInput/MInput'
+import { FC } from "react";
 import cls from "./CreatePostCard.module.scss";
 // import { LBtn } from 'src/shared/ui/Buttons/LevelsBtn/lBtn/LBtn'
 // import { SBtn } from 'src/shared/ui/Buttons/LevelsBtn/sBtn/SBtn'
@@ -7,7 +8,7 @@ import cls from "./CreatePostCard.module.scss";
 
 interface CreatePostCardProps {}
 
-export const CreatePostCard = ({}: CreatePostCardProps) => {
+export const CreatePostCard: FC<CreatePostCardProps> = () => {
 	return (
 		<form onSubmit={(e) => e.preventDefault()} className={cls.CreatePostForm}>
 			{/* <MInput>Add a content</MInput>

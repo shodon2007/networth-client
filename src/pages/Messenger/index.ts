@@ -1,3 +1,5 @@
-export * from './api'
-export * from './model'
-export * from './ui'
+import MessengerPage from "./ui/MessengerPage";
+
+export {
+	MessengerPage
+};

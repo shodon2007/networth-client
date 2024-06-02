@@ -9,15 +9,15 @@ export type InteractiveBtn = {
 }
 
 export const InteractiveBtnList: InteractiveBtn[] = [
-  {
-    icon: 'Like',
-    counter: 0,
-  },
-  {
-    icon: 'Comments',
-    counter: 0,
-  },
-  {
-    icon: 'Shared',
-  },
-]
+	{
+		icon: "Like",
+		counter: 0,
+	},
+	{
+		icon: "Comments",
+		counter: 0,
+	},
+	{
+		icon: "Shared",
+	},
+];

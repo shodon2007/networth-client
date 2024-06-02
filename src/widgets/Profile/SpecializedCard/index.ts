@@ -1,3 +1,3 @@
 import { SpecializedCard } from "./ui/SpecializedCard";
 
-export { SpecializedCard }
+export { SpecializedCard };

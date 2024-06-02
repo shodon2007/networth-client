@@ -1,6 +1,7 @@
 import {FC, ReactNode} from "react";
-import cls from "./Modal.module.scss";
 import classNames from "src/shared/lib/classNames";
+
+import cls from "./Modal.module.scss";
 
 interface ModalProps {
 	children: ReactNode;

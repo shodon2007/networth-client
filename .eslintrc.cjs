@@ -4,9 +4,12 @@ module.exports = {
 		es2021: true,
 	},
 	extends: [
+		"plugin:react/jsx-runtime",
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:react/recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings",
 	],
 	overrides: [
 		{
@@ -24,12 +27,52 @@ module.exports = {
 		ecmaVersion: "latest",
 		sourceType: "module",
 	},
+	settings: {
+		react: {
+			"version": "18.2.0"
+		},
+		"import/resolver": {
+			alias: {
+				map: [["src", "./src"]],
+				extensions: [".js", ".jsx", ".ts", ".tsx", ".svg", ".svg?react"],
+			},
+		},
+	},
 	plugins: ["@typescript-eslint", "react"],
 	rules: {
 		indent: ["error", "tab"],
-		"linebreak-style": ["error", "windows"],
 		quotes: ["error", "double"],
 		semi: ["error", "always"],
+		"import/no-unresolved": ["error", {
+			ignore: ["\\.svg", "\\.svg?react"]
+		}],
 		"react/react-in-jsx-scope": 0,
+		"import/order": [
+			"error",
+			{
+				groups: [
+					"builtin",
+					"external",
+					"internal",
+					"parent",
+					"sibling",
+					"index",
+					"object",
+					"type",
+					"unknown",
+				],
+				pathGroups: [
+					{
+						pattern: "*.scss",
+						group: "unknown",
+						position: "after",
+					},
+				],
+			},
+		],
 	},
+	"ignorePatterns": [
+		"*.svg",
+		"*.svg?react"
+	]
 };

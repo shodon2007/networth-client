@@ -1,3 +1,3 @@
 import { PostEntity } from "./PostEntity";
 
-export { PostEntity }
+export { PostEntity };

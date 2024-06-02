@@ -1,3 +1,3 @@
 import { NavbarTemplate } from "./ui";
 
-export { NavbarTemplate }
+export { NavbarTemplate };

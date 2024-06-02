@@ -1,6 +1,7 @@
 import {ReactNode} from "react";
-import cls from "./Title.module.scss";
 import classNames from "src/shared/lib/classNames";
+
+import cls from "./Title.module.scss";
 
 export enum TitleType {
 	small = "SMALL",
