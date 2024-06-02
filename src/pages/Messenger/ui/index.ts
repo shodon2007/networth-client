@@ -1,3 +1,3 @@
-import Messenger from './MessengerPage.tsx'
+import Messenger from "./MessengerPage.tsx";
 
-export { Messenger }
+export { Messenger };

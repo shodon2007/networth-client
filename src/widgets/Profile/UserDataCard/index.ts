@@ -1,3 +1,3 @@
 import { UserDataCard } from "./ui/UserDataCard";
 
-export { UserDataCard }
+export { UserDataCard };

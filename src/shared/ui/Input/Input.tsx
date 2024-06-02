@@ -1,6 +1,7 @@
-import {InputHTMLAttributes, FC} from "react";
-import cls from "./Input.module.scss";
+import {FC, InputHTMLAttributes} from "react";
 import classNames from "src/shared/lib/classNames";
+
+import cls from "./Input.module.scss";
 
 export enum InputSize {
 	big = "BIG",

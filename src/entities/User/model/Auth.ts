@@ -1,10 +1,10 @@
-import {UserType} from "./UserType";
+import { UserTypes } from "src/shared/types/user/userTypes";
 
 export interface AuthResponse {
 	isAuth: boolean;
 	accessToken: string | null;
 	refreshToken: string | null;
-	user?: UserType;
+	user?: UserTypes;
 }
 
 export interface AuthRequest {

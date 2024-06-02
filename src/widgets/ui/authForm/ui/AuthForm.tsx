@@ -1,16 +1,16 @@
-import {FC, FormHTMLAttributes, ReactNode} from 'react'
+import {FC, FormEventHandler, ReactNode} from "react";
 
-interface FormProps extends FormHTMLAttributes<HTMLFormElement> { 
+interface FormProps { 
   children: ReactNode,
-  onSubmit: (data: any) => Promise<void>,
+  onSubmit: FormEventHandler<HTMLFormElement>
 }
 const AuthForm: FC<FormProps> = ({children, onSubmit, ...rest}) => {
   
-  return (
-    <form onSubmit={onSubmit} {...rest}>
-      {children}
-    </form>
-  )
-}
+	return (
+		<form onSubmit={onSubmit} {...rest}>
+			{children}
+		</form>
+	);
+};
 
-export default AuthForm
+export default AuthForm;

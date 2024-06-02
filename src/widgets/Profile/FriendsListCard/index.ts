@@ -1,3 +1,3 @@
-import { FriendsListCard } from "./ui/FriendsListCard"
+import { FriendsListCard } from "./ui/FriendsListCard";
 
-export { FriendsListCard }
+export { FriendsListCard };

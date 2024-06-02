@@ -1,6 +1,6 @@
+import {Suspense} from "react";
 import {Routes} from "react-router-dom";
 
-import {Suspense} from "react";
 import {renderRoutes, routes} from "../model/router";
 
 const AppRouter = () => {

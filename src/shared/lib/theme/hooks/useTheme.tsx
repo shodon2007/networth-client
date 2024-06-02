@@ -1,8 +1,10 @@
-import {useAppSelector} from "src/shared/lib/store";
-import {getTheme} from "src/app/providers/themeProvider";
-import {Themes} from "../const/theme";
 import {useDispatch} from "react-redux";
 import {setTheme} from "src/app/providers";
+import {getTheme} from "src/app/providers/themeProvider";
+import {useAppSelector} from "src/shared/lib/store";
+
+import {Themes} from "../const/theme";
+
 
 interface UseThemeResult {
 	theme: Themes;

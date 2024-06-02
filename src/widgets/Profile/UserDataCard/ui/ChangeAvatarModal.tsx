@@ -1,17 +1,18 @@
 import {FC, useCallback, useRef, useState} from "react";
-import {useSelector} from "react-redux";
-import {getUser} from "src/entities/User";
-import cls from "./ChangeAvatar.module.scss";
-import Modal from "src/shared/ui/Modal/Modal";
-import SelectFileIcon from "src/shared/assets/SelectFileIcon.svg";
-import {profileApi} from "src/entities/Profile";
-import {toast} from "react-toastify";
-import {userApi} from "src/entities";
-import {useAppDispatch} from "src/shared/lib/store";
-import {setUserInfo} from "src/entities/User/services/userSlice";
-import Button, {ThemeButton} from "src/shared/ui/Button/Button";
 import {useDropzone} from "react-dropzone";
 import {useTranslation} from "react-i18next";
+import {useSelector} from "react-redux";
+import {toast} from "react-toastify";
+import {userApi} from "src/entities";
+import {profileApi} from "src/entities/Profile";
+import {getUser} from "src/entities/User";
+import {setUserInfo} from "src/entities/User/services/userSlice";
+import SelectFileIcon from "src/shared/assets/SelectFileIcon.svg";
+import {useAppDispatch} from "src/shared/lib/store";
+import Button, {ThemeButton} from "src/shared/ui/Button/Button";
+import Modal from "src/shared/ui/Modal/Modal";
+
+import cls from "./ChangeAvatar.module.scss";
 
 interface EditUserModalProps {
 	close: () => void;

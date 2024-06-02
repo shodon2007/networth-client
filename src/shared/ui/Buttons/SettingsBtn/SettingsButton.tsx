@@ -1,5 +1,6 @@
-import cls from "./SettingsButton.module.scss";
 import classNames from "src/shared/lib/classNames";
+
+import cls from "./SettingsButton.module.scss";
 
 interface SettingsButtonProps {
 	border?: boolean;

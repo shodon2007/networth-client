@@ -1,13 +1,13 @@
-import {useUserData} from "src/shared/lib/store/hooks/useUserData";
+import { FC } from "react";
 import {SearchBar} from "src/shared/ui/searchbar/SearchBar";
 import {ChatCard} from "src/shared/ui/sectionsBlocks/Messanger/chatCard";
+
 import cls from "./ChatList.module.scss";
 import {ChatListItems} from "./consts/ChatListItems";
 
 interface ChatListProps {}
 
-export const ChatList = ({}: ChatListProps) => {
-	const user = useUserData();
+export const ChatList: FC<ChatListProps> = () => {
 
 	return (
 		<section className={cls.ChatList}>
@@ -19,9 +19,9 @@ export const ChatList = ({}: ChatListProps) => {
       */}
 			<ul className={cls.ChatList__chats}>
 				{
-				ChatListItems.map(_ => 
-					<ChatCard nikcname={_.nickname} icon={_.icon} href={_.href} />
-				)
+					ChatListItems.map(_ => 
+						<ChatCard key={_.nickname} nikcname={_.nickname} icon={_.icon} href={_.href} />
+					)
 				}
 			</ul>
 		</section>

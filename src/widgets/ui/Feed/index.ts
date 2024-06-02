@@ -1,3 +1,3 @@
 import { FeedWidget } from "./ui";
 
-export { FeedWidget }
+export { FeedWidget };

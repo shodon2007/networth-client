@@ -1,10 +1,10 @@
-import {SearchBar} from "src/shared/ui/searchbar/SearchBar";
-import cls from "./Header.module.scss";
-import NetWorth from "src/shared/assets/NetWorthLogo.svg";
-import magnifier from "src/shared/assets/magnifier.svg";
-import Button from "src/shared/ui/Button/Button";
-import {useTheme} from "src/shared/lib/theme/hooks/useTheme";
 import {useTranslation} from "react-i18next";
+import NetWorth from "src/shared/assets/NetWorthLogo.svg";
+import {useTheme} from "src/shared/lib/theme/hooks/useTheme";
+import Button from "src/shared/ui/Button/Button";
+import {SearchBar} from "src/shared/ui/searchbar/SearchBar";
+
+import cls from "./Header.module.scss";
 
 export const Header = () => {
 	const {theme, toggleTheme} = useTheme();

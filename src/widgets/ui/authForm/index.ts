@@ -1,2 +1,2 @@
-export * from './ui/AuthForm'
+export * from "./ui/AuthForm";
 

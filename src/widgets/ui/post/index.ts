@@ -1,4 +1,4 @@
-import { PostEntity } from "./ui"
+import { PostEntity } from "./ui";
 
-export { PostEntity }
+export { PostEntity };
 

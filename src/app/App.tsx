@@ -1,11 +1,12 @@
 import {FC, useEffect} from "react";
-import {AppRouter} from "./providers/router";
-import classNames from "src/shared/lib/classNames";
-import {useTheme} from "src/shared/lib/theme/hooks/useTheme";
 import {ToastContainer} from "react-toastify";
-import {useAppDispatch} from "src/shared/lib/store";
 import {userApi} from "src/entities";
 import {setUserInfo} from "src/entities/User/services/userSlice";
+import classNames from "src/shared/lib/classNames";
+import {useAppDispatch} from "src/shared/lib/store";
+import {useTheme} from "src/shared/lib/theme/hooks/useTheme";
+
+import {AppRouter} from "./providers/router";
 
 const App: FC = () => {
 	const {theme} = useTheme();

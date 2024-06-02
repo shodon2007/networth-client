@@ -1,3 +1,3 @@
 import { NavbarTemplate } from "./NavbarTemplate";
 
-export { NavbarTemplate }
+export { NavbarTemplate };

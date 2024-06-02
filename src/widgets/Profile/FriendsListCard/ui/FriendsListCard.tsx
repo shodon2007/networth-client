@@ -1,11 +1,12 @@
+import { FC } from "react";
+import FriendsIcon from "src/shared/assets/FriendsIcon.svg";
 import cls from "./FriendsListCard.module.scss";
 // import Button from "src/shared/ui/Button/Button";
-import FriendsIcon from "src/shared/assets/FriendsIcon.svg";
 // import {useAppSelector} from "src/shared/lib/Redux/model";
 
 interface FriendsListCardProps {}
 
-export const FriendsListCard = ({}: FriendsListCardProps) => {
+export const FriendsListCard: FC<FriendsListCardProps> = () => {
 	// const {user} = useAppSelector((state) => state.auth);
 
 	return (

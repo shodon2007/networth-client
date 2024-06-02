@@ -1,12 +1,12 @@
-import {ProfilePage} from "src/pages/Profile/ui/ProfilePage";
-import {LoginPage} from "src/pages/Auth/Login";
-import {Layout} from "src/shared/ui/Layout/Layout";
-import {FeedPage} from "src/pages/Feed";
-import RegistrationPage from "src/pages/Auth/Registration/ui/RegistrationPage";
-import ActivationPage from "src/pages/Auth/Activation/ActivationPage";
 import {ReactNode} from "react";
 import {Route} from "react-router-dom";
-import MessengerPage from "src/pages/Messenger/ui/MessengerPage";
+import {ActivationPage} from "src/pages/Auth/Activation";
+import {LoginPage} from "src/pages/Auth/Login";
+import {RegistrationPage} from "src/pages/Auth/Registration";
+import {FeedPage} from "src/pages/Feed";
+import {MessengerPage} from "src/pages/Messenger";
+import {ProfilePage} from "src/pages/Profile/ui/ProfilePage";
+import {Layout} from "src/shared/ui/Layout/Layout";
 
 export enum AppRoutes {
 	REGISTRATION = "registration",
