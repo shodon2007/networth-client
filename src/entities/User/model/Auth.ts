@@ -1,4 +1,4 @@
-import { UserTypes } from "src/shared/types/user/userTypes";
+import {UserTypes} from "src/shared/types/user/userTypes";
 
 export interface AuthResponse {
 	isAuth: boolean;
