@@ -30,7 +30,7 @@ const userSlice = createSlice({
 			state.user = action.payload.user;
 			state.isAuth = true;
 		},
-		setUserInfo(state, action: PayloadAction<UserType>) {
+		setUserInfo(state, action: PayloadAction<UserTypes>) {
 			state.user = action.payload;
 			state.isAuth = true;
 		},

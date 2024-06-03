@@ -1,4 +1,5 @@
 import {t} from "i18next";
+import {AxiosResponse} from "axios";
 import {FC, useState} from "react";
 import {useSelector} from "react-redux";
 import {toast} from "react-toastify";
@@ -6,8 +7,8 @@ import {userApi} from "src/entities";
 import {profileApi} from "src/entities/Profile";
 import {getUser} from "src/entities/User";
 import {setUserInfo} from "src/entities/User/services/userSlice";
+import {ErrorResponseType} from "src/shared/types/response/responseType";
 import {useAppDispatch} from "src/shared/lib/store";
-import {ApiError} from "src/shared/types/error/errorTypes";
 import Block from "src/shared/ui/Block/Block";
 import Button from "src/shared/ui/Button/Button";
 import Divider from "src/shared/ui/Divider/Divider";
@@ -39,7 +40,7 @@ const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close, isOpen}) => {
 			email: newEmail,
 		}).then((res) => {
 			if ("error" in res) {
-				const errorApi = res.error as ApiError;
+				const errorApi = res.error as AxiosResponse<ErrorResponseType>;
 				return toast.error(errorApi.data.message ?? "Ошибка");
 			}
 			toast.success(res.data.message);
@@ -52,7 +53,7 @@ const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close, isOpen}) => {
 			email: newEmail,
 		}).then(async (res) => {
 			if ("error" in res) {
-				const errorApi = res.error as ApiError;
+				const errorApi = res.error as AxiosResponse<ErrorResponseType>;
 				return toast.error(errorApi.data.message ?? "Ошибка");
 			}
 			toast.success(res.data.message);

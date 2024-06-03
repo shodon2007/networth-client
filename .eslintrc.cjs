@@ -47,6 +47,7 @@ module.exports = {
 			ignore: ["\\.svg", "\\.svg?react"]
 		}],
 		"react/react-in-jsx-scope": 0,
+		"import/named": 0,
 		"import/order": [
 			"error",
 			{
