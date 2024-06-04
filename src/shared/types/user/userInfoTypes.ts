@@ -1,6 +1,4 @@
-// import {UserRegType} from "src/shared/types/auth/registrationTypes";
-
-export interface UserTypes {
+export interface UserInfoTypes {
 	id: number | string;
 	name: string;
 	surname: string;

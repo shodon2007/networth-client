@@ -1,19 +1,19 @@
 import {PayloadAction, createSlice} from "@reduxjs/toolkit";
-import { UserTypes } from "src/shared/types/user/userTypes";
-import {AuthResponse} from "../model/Auth";
+import {AuthResponse} from "src/entities/auth/model/authTypes";
+import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
 
-interface InitialState {
+interface UserStateTypes {
 	accessToken: string | null;
 	refreshToken: string | null;
 	isAuth: boolean;
-	user: UserTypes | undefined;
+	data: UserInfoTypes | undefined;
 }
 
-const initialState: InitialState = {
+const initialState: UserStateTypes = {
 	accessToken: getAccessTokenFromStorage(),
 	refreshToken: null,
 	isAuth: false,
-	user: undefined,
+	data: undefined,
 };
 
 const userSlice = createSlice({
@@ -27,11 +27,11 @@ const userSlice = createSlice({
 
 			state.accessToken = action.payload.accessToken;
 			state.refreshToken = action.payload.refreshToken;
-			state.user = action.payload.user;
+			state.data = action.payload.data;
 			state.isAuth = true;
 		},
-		setUserInfo(state, action: PayloadAction<UserTypes>) {
-			state.user = action.payload;
+		setUserInfo(state, action: PayloadAction<UserInfoTypes>) {
+			state.data = action.payload;
 			state.isAuth = true;
 		},
 	},

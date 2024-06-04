@@ -1,6 +1,6 @@
-import {UserType} from "./User";
-import {userApi} from "./User/services/userService";
-import userSlice, {setUser} from "./User/services/userSlice";
+import {UserType} from "./user";
+import {userApi} from "./user/services/userService";
+import userSlice, {setUser} from "./user/services/userSlice";
 
 export type {UserType};
 export {userApi, userSlice, setUser};

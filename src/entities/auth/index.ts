@@ -1,4 +1,4 @@
-import {useLogin} from "./lib/useLogin";
-import {useRegistration} from "./lib/useRegistration";
+import {useLogin} from "./hooks/useLogin";
+import {useRegistration} from "./hooks/useRegistration";
 
 export {useLogin, useRegistration};
