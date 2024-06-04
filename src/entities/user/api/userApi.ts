@@ -1,4 +1,3 @@
-import {AxiosResponse} from "axios";
 import {ResponseType} from "src/shared/types/response/responseType";
 import {authInstance} from "src/shared/api/auth-instance/auth-instance";
 import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
@@ -13,7 +12,7 @@ interface AvatarData {
 }
 
 export const getUserInfo = async () => {
-	return await authInstance.get("/api/user_info");
+	return await authInstance.get("/api/user/user_info");
 };
 
 export const updateUserInfo = async (data: Partial<UserInfoTypes>) => {

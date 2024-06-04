@@ -1,9 +1,8 @@
 import {FC} from "react";
 import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router-dom";
-import {getUser} from "src/entities/user";
+import {useGetUser} from "src/entities/user";
 import classNames from "src/shared/lib/classNames";
-import {useAppSelector} from "src/shared/lib/store";
 import MyLink from "src/shared/ui/Link/Link";
 
 import links from "../model/Links";
@@ -14,20 +13,20 @@ export interface LinksData {
 	title: string;
 	icon: string;
 }
-interface NavbarTemplateProps {}
+interface SidebarProps {}
 
-const Sidebar: FC<NavbarTemplateProps> = () => {
+const Sidebar: FC<SidebarProps> = () => {
 	const {t} = useTranslation();
-	const {user} = useAppSelector(getUser);
+	const {data: userData} = useGetUser();
 
 	return (
 		<aside className={cls.sidebar}>
 			<header className={cls.header}>
-				<img src={user?.avatar} alt="avatar" className={cls.avatar} />
-				{user ? (
+				<img src={userData?.avatar} alt="avatar" className={cls.avatar} />
+				{userData ? (
 					<h1 className={cls.username}>
-						<span>{user.name}</span>
-						<span>{user.surname}</span>
+						<span>{userData.name}</span>
+						<span>{userData.surname}</span>
 					</h1>
 				) : (
 					<div className={cls.header_links}>

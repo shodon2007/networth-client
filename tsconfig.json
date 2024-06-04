@@ -23,7 +23,7 @@
 		"paths": {
 			"src/*": ["src/*"],
 			"@assets/*": ["src/shared/assets/*"]
-		},
+		}
 	},
 	"include": ["src"],
 	"references": [{"path": "./tsconfig.node.json"}]
