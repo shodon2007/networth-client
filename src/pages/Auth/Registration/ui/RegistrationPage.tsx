@@ -7,8 +7,8 @@ import Input from "src/shared/ui/Input/Input";
 import Block from "src/shared/ui/Block/Block";
 import {Title} from "src/shared/ui/Title/Title";
 import {useRegistration} from "src/entities/auth";
-import {AuthRequest} from "src/entities/user/model/Auth";
 import Button, {ThemeButton} from "src/shared/ui/Button/Button";
+import {AuthRequest} from "src/entities/auth/model/authTypes";
 
 import cls from "./RegistrationPage.module.scss";
 
