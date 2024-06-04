@@ -15,7 +15,13 @@ export const ChatCard = ({nikcname, icon, href}: ChatCardProps) => {
 		<div className={cls.ChatCard}>
 			<header className={cls.ChatCard__header}>
 				<div className={cls.user}>
-					<img className={cls.user__avatar} src={icon} alt="avatar" width='60' height='60'/>
+					<img
+						className={cls.user__avatar}
+						src={icon}
+						alt="avatar"
+						width="60"
+						height="60"
+					/>
 					<h1 className={cls.user__nickname}>{nikcname}</h1>
 				</div>
 				<SettingsButton border={true} />
@@ -23,7 +29,7 @@ export const ChatCard = ({nikcname, icon, href}: ChatCardProps) => {
 			<footer className={cls.ChatCard__footer}>
 				{/*  Last message ?? start chat button */}
 				<Link to={href} className={cls.Button}>
-						Start chatting
+					Start chatting
 				</Link>
 			</footer>
 		</div>

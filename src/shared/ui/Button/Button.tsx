@@ -3,10 +3,10 @@ import classNames from "src/shared/lib/classNames";
 
 import cls from "./Button.module.scss";
 
-enum ThemeButton {
+export enum ThemeButton {
 	CLEAR = "clear",
 	SMALL = "small",
-	SUBMIT_BUTTON = "submit_button",
+	SUBMIT = "submit",
 	RED = "red",
 }
 
@@ -33,4 +33,3 @@ const Button: FC<ButtonProps> = ({
 };
 
 export default Button;
-export {ThemeButton};

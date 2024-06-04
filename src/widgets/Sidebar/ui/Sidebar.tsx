@@ -1,7 +1,7 @@
 import {FC} from "react";
 import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router-dom";
-import {getUser} from "src/entities/User";
+import {getUser} from "src/entities/user";
 import classNames from "src/shared/lib/classNames";
 import {useAppSelector} from "src/shared/lib/store";
 import MyLink from "src/shared/ui/Link/Link";
@@ -9,7 +9,6 @@ import MyLink from "src/shared/ui/Link/Link";
 import links from "../model/Links";
 
 import cls from "./Sidebar.module.scss";
-
 
 export interface LinksData {
 	title: string;

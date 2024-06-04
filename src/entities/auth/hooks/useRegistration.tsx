@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {AxiosError} from "axios";
 
 import {useAppDispatch} from "src/shared/lib/store";
-import {setUser} from "src/entities/User/services/userSlice";
+import {setUser} from "src/entities/user/services/userSlice";
 import {ErrorResponseType} from "src/shared/types/response/responseType";
 import {RegistrationRequestType, getRegistration} from "../api/authApi";
 

@@ -1,14 +1,8 @@
 import {FC, useCallback, useRef, useState} from "react";
 import {useDropzone} from "react-dropzone";
 import {useTranslation} from "react-i18next";
-import {useSelector} from "react-redux";
-import {toast} from "react-toastify";
-import {userApi} from "src/entities";
-import {profileApi} from "src/entities/Profile";
-import {getUser} from "src/entities/User";
-import {setUserInfo} from "src/entities/User/services/userSlice";
 import SelectFileIcon from "src/shared/assets/SelectFileIcon.svg";
-import {useAppDispatch} from "src/shared/lib/store";
+import {useChangeAvatar} from "src/entities/user/hooks/useChangeAvatar";
 import Button, {ThemeButton} from "src/shared/ui/Button/Button";
 import Modal from "src/shared/ui/Modal/Modal";
 
@@ -20,13 +14,10 @@ interface EditUserModalProps {
 }
 
 const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
-	const {user} = useSelector(getUser);
-	const [changeAvatar] = profileApi.useFetchUploadAvatarMutation();
-
-	const {refetch} = userApi.useFetchUserInfoQuery(user);
 	const [file, setFile] = useState<File | null>(null);
 	const imgRef = useRef<HTMLImageElement>(null);
 	const {t} = useTranslation();
+	const changeAvatarFn = useChangeAvatar(close).mutate;
 
 	const onDrop = useCallback((files: File[]) => {
 		setFile(files[0]);
@@ -42,29 +33,12 @@ const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 		},
 	});
 
-	const dispatch = useAppDispatch();
-
-	if (!user) {
-		return null;
-	}
-
 	const submit = () => {
 		const formData = new FormData();
 		if (file) {
 			formData.append("file", file);
 		}
-		changeAvatar(formData).then(async (res) => {
-			if ("error" in res) {
-				return toast.error("Не удалось изменить фото профиля");
-			}
-			if ("data" in res && res.data.status === 200) {
-				toast.success(res.data.message);
-				const {data} = await refetch();
-				if (data) {
-					dispatch(setUserInfo(data));
-				}
-			}
-		});
+		changeAvatarFn(formData);
 	};
 
 	return (
@@ -88,7 +62,7 @@ const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 							}
 							close();
 						}}
-						theme={ThemeButton.SUBMIT_BUTTON}
+						theme={ThemeButton.SUBMIT}
 					>
 						{t("profile.editButton")}
 					</Button>

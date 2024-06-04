@@ -7,7 +7,7 @@ import MyLink from "src/shared/ui/Link/Link";
 import Block from "src/shared/ui/Block/Block";
 import Input from "src/shared/ui/Input/Input";
 import {Title} from "src/shared/ui/Title/Title";
-import {AuthRequest} from "src/entities/User/model/Auth";
+import {AuthRequest} from "src/entities/user/model/Auth";
 import Button, {ThemeButton} from "src/shared/ui/Button/Button";
 
 import cls from "./LoginPage.module.scss";
@@ -49,7 +49,7 @@ const LoginPage: FC = () => {
 					/>
 				</div>
 				<div className={cls.bottom}>
-					<Button theme={ThemeButton.SUBMIT_BUTTON} type="submit">
+					<Button theme={ThemeButton.SUBMIT} type="submit">
 						{t("login.submitButton")}
 					</Button>
 					<MyLink to="/registration">{t("login.registrationButton")}</MyLink>

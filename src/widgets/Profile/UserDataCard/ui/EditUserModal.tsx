@@ -1,13 +1,7 @@
 import {FC} from "react";
 import {Controller, SubmitHandler, useForm} from "react-hook-form";
 import {useTranslation} from "react-i18next";
-import {useSelector} from "react-redux";
-import {toast} from "react-toastify";
-import {userApi} from "src/entities";
-import {profileApi} from "src/entities/Profile";
-import {UserType, getUser} from "src/entities/User";
-import {setUserInfo} from "src/entities/User/services/userSlice";
-import {useAppDispatch} from "src/shared/lib/store";
+import {useGetUser} from "src/entities/user";
 import Block from "src/shared/ui/Block/Block";
 import Button from "src/shared/ui/Button/Button";
 import Divider from "src/shared/ui/Divider/Divider";
@@ -15,6 +9,8 @@ import Input, {InputSize} from "src/shared/ui/Input/Input";
 import Modal from "src/shared/ui/Modal/Modal";
 import {Title, TitleType} from "src/shared/ui/Title/Title";
 
+import {useUpdateUserInfo} from "src/entities/user/hooks/useUpdateUserInfo";
+import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
 import cls from "./UserCardStyle.module.scss";
 
 interface EditUserModalProps {
@@ -23,45 +19,18 @@ interface EditUserModalProps {
 }
 
 const EditUserModal: FC<EditUserModalProps> = ({close, isOpen}) => {
-	const {user} = useSelector(getUser);
-	const [changeUserData] = profileApi.useFetchChangeUserMutation();
-	const {refetch} = userApi.useFetchUserInfoQuery(user);
-	const dispatch = useAppDispatch();
+	const {data: userData} = useGetUser();
+	const updateUserInfo = useUpdateUserInfo(close).mutate;
 	const {t} = useTranslation();
-	const {control, handleSubmit} = useForm<UserType>({
+	const {control, handleSubmit} = useForm<Partial<UserInfoTypes>>({
 		defaultValues: {
-			name: user?.name,
-			surname: user?.surname,
+			name: userData?.name,
+			surname: userData?.surname,
 		},
 	});
 
-	if (!user) {
-		return null;
-	}
-
-	const submit: SubmitHandler<UserType> = (form) => {
-		changeUserData({...form, id: user.id}).then(async (res) => {
-			if ("error" in res) {
-				return toast.error("Неизвестная ошибка", {
-					autoClose: 2000,
-				});
-			}
-
-			if (res.data.status === 200) {
-				close();
-				const {data} = await refetch();
-				if (data) {
-					dispatch(setUserInfo(data));
-				}
-				return toast.success(res.data.message, {
-					autoClose: 2000,
-				});
-			} else {
-				return toast.error(res.data.message, {
-					autoClose: 2000,
-				});
-			}
-		});
+	const submit: SubmitHandler<Partial<UserInfoTypes>> = (form) => {
+		updateUserInfo(form);
 	};
 
 	return (

@@ -1,20 +1,17 @@
 import {t} from "i18next";
-import {AxiosResponse} from "axios";
 import {FC, useState} from "react";
-import {useSelector} from "react-redux";
-import {toast} from "react-toastify";
-import {userApi} from "src/entities";
-import {profileApi} from "src/entities/Profile";
-import {getUser} from "src/entities/User";
-import {setUserInfo} from "src/entities/User/services/userSlice";
-import {ErrorResponseType} from "src/shared/types/response/responseType";
-import {useAppDispatch} from "src/shared/lib/store";
+import {useGetUser} from "src/entities/user";
 import Block from "src/shared/ui/Block/Block";
 import Button from "src/shared/ui/Button/Button";
 import Divider from "src/shared/ui/Divider/Divider";
 import Input, {InputSize} from "src/shared/ui/Input/Input";
 import Modal from "src/shared/ui/Modal/Modal";
 import {Title, TitleType} from "src/shared/ui/Title/Title";
+
+import {
+	useChangeEmail,
+	useSendCode,
+} from "src/entities/user/hooks/useChangeEmail";
 
 import cls from "./UserCardStyle.module.scss";
 
@@ -24,44 +21,32 @@ interface ChangeEmailModalProps {
 }
 
 const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close, isOpen}) => {
-	const {user} = useSelector(getUser);
-	const [sendCodeToServer] = profileApi.useFetchSendCodeMutation();
-	const [changeEmailInServer] = profileApi.useFetchChangeEmailMutation();
-	const {refetch} = userApi.useFetchUserInfoQuery(user);
-	const dispatch = useAppDispatch();
+	const {data: userData} = useGetUser();
 	const [newEmail, setNewEmail] = useState("");
 	const [code, setCode] = useState("");
-	if (!user) {
+	const changeEmailFn = useChangeEmail(onSuccess).mutate;
+	const sendCodeFn = useSendCode().mutate;
+
+	if (!userData) {
 		return null;
 	}
 
 	const sendCode = () => {
-		sendCodeToServer({
+		sendCodeFn({
 			email: newEmail,
-		}).then((res) => {
-			if ("error" in res) {
-				const errorApi = res.error as AxiosResponse<ErrorResponseType>;
-				return toast.error(errorApi.data.message ?? "Ошибка");
-			}
-			toast.success(res.data.message);
 		});
 	};
 
+	function onSuccess() {
+		close();
+		setNewEmail("");
+		setCode("");
+	}
+
 	const changeEmail = () => {
-		changeEmailInServer({
-			code,
+		changeEmailFn({
+			code: code,
 			email: newEmail,
-		}).then(async (res) => {
-			if ("error" in res) {
-				const errorApi = res.error as AxiosResponse<ErrorResponseType>;
-				return toast.error(errorApi.data.message ?? "Ошибка");
-			}
-			toast.success(res.data.message);
-			const {data} = await refetch();
-			if (data) {
-				dispatch(setUserInfo(data));
-			}
-			close();
 		});
 	};
 
@@ -73,7 +58,7 @@ const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close, isOpen}) => {
 				<form className={cls.inputs} onSubmit={(e) => e.preventDefault()}>
 					<span>
 						{t("profile.editEmailPrevText")}
-						<span style={{fontWeight: "bold"}}>{user.email}</span>
+						<span style={{fontWeight: "bold"}}>{userData.email}</span>
 					</span>
 					<div style={{display: "flex", gap: "10px"}}>
 						<Input

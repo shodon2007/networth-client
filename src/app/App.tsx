@@ -1,7 +1,7 @@
 import {FC, useEffect} from "react";
 import {ToastContainer} from "react-toastify";
 import {userApi} from "src/entities";
-import {setUserInfo} from "src/entities/User/services/userSlice";
+import {setUserInfo} from "src/entities/user/services/userSlice";
 import classNames from "src/shared/lib/classNames";
 import {useAppDispatch} from "src/shared/lib/store";
 import {useTheme} from "src/shared/lib/theme/hooks/useTheme";

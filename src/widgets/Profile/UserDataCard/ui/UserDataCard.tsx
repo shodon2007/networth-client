@@ -1,9 +1,8 @@
 import {useState} from "react";
 import {useTranslation} from "react-i18next";
-import {getUser} from "src/entities/User";
+import {useGetUser} from "src/entities/user";
 import DetailIcon from "src/shared/assets/DetailIcon.svg";
 import Mailicon from "src/shared/assets/MailIcon.svg";
-import {useAppSelector} from "src/shared/lib/store";
 import Block from "src/shared/ui/Block/Block";
 import Button, {ThemeButton} from "src/shared/ui/Button/Button";
 
@@ -12,29 +11,24 @@ import ChangeEmailModal from "./ChangeEmailModal";
 import ChangePasswordModal from "./ChangePasswordModal";
 import EditUserModal from "./EditUserModal";
 import cls from "./UserCardStyle.module.scss";
-// import { useAppSelector } from 'src/shared/lib/Redux/model'
-// import { MBtn } from "src/shared/ui/Buttons/LevelsBtn/mBtn/MBtn"
 
 export const UserDataCard = () => {
-	const {user, isAuth} = useAppSelector(getUser);
+	const {data: userData, isAuth} = useGetUser();
 	const [editModalOpen, setEditModalOpen] = useState(false);
 	const [changeAvatarModalOpen, setChangeAvatarModalOpen] = useState(false);
 	const [changePasswordModalOpen, setChangePasswordModalOpen] = useState(false);
 	const [changeEmailModalOpen, setChangeEmailModalOpen] = useState(false);
 	const {t} = useTranslation();
 
-	if (!user || !isAuth) {
+	if (!userData || !isAuth) {
 		return <div>Пожалуйста Зарегестрируйтесь</div>;
 	}
 
-	// TODO: create a capability change user's data
-
 	return (
-		// Add displaying user's data
 		<Block className={cls.UserCard}>
 			<div className={cls.UserCard__info}>
 				<div className={cls.avatar}>
-					<img src={user.avatar} alt="Avatar" className={cls.avatar__img} />
+					<img src={userData.avatar} alt="Avatar" className={cls.avatar__img} />
 					<div className={cls.avatar__menu}>
 						<Button onClick={() => setChangeAvatarModalOpen(true)}>
 							{t("profile.updateAvatar")}
@@ -44,11 +38,11 @@ export const UserDataCard = () => {
 
 				<ul className={cls.UserCard__userInfo}>
 					<li className={cls.UserCard__name}>
-						{`${user.name} ${user.surname}`}
+						{`${userData.name} ${userData.surname}`}
 					</li>
 					<li className={cls.UserCard__detail}>
 						<img src={Mailicon} />
-						{user?.email}
+						{userData?.email}
 					</li>
 					<li className={cls.UserCard__detail}>
 						<img src={DetailIcon} alt="" />
