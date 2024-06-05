@@ -6,11 +6,11 @@ import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
 import {useAppDispatch} from "src/shared/lib/store";
 import {updateUserInfo} from "../api/userApi";
 import {setUserInfo} from "../services/userSlice";
-import {useGetUser} from "./useGetUser";
+import {useUser} from "./useUser";
 
 export const useUpdateUserInfo = (onSuccess: () => void) => {
 	const dispatch = useAppDispatch();
-	const {data: userData} = useGetUser();
+	const {data: userData} = useUser();
 
 	return useMutation({
 		mutationFn: (data: Partial<UserInfoTypes>) => {

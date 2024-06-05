@@ -1,7 +1,7 @@
 import {FC} from "react";
 import {Controller, SubmitHandler, useForm} from "react-hook-form";
 import {useTranslation} from "react-i18next";
-import {useGetUser} from "src/entities/user";
+import {useUser} from "src/entities/user";
 import Block from "src/shared/ui/Block/Block";
 import Button from "src/shared/ui/Button/Button";
 import Divider from "src/shared/ui/Divider/Divider";
@@ -19,7 +19,7 @@ interface EditUserModalProps {
 }
 
 const EditUserModal: FC<EditUserModalProps> = ({close, isOpen}) => {
-	const {data: userData} = useGetUser();
+	const {data: userData} = useUser();
 	const updateUserInfo = useUpdateUserInfo(close).mutate;
 	const {t} = useTranslation();
 	const {control, handleSubmit} = useForm<Partial<UserInfoTypes>>({
