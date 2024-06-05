@@ -7,3 +7,7 @@ export const getAccessToken = (state: RootState) => {
 export const getUser = (state: RootState) => {
 	return state.user;
 };
+
+export const getUserData = (state: RootState) => {
+	return state.user.data;
+};

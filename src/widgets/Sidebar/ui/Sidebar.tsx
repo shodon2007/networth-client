@@ -1,7 +1,7 @@
 import {FC} from "react";
 import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router-dom";
-import {useGetUser} from "src/entities/user";
+import {useUser} from "src/entities/user";
 import classNames from "src/shared/lib/classNames";
 import MyLink from "src/shared/ui/Link/Link";
 
@@ -17,7 +17,7 @@ interface SidebarProps {}
 
 const Sidebar: FC<SidebarProps> = () => {
 	const {t} = useTranslation();
-	const {data: userData} = useGetUser();
+	const {data: userData} = useUser();
 
 	return (
 		<aside className={cls.sidebar}>

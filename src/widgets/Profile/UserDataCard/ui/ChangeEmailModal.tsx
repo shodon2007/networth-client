@@ -1,6 +1,6 @@
 import {t} from "i18next";
 import {FC, useState} from "react";
-import {useGetUser} from "src/entities/user";
+import {useUser} from "src/entities/user";
 import Block from "src/shared/ui/Block/Block";
 import Button from "src/shared/ui/Button/Button";
 import Divider from "src/shared/ui/Divider/Divider";
@@ -21,7 +21,7 @@ interface ChangeEmailModalProps {
 }
 
 const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close, isOpen}) => {
-	const {data: userData} = useGetUser();
+	const {data: userData} = useUser();
 	const [newEmail, setNewEmail] = useState("");
 	const [code, setCode] = useState("");
 	const changeEmailFn = useChangeEmail(onSuccess).mutate;

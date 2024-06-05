@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useTranslation} from "react-i18next";
-import {useGetUser} from "src/entities/user";
+import {useUser} from "src/entities/user";
 import DetailIcon from "src/shared/assets/DetailIcon.svg";
 import Mailicon from "src/shared/assets/MailIcon.svg";
 import Block from "src/shared/ui/Block/Block";
@@ -13,7 +13,7 @@ import EditUserModal from "./EditUserModal";
 import cls from "./UserCardStyle.module.scss";
 
 export const UserDataCard = () => {
-	const {data: userData, isAuth} = useGetUser();
+	const {data: userData, isAuth} = useUser();
 	const [editModalOpen, setEditModalOpen] = useState(false);
 	const [changeAvatarModalOpen, setChangeAvatarModalOpen] = useState(false);
 	const [changePasswordModalOpen, setChangePasswordModalOpen] = useState(false);

@@ -17,8 +17,8 @@ const initialState: UserStateTypes = {
 };
 
 const userSlice = createSlice({
-	initialState,
 	name: "userStore",
+	initialState,
 	reducers: {
 		setUser(state, action: PayloadAction<AuthResponse>) {
 			const accessToken = action.payload.accessToken;

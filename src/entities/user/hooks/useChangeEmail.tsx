@@ -6,7 +6,7 @@ import {useAppDispatch} from "src/shared/lib/store";
 import {sendCode, updateEmail} from "../api/userApi";
 import {ChangeEmailTypes, SendCodeTypes} from "../model/profileTypes";
 import {setUserInfo} from "../services/userSlice";
-import {useGetUser} from "./useGetUser";
+import {useUser} from "./useUser";
 
 export const useSendCode = (onSuccess?: () => void) => {
 	return useMutation({
@@ -25,7 +25,7 @@ export const useSendCode = (onSuccess?: () => void) => {
 
 export const useChangeEmail = (onSuccess: () => void) => {
 	const dispatch = useAppDispatch();
-	const {data: userData} = useGetUser();
+	const {data: userData} = useUser();
 
 	return useMutation({
 		mutationFn: (data: ChangeEmailTypes) => {
