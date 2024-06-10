@@ -6,7 +6,8 @@
 @import "react-toastify/dist/ReactToastify.css";
 
 .app {
-	@include grid-background();
+	@include grid-background;
+
 	min-height: 100svh;
 	width: 100%;
 	display: flex;
