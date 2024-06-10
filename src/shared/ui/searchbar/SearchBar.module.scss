@@ -1,4 +1,4 @@
-.SearchBar {
+.searchBar {
   border-radius: 50px;
   // padding: 0.94rem 1.38rem;
   width: 100%;
@@ -10,29 +10,29 @@
   color: var(--our-gray-color);
   font-family: var(--font-main-Blin);
   font-size: var(--font-size-l-mobile);
-
-  &__icon {
-    width: 40px;
-    height: 42px;
-  }
 }
 
-.Stroke {
+.searchBarIcon {
+  width: 40px;
+  height: 42px;
+}
+
+.stroke {
   width: 100%;
   height: 60px;
   background-image: var(--colorful-gradient);
   padding: 2px;
   border-radius: 50px;
+}
 
-  &__BG {
-    width: 100%;
-    height: 100%;
-    background: var(--main-black);
-    display: flex;
-    align-items: center;
+.strokeBg {
+  width: 100%;
+  height: 100%;
+  background: var(--main-black);
+  display: flex;
+  align-items: center;
 
-    padding-left: 19px;
-    column-gap: 7px;
-    border-radius: 50px; 
-  }
+  padding-left: 19px;
+  column-gap: 7px;
+  border-radius: 50px;
 }
