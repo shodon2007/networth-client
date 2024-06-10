@@ -3,9 +3,9 @@
 	padding: 15px 20px;
 	color: var(--white-color);
 	width: 100%;
-
 	background: var(--bg-secondary-color);
 	transition: 0.2s;
+
 	&:hover {
 		background: var(--bg-secondary-hover-color);
 	}
@@ -17,7 +17,7 @@
 	&::placeholder {
 		font-family: var(--font-main-Blin);
 		font-weight: 600;
-		color: rgba(255, 255, 255, 0.8);
+		color: rgb(255 255 255 / 80%);
 	}
 }
 

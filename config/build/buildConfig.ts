@@ -18,7 +18,7 @@ const buildConfig = (options: BuildOptions): Configuration => {
 		module: {
 			rules: buildRules(options),
 		},
-		resolve: buildResolvers(options),
+		resolve: buildResolvers(),
 
 		plugins: buildPlugins(options),
 		devServer: buildServer(options),

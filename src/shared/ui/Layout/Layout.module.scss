@@ -16,12 +16,14 @@
 
 .main {
   background: var(--main-bg-color);
-  @include grid-background();
+
+  @include grid-background;
+
   grid-row-start: 2;
   grid-column-start: 1;
   flex-shrink: 2;
   display: flex;
-  padding: 48px 0px;
+  padding: 48px 0;
   justify-content: center;
 }
 

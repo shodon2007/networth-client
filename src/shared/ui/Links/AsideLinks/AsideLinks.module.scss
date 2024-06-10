@@ -4,8 +4,8 @@
   font-size: var(--font-size-ss-desktop);
   background: linear-gradient(112deg, var(--colorful-gradient));
   background-clip: text;
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
   &:hover{
     font-size: var(--font-size-mm-desktop);
   }
