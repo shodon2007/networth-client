@@ -25,32 +25,32 @@ export const UserDataCard = () => {
 	}
 
 	return (
-		<Block className={cls.UserCard}>
-			<div className={cls.UserCard__info}>
+		<Block className={cls.userCard}>
+			<div className={cls.userCardInfo}>
 				<div className={cls.avatar}>
-					<img src={userData.avatar} alt="Avatar" className={cls.avatar__img} />
-					<div className={cls.avatar__menu}>
+					<img src={userData.avatar} alt="Avatar" className={cls.avatarImg} />
+					<div className={cls.avatarMenu}>
 						<Button onClick={() => setChangeAvatarModalOpen(true)}>
 							{t("profile.updateAvatar")}
 						</Button>
 					</div>
 				</div>
 
-				<ul className={cls.UserCard__userInfo}>
-					<li className={cls.UserCard__name}>
+				<ul className={cls.userCardUserInfo}>
+					<li className={cls.userCardName}>
 						{`${userData.name} ${userData.surname}`}
 					</li>
-					<li className={cls.UserCard__detail}>
+					<li className={cls.userCardDetail}>
 						<img src={Mailicon} />
 						{userData?.email}
 					</li>
-					<li className={cls.UserCard__detail}>
+					<li className={cls.userCardDetail}>
 						<img src={DetailIcon} alt="" />
 						<h4>Detils</h4>
 					</li>
 				</ul>
 			</div>
-			<div className={cls.UserCard__buttons}>
+			<div className={cls.userCardButtons}>
 				<Button
 					theme={ThemeButton.SMALL}
 					onClick={() => setEditModalOpen(true)}

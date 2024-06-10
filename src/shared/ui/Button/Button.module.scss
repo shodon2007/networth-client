@@ -1,4 +1,4 @@
-.Button {
+.button {
 	cursor: pointer;
 	background: var(--main-black-02);
 	color: var(--primary-color);
@@ -11,7 +11,7 @@
 	}
 }
 
-.Button.submit {
+.button.submit {
 	border-radius: 14px;
 	padding: 0px 12px;
 	width: 400px;
@@ -30,6 +30,6 @@
 	}
 }
 
-.Button.red {
+.button.red {
 	background-color: #ff0000;
 }
