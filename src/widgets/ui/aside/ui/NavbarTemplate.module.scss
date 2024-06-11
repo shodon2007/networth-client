@@ -4,7 +4,6 @@
 .aside {
   width: 150px;
   height: 100%;
-
   transition: width .25s;
 }
 
@@ -23,7 +22,8 @@
 }
 
 .asideContent {
-  @include grid-background();
+  @include grid-background;
+
   width: 100%;
   height: 100%;
   background-color: var(--main-black);
@@ -94,7 +94,6 @@
   font-family: var(--third-main-Leel);
   background-image: var(--main-cool-gradient);
   color: transparent;
-  -webkit-background-clip: text;
   background-clip: text;
   display: flex;
   align-items: center;

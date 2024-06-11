@@ -1,4 +1,4 @@
-.Button {
+.button {
 	cursor: pointer;
 	background: var(--main-black-02);
 	color: var(--primary-color);
@@ -11,25 +11,24 @@
 	}
 }
 
-.Button.submit {
+.button.submit {
 	border-radius: 14px;
-	padding: 0px 12px;
+	padding: 0 12px;
 	width: 400px;
 	height: 60px;
-
 	font-family: var(--font-main-Blin);
 	font-weight: 600;
 	font-size: var(--font-size-mm-desktop);
 	color: var(--white-color);
-
 	background: var(--main-black-02);
 	transition: 0.5s;
+
 	&:hover {
 		transform: translateY(-10px) scale(1.02);
 		background: var(--main-black-04);
 	}
 }
 
-.Button.red {
-	background-color: #ff0000;
+.button.red {
+	background-color: #f00;
 }

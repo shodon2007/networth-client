@@ -1,6 +1,5 @@
 .app.light {
 	--bg-gradient-color: linear-gradient(180deg, #5347e5, #7200e3);
-
 	--main-bg-color: white;
 	--main-black: #171717;
 	--main-black-02: #17171737;
@@ -11,12 +10,10 @@
 	--red: #ff1313;
 	--primary-color: black;
 	--primary-select-color: #7200e3;
-
 	--main-gradient: linear-gradient(180deg, #5347e5 0%, #7200e3 100%);
 	--colorful-gradient: linear-gradient(135deg, #f03cff 0%, #00ffb2 100%);
 	--main-cool-gradient: linear-gradient(132deg, #1d3eea 0%, #c818d7 100%);
-
-	--bg-secondary-color: rgba(0, 0, 0, 0.2);
-	--bg-secondary-hover-color: rgba(0, 0, 0, 0.3);
-	--bg-secondary-focus-color: rgba(0, 0, 0, 0.5);
+	--bg-secondary-color: rgb(0 0 0 / 20%);
+	--bg-secondary-hover-color: rgb(0 0 0 / 30%);
+	--bg-secondary-focus-color: rgb(0 0 0 / 50%);
 }
