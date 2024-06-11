@@ -6,7 +6,9 @@
 	overflow: hidden;
 	transition: all 0.5s ease;
 	background: var(--main-bg-color);
-	@include grid-background();
+
+	@include grid-background;
+
 	display: flex;
 	flex-direction: column;
 	gap: 50px;
@@ -57,14 +59,12 @@
 	user-select: none;
 	background-image: var(--main-cool-gradient);
 	color: transparent;
-	-webkit-background-clip: text;
 	background-clip: text;
 	transition: all 0.3s ease;
 	align-items: center;
 }
 
 .navLinkActive {
-	-webkit-background-clip: border-box;
 	background-clip: border-box;
 	background-color: var(--primary-color);
 	color: var(--primary-color);
@@ -121,12 +121,14 @@
 	}
 }
 
-@media (max-width: 1440px) {
+@media (width <= 1440px) {
 	.username {
 	}
+
 	.sidebar {
 		gap: 30px;
 	}
+
 	.avatar {
 		width: 60px;
 		height: 60px;

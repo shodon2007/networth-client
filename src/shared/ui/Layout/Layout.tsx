@@ -1,13 +1,13 @@
-import {Outlet} from "react-router-dom";
-import {Header} from "src/widgets/Header";
-import {Sidebar} from "src/widgets/Sidebar";
+import { Outlet } from "react-router-dom";
+import { Header } from "src/widgets/Header";
+import { Sidebar } from "src/widgets/Sidebar";
 
 import cls from "./Layout.module.scss";
 
 export const Layout = () => {
 	return (
 		<>
-			<div className={cls.GridLayout}>
+			<div className={cls.gridLayout}>
 				<header className={cls.header}>
 					<Header />
 				</header>

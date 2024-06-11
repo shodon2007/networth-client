@@ -9,7 +9,6 @@
   width: 300px;
   display: flex;
   justify-content: space-between;
-
   align-items: center;
 
   > select {
@@ -19,19 +18,16 @@
 
   &__people {
     display: flex;
-
     border-right: 1.5px solid var(--white-color);
     padding: 8px 24px 8px 4px;
     border-radius: var(--medium-border-radius);
-
     font-size: var(--font-size-smallest-desktop);
     font-weight: bold;
     font-family: var(--third-main-Leel);
-    
     background: var(--white-color-04);
     outline: none;
-
     transition: .4s;
+
     &:hover {
       background: var(--white-color);
     }
@@ -45,7 +41,6 @@
     display: flex;
     align-items: center;
     column-gap: 12px;
-    
     padding: 8px 12px;
 
     >h6 {
@@ -55,16 +50,15 @@
     &2 {
       padding: 6px;
       border-radius: var(--medium-border-radius);
-      
       color: var(--bg-secondary-black-focus-color);
-
       background: var(--white-color-04);
-      
       transition: .4s;
+
       &:hover {
         color: var(--main-black);
         background: var(--white-color);
       }
+
       &::-webkit-calendar-picker-indicator {
         font-size: 20px;
       }
@@ -75,23 +69,24 @@
 
 .interactivityList {
   width: 200px;
-  
   display: flex;
   align-items: center;
   column-gap: 12px;
-
   padding-right: 4px;
+
   &__item {
     > button {
       background: none;
     }
   }
+
   &__items {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   &__specBtn {
     display: flex;
     align-items: center;
