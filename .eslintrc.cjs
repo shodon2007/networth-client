@@ -2,6 +2,7 @@ module.exports = {
 	env: {
 		browser: true,
 		es2021: true,
+		jest: true,
 	},
 	extends: [
 		"plugin:react/jsx-runtime",
@@ -29,7 +30,7 @@ module.exports = {
 	},
 	settings: {
 		react: {
-			"version": "18.2.0"
+			version: "18.2.0",
 		},
 		"import/resolver": {
 			alias: {
@@ -43,9 +44,12 @@ module.exports = {
 		indent: ["error", "tab"],
 		quotes: ["error", "double"],
 		semi: ["error", "always"],
-		"import/no-unresolved": ["error", {
-			ignore: ["\\.svg", "\\.svg?react"]
-		}],
+		"import/no-unresolved": [
+			"error",
+			{
+				ignore: ["\\.svg", "\\.svg?react"],
+			},
+		],
 		"react/react-in-jsx-scope": 0,
 		"import/named": 0,
 		"import/order": [
@@ -72,8 +76,5 @@ module.exports = {
 			},
 		],
 	},
-	"ignorePatterns": [
-		"*.svg",
-		"*.svg?react"
-	]
+	ignorePatterns: ["*.svg", "*.svg?react"],
 };
