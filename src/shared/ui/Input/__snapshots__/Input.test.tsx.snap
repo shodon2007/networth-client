@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Input.tsx Snapshoting input sizes 1`] = `
+<div
+  data-testid="input-parent"
+>
+  <input
+    class="input small"
+    data-testid="input"
+  />
+</div>
+`;
+
+exports[`Testing Input.tsx Testing and snapshoting input sizes Testing small input 1`] = `
+<div
+  data-testid="input-parent"
+>
+  <input
+    class="input small"
+    data-testid="input"
+  />
+</div>
+`;
+
+exports[`Testing Input.tsx Testing and snapshoting input sizes Testing small input 2`] = `
+<div
+  data-testid="input-parent"
+>
+  <input
+    class="input medium"
+    data-testid="input"
+  />
+</div>
+`;
+
+exports[`Testing Input.tsx Testing and snapshoting input sizes Testing small input 3`] = `
+<div
+  data-testid="input-parent"
+>
+  <input
+    class="input BIG"
+    data-testid="input"
+  />
+</div>
+`;
+
+exports[`Testing Input.tsx should pass snapshot 1`] = `
+<div
+  data-testid="input-parent"
+>
+  <input
+    class="input medium"
+    data-testid="input"
+  />
+</div>
+`;

@@ -6,9 +6,11 @@
 		"build:dev": "webpack --env mode=development",
 		"build:prod": "webpack --env mode=production",
 		"start": "webpack serve --env mode=development --env port=3000",
-		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives",
-		"lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --fix",
-		"test": "jest --config ./config/jest/jest.config.ts"
+		"lint:ts": "eslint . --ext ts,tsx --report-unused-disable-directives",
+		"lint:ts:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --fix",
+		"lint:styles": "npx stylelint '**/*.scss'",
+		"lint:styles:fix": "npx stylelint '**/*.scss' --fix",
+		"test:unit": "jest --config ./config/jest/jest.config.ts"
 	},
 	"keywords": [],
 	"author": "",

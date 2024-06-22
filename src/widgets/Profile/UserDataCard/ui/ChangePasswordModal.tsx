@@ -44,7 +44,7 @@ const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close, isOpen}) => {
 	return (
 		<Modal isOpen={isOpen} close={close}>
 			<Block>
-				<Title type={TitleType.small}>{t("profile.editPassword")}</Title>
+				<Title type={TitleType.SMALL}>{t("profile.editPassword")}</Title>
 				<Divider />
 				<form onSubmit={handleSubmit(submit)} className={cls.inputs}>
 					<Controller
