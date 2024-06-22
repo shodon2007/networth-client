@@ -53,7 +53,7 @@ const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close, isOpen}) => {
 	return (
 		<Modal isOpen={isOpen} close={close}>
 			<Block>
-				<Title type={TitleType.small}>{t("profile.editEmail")}</Title>
+				<Title type={TitleType.SMALL}>{t("profile.editEmail")}</Title>
 				<Divider />
 				<form className={cls.inputs} onSubmit={(e) => e.preventDefault()}>
 					<span>

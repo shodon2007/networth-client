@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Modal.tsx snapshoting modal 1`] = `
+<div
+  class="modal"
+  data-testid="modal"
+>
+  <div
+    class="body"
+  >
+    hello worlds
+  </div>
+</div>
+`;

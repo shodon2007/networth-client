@@ -12,6 +12,7 @@ interface ModalProps {
 const Modal: FC<ModalProps> = ({children, isOpen, close}) => {
 	return (
 		<div
+			data-testid="modal"
 			onClick={close}
 			className={classNames(cls.modal, {[cls.open]: isOpen})}
 		>

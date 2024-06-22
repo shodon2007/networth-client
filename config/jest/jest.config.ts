@@ -13,7 +13,10 @@ const config: Config = {
 	testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
 	moduleNameMapper: {
 		"\\.s?css$": "identity-obj-proxy",
-		"\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+		"\\.svg$": "<rootDir>/config/jest/empty.ts",
+		"\\.svg\\?react$": "<rootDir>/config/jest/jestEmptyComponent.tsx",
+		"\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+			"<rootDir>/config/jest/empty.ts",
 	},
 };
 

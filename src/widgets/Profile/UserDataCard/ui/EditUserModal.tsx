@@ -36,7 +36,7 @@ const EditUserModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 	return (
 		<Modal isOpen={isOpen} close={close}>
 			<Block>
-				<Title type={TitleType.small}>{t("profile.editProfile")}</Title>
+				<Title type={TitleType.SMALL}>{t("profile.editProfile")}</Title>
 				<Divider />
 				<form onSubmit={handleSubmit(submit)} className={cls.inputs}>
 					<Controller

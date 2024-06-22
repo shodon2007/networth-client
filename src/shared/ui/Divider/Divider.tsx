@@ -1,7 +1,7 @@
 import cls from "./Divider.module.scss";
 
 const Divider = () => {
-	return <div className={cls.divider} />;
+	return <div data-testid="divider" className={cls.divider} />;
 };
 
 export default Divider;

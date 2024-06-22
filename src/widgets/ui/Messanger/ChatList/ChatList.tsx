@@ -1,6 +1,6 @@
-import { FC } from "react";
+import {FC} from "react";
 import {SearchBar} from "src/shared/ui/searchbar/SearchBar";
-import {ChatCard} from "src/shared/ui/sectionsBlocks/Messanger/chatCard";
+import {ChatCard} from "src/entities/messenger";
 
 import cls from "./ChatList.module.scss";
 import {ChatListItems} from "./consts/ChatListItems";
@@ -8,7 +8,6 @@ import {ChatListItems} from "./consts/ChatListItems";
 interface ChatListProps {}
 
 export const ChatList: FC<ChatListProps> = () => {
-
 	return (
 		<section className={cls.ChatList}>
 			<SearchBar>find a chat . . .</SearchBar>
@@ -18,11 +17,14 @@ export const ChatList: FC<ChatListProps> = () => {
         // ToDo: 3. Think up how to display the users
       */}
 			<ul className={cls.ChatList__chats}>
-				{
-					ChatListItems.map(_ => 
-						<ChatCard key={_.nickname} nikcname={_.nickname} icon={_.icon} href={_.href} />
-					)
-				}
+				{ChatListItems.map((_) => (
+					<ChatCard
+						key={_.nickname}
+						nikcname={_.nickname}
+						icon={_.icon}
+						href={_.href}
+					/>
+				))}
 			</ul>
 		</section>
 	);
