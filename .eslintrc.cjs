@@ -33,6 +33,9 @@ module.exports = {
 			version: "18.2.0",
 		},
 		"import/resolver": {
+			node: {
+				extensions: [".js", ".jsx", ".ts", ".tsx", ".svg", ".svg?react"],
+			},
 			alias: {
 				map: [["src", "./src"]],
 				extensions: [".js", ".jsx", ".ts", ".tsx", ".svg", ".svg?react"],
