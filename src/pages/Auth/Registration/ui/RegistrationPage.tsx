@@ -26,7 +26,10 @@ const RegistrationPage: FC = () => {
 	const registrationMutate = useRegistration().mutate;
 
 	return (
-		<form onSubmit={handleSubmit((data) => registrationMutate(data))}>
+		<form
+			data-testid="registration-form"
+			onSubmit={handleSubmit((data) => registrationMutate(data))}
+		>
 			<Block className={cls.page}>
 				<Title>{t("registration.title")}</Title>
 				<div className={cls.inputs}>

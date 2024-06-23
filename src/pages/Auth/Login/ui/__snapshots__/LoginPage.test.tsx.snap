@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`teting LoginPage.tsx snapshot testing 1`] = `
+<form
+  data-testid="login-form"
+>
+  <div
+    class="block default page"
+    data-testid="block"
+  >
+    <h1
+      class="title MIDDLE"
+    >
+      Войти
+    </h1>
+    <div
+      class="inputs"
+    >
+      <div
+        data-testid="input-parent"
+      >
+        <input
+          class="input medium"
+          data-testid="email"
+          name="email"
+          placeholder="Введите почту"
+          value=""
+        />
+      </div>
+      <div
+        data-testid="input-parent"
+      >
+        <input
+          class="input medium"
+          data-testid="password"
+          name="password"
+          placeholder="Введите пароль"
+          type="password"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="bottom"
+    >
+      <button
+        class="button submit"
+        data-testid="login-button"
+        type="submit"
+      >
+        Войти
+      </button>
+      <a
+        class="link"
+        data-testid="registration-link"
+        href="/registration"
+      >
+        Создать аккаунт
+      </a>
+    </div>
+  </div>
+</form>
+`;

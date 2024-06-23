@@ -23,7 +23,10 @@ const LoginPage: FC = () => {
 	const loginFn = useLogin();
 
 	return (
-		<form onSubmit={handleSubmit((data) => loginFn.mutate(data))}>
+		<form
+			data-testid="login-form"
+			onSubmit={handleSubmit((data) => loginFn.mutate(data))}
+		>
 			<Block className={cls.page}>
 				<Title>{t("login.title")}</Title>
 				<div className={cls.inputs}>
@@ -31,7 +34,13 @@ const LoginPage: FC = () => {
 						control={control}
 						name="email"
 						render={({field}) => {
-							return <Input placeholder={t("login.emailInput")} {...field} />;
+							return (
+								<Input
+									data-testid="email"
+									placeholder={t("login.emailInput")}
+									{...field}
+								/>
+							);
 						}}
 					/>
 					<Controller
@@ -40,6 +49,7 @@ const LoginPage: FC = () => {
 						render={({field}) => {
 							return (
 								<Input
+									data-testid="password"
 									placeholder={t("login.passwordInput")}
 									type="password"
 									{...field}
@@ -49,10 +59,16 @@ const LoginPage: FC = () => {
 					/>
 				</div>
 				<div className={cls.bottom}>
-					<Button theme={ThemeButton.SUBMIT} type="submit">
+					<Button
+						data-testid="login-button"
+						theme={ThemeButton.SUBMIT}
+						type="submit"
+					>
 						{t("login.submitButton")}
 					</Button>
-					<MyLink to="/registration">{t("login.registrationButton")}</MyLink>
+					<MyLink to="/registration" data-testid="registration-link">
+						{t("login.registrationButton")}
+					</MyLink>
 				</div>
 			</Block>
 		</form>
