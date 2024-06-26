@@ -27,6 +27,10 @@ export const updateEmail = async (data: ChangeEmailTypes) => {
 	return await authInstance.post("/api/user/change_email", data);
 };
 
+export const deleteUser = async () => {
+	return await authInstance.post("/api/user/delete");
+};
+
 export const updateAvatar = async (data: FormData) => {
 	return await authInstance.post<ResponseType<AvatarData>>(
 		"/api/file/change_avatar",

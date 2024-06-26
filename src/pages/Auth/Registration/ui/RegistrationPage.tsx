@@ -37,7 +37,13 @@ const RegistrationPage: FC = () => {
 						control={control}
 						name="name"
 						render={({field}) => {
-							return <Input placeholder={t("registration.name")} {...field} />;
+							return (
+								<Input
+									data-testid="reigstration-name-input"
+									placeholder={t("registration.name")}
+									{...field}
+								/>
+							);
 						}}
 					/>
 					<Controller
@@ -45,7 +51,11 @@ const RegistrationPage: FC = () => {
 						name="surname"
 						render={({field}) => {
 							return (
-								<Input placeholder={t("registration.surname")} {...field} />
+								<Input
+									data-testid="reigstration-surname-input"
+									placeholder={t("registration.surname")}
+									{...field}
+								/>
 							);
 						}}
 					/>
@@ -53,7 +63,13 @@ const RegistrationPage: FC = () => {
 						control={control}
 						name="email"
 						render={({field}) => {
-							return <Input placeholder={t("registration.email")} {...field} />;
+							return (
+								<Input
+									data-testid="reigstration-email-input"
+									placeholder={t("registration.email")}
+									{...field}
+								/>
+							);
 						}}
 					/>
 					<Controller
@@ -62,6 +78,7 @@ const RegistrationPage: FC = () => {
 						render={({field}) => {
 							return (
 								<Input
+									data-testid="reigstration-password-input"
 									type="password"
 									placeholder={t("registration.password")}
 									{...field}
@@ -71,10 +88,16 @@ const RegistrationPage: FC = () => {
 					/>
 				</div>
 				<div className={cls.bottom}>
-					<Button type="submit" theme={ThemeButton.SUBMIT}>
+					<Button
+						data-testid="register-button"
+						type="submit"
+						theme={ThemeButton.SUBMIT}
+					>
 						{t("registration.submitButton")}
 					</Button>
-					<MyLink to="/login">{t("registration.loginButton")}</MyLink>
+					<MyLink to="/login" data-testid="login-link">
+						{t("registration.loginButton")}
+					</MyLink>
 				</div>
 			</Block>
 		</form>

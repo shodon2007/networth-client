@@ -17,7 +17,9 @@ interface SidebarProps {}
 
 const Sidebar: FC<SidebarProps> = () => {
 	const {t} = useTranslation();
-	const {data: userData} = useUser();
+	const user = useUser();
+
+	const {data: userData} = user ?? {};
 
 	return (
 		<aside className={cls.sidebar}>

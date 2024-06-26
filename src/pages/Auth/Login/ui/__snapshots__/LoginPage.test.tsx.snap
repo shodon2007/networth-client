@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`teting LoginPage.tsx snapshot testing 1`] = `
+exports[`Testing LoginPage.tsx snapshot testing 1`] = `
 <form
   data-testid="login-form"
 >

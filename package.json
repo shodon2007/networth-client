@@ -10,7 +10,8 @@
 		"lint:ts:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --fix",
 		"lint:styles": "npx stylelint '**/*.scss'",
 		"lint:styles:fix": "npx stylelint '**/*.scss' --fix",
-		"test:unit": "jest --config ./config/jest/jest.config.ts"
+		"test:unit": "jest --config ./config/jest/jest.config.ts",
+		"test:unit:u": "jest --config ./config/jest/jest.config.ts -- -u"
 	},
 	"keywords": [],
 	"author": "",
@@ -40,6 +41,7 @@
 		"babel-core": "^4.7.16",
 		"babel-jest": "^29.7.0",
 		"babel-loader": "^9.1.3",
+		"babel-plugin-react-remove-properties": "^0.3.0",
 		"css-loader": "^7.1.2",
 		"eslint": "^8.57.0",
 		"eslint-import-resolver-alias": "^1.1.2",

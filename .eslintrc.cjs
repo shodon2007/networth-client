@@ -54,6 +54,7 @@ module.exports = {
 			},
 		],
 		"react/react-in-jsx-scope": 0,
+		"import/no-named-as-default": 0,
 		"import/named": 0,
 		"import/order": [
 			"error",

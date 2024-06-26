@@ -5,4 +5,9 @@ module.exports = {
 		"@babel/plugin-syntax-jsx",
 		"@babel/preset-typescript",
 	],
+	env: {
+		production: {
+			plugins: [["react-remove-properties", {properties: ["data-testid"]}]],
+		},
+	},
 };

@@ -47,124 +47,129 @@ exports[`Testing Layout.tsx Snapshoting Layout 1`] = `
   <main
     class="main"
   >
-    <section
-      class="feedSection"
+    <div
+      data-testid="home-page"
     >
-      <article
-        class="article"
+      <section
+        class="feedSection"
+        data-testid="feed-widget"
       >
-        <header
-          class="header"
-        >
-          <div
-            class="headerMain"
-          >
-            <img
-              alt="avatar"
-              class="headerUserAvatar"
-              src=""
-            />
-            <h1
-              class="headerUserName"
-            >
-              ZXC Baron
-            </h1>
-            <span
-              class="headerArticleData"
-            >
-              <h5
-                class="headerArticleDate"
-              >
-                today
-              </h5>
-              <p
-                class="headerArticleWatcher"
-              >
-                <img
-                  alt="eye"
-                  class="headerWatchIcon"
-                  src=""
-                />
-                0
-              </p>
-            </span>
-          </div>
-          <span
-            class="headerMore"
-          >
-             
-            <button
-              class="Button"
-            >
-              <div
-                class="Button__point"
-              />
-              <div
-                class="Button__point"
-              />
-              <div
-                class="Button__point"
-              />
-            </button>
-          </span>
-        </header>
-        <main
-          class="main"
-        >
-          <h1
-            class="mainTitle"
-          >
-            Great Alkil kill the bulling shit
-          </h1>
-          <p
-            class="mainContent"
-          >
-            “ For every morning have other ideas. Never get some bitch for break to rest. Man you better check your last checkpoint if you’ll be thinking about to give up. Better forgot about my name ”. An ‘Alkil’ provided us such wonderful lines and enforce these fucking school boys to shut the fucking up. “
-          </p>
-        </main>
-        <footer
-          class="footer"
+        <article
+          class="article"
         >
           <header
-            class="footerInteractive"
+            class="header"
           >
-            <button
-              class="footerInteractiveBtn"
+            <div
+              class="headerMain"
             >
-              <h2>
-                Like
-              </h2>
-              <p>
-                0
-              </p>
-            </button>
-            <button
-              class="footerInteractiveBtn"
+              <img
+                alt="avatar"
+                class="headerUserAvatar"
+                src=""
+              />
+              <h1
+                class="headerUserName"
+              >
+                ZXC Baron
+              </h1>
+              <span
+                class="headerArticleData"
+              >
+                <h5
+                  class="headerArticleDate"
+                >
+                  today
+                </h5>
+                <p
+                  class="headerArticleWatcher"
+                >
+                  <img
+                    alt="eye"
+                    class="headerWatchIcon"
+                    src=""
+                  />
+                  0
+                </p>
+              </span>
+            </div>
+            <span
+              class="headerMore"
             >
-              <h2>
-                Comments
-              </h2>
-              <p>
-                0
-              </p>
-            </button>
-            <button
-              class="footerInteractiveBtn"
-            >
-              <h2>
-                Shared
-              </h2>
-              <p />
-            </button>
+               
+              <button
+                class="Button"
+              >
+                <div
+                  class="Button__point"
+                />
+                <div
+                  class="Button__point"
+                />
+                <div
+                  class="Button__point"
+                />
+              </button>
+            </span>
           </header>
-          <section
-            class="comments"
+          <main
+            class="main"
           >
-            Comments
-          </section>
-        </footer>
-      </article>
-    </section>
+            <h1
+              class="mainTitle"
+            >
+              Great Alkil kill the bulling shit
+            </h1>
+            <p
+              class="mainContent"
+            >
+              “ For every morning have other ideas. Never get some bitch for break to rest. Man you better check your last checkpoint if you’ll be thinking about to give up. Better forgot about my name ”. An ‘Alkil’ provided us such wonderful lines and enforce these fucking school boys to shut the fucking up. “
+            </p>
+          </main>
+          <footer
+            class="footer"
+          >
+            <header
+              class="footerInteractive"
+            >
+              <button
+                class="footerInteractiveBtn"
+              >
+                <h2>
+                  Like
+                </h2>
+                <p>
+                  0
+                </p>
+              </button>
+              <button
+                class="footerInteractiveBtn"
+              >
+                <h2>
+                  Comments
+                </h2>
+                <p>
+                  0
+                </p>
+              </button>
+              <button
+                class="footerInteractiveBtn"
+              >
+                <h2>
+                  Shared
+                </h2>
+                <p />
+              </button>
+            </header>
+            <section
+              class="comments"
+            >
+              Comments
+            </section>
+          </footer>
+        </article>
+      </section>
+    </div>
   </main>
   <aside
     class="aside"
