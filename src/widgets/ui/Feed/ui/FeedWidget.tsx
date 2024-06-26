@@ -8,7 +8,7 @@ interface FeedWidgetProps { }
 export const FeedWidget: FC<FeedWidgetProps> = () => {
   
 	return (
-		<section className={cls.feedSection}>
+		<section className={cls.feedSection} data-testid="feed-widget">
 			<PostEntity />
 		</section>
 	);

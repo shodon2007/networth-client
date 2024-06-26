@@ -21,7 +21,6 @@ const userSlice = createSlice({
 	initialState,
 	reducers: {
 		setUser(state, action: PayloadAction<AuthResponse>) {
-			console.log(action.payload.user);
 			const accessToken = action.payload.accessToken;
 			const refreshToken = action.payload.refreshToken;
 			localStorage.setItem("user", JSON.stringify({accessToken, refreshToken}));
