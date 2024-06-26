@@ -15,11 +15,11 @@ import cls from "./UserCardStyle.module.scss";
 
 interface EditUserModalProps {
 	close: () => void;
-	isOpen: boolean;
 }
 
-const EditUserModal: FC<EditUserModalProps> = ({close, isOpen}) => {
+const EditUserModal: FC<EditUserModalProps> = ({close}) => {
 	const {data: userData} = useUser();
+
 	const updateUserInfo = useUpdateUserInfo(close).mutate;
 	const {t} = useTranslation();
 	const {control, handleSubmit} = useForm<Partial<UserInfoTypes>>({
@@ -34,7 +34,7 @@ const EditUserModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 	};
 
 	return (
-		<Modal isOpen={isOpen} close={close}>
+		<Modal isOpen={true} close={close}>
 			<Block>
 				<Title type={TitleType.SMALL}>{t("profile.editProfile")}</Title>
 				<Divider />

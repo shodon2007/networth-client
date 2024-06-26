@@ -17,15 +17,16 @@ import cls from "./UserCardStyle.module.scss";
 
 interface ChangeEmailModalProps {
 	close: () => void;
-	isOpen: boolean;
 }
 
-const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close, isOpen}) => {
+const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close}) => {
 	const {data: userData} = useUser();
 	const [newEmail, setNewEmail] = useState("");
 	const [code, setCode] = useState("");
 	const changeEmailFn = useChangeEmail(onSuccess).mutate;
 	const sendCodeFn = useSendCode().mutate;
+
+	console.log("перерисовка emailа");
 
 	if (!userData) {
 		return null;
@@ -51,7 +52,7 @@ const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close, isOpen}) => {
 	};
 
 	return (
-		<Modal isOpen={isOpen} close={close}>
+		<Modal isOpen={true} close={close}>
 			<Block>
 				<Title type={TitleType.SMALL}>{t("profile.editEmail")}</Title>
 				<Divider />
