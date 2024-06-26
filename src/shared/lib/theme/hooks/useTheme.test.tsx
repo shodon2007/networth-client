@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars , @typescript-eslint/no-unused-vars
+ 
 import {useAppSelector, useAppDispatch} from "src/shared/lib/store";
 import {Themes} from "src/shared/lib/theme";
 import {useTheme} from "./useTheme";
