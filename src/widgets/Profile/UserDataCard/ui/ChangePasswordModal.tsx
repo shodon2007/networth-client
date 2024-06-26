@@ -14,10 +14,9 @@ import cls from "./UserCardStyle.module.scss";
 
 interface ChangePasswordModalProps {
 	close: () => void;
-	isOpen: boolean;
 }
 
-const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close, isOpen}) => {
+const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close}) => {
 	const changePasswordFn = useChangePassword(onChangeSuccess).mutate;
 	const {control, handleSubmit, reset} = useForm<ChangePasswordTypes>({
 		defaultValues: {
@@ -25,6 +24,8 @@ const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close, isOpen}) => {
 			newPassword: "",
 		},
 	});
+
+	console.log("rerender password");
 
 	useEffect(() => {
 		return () => {
@@ -42,7 +43,7 @@ const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close, isOpen}) => {
 	}
 
 	return (
-		<Modal isOpen={isOpen} close={close}>
+		<Modal isOpen={true} close={close}>
 			<Block>
 				<Title type={TitleType.SMALL}>{t("profile.editPassword")}</Title>
 				<Divider />

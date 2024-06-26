@@ -12,7 +12,8 @@ interface AvatarData {
 }
 
 export const getUserInfo = async () => {
-	return await authInstance.get("/api/user/user_info");
+	const userInfo = await authInstance.get<UserInfoTypes>("/api/user/user_info");
+	return userInfo;
 };
 
 export const updateUserInfo = async (data: Partial<UserInfoTypes>) => {

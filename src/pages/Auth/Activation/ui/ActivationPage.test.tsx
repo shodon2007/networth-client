@@ -1,9 +1,15 @@
 import {waitFor} from "@testing-library/dom";
+import {RootState} from "src/app/providers/storeProvider";
 import {routePath} from "src/shared/config/routeConfig";
+import {Themes} from "src/shared/lib/theme";
 import {renderWithProviders} from "src/shared/tests";
 
-const mockAuthStore = {
+const mockAuthStore: RootState = {
+	theme: {
+		theme: Themes.DARK,
+	},
 	user: {
+		isUserDataLoading: false,
 		accessToken: "меега пачка чипсонов",
 		refreshToken: "со вкусом краба",
 		data: {
