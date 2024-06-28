@@ -1,10 +1,10 @@
 import {ReactNode} from "react";
-import {ActivationPage} from "src/pages/Auth/Activation";
-import {LoginPage} from "src/pages/Auth/Login";
-import {RegistrationPage} from "src/pages/Auth/Registration";
-import {FeedPage} from "src/pages/Feed";
-import {MessengerPage} from "src/pages/Messenger";
-import {ProfilePage} from "src/pages/Profile/ui/ProfilePage";
+import {ActivationPageAsync} from "src/pages/Auth/Activation";
+import {LoginPageAsync} from "src/pages/Auth/Login";
+import {RegistrationPageAsync} from "src/pages/Auth/Registration";
+import {FeedPageAsync} from "src/pages/Feed";
+import {MessengerPageAsync} from "src/pages/Messenger";
+import {ProfilePageAsync} from "src/pages/Profile";
 import {Layout} from "src/shared/ui/Layout/Layout";
 
 export enum AppRoutes {
@@ -40,30 +40,30 @@ export const routes: RouteItem[] = [
 		children: [
 			{
 				path: routePath.home,
-				element: <FeedPage />,
+				element: <FeedPageAsync />,
 				index: true,
 			},
 			{
 				path: routePath.profile,
-				element: <ProfilePage />,
+				element: <ProfilePageAsync />,
 				index: true,
 			},
 			{
 				path: routePath.messenger,
-				element: <MessengerPage />,
+				element: <MessengerPageAsync />,
 				index: true,
 			},
 			{
 				path: routePath.activation,
-				element: <ActivationPage />,
+				element: <ActivationPageAsync />,
 			},
 			{
 				path: routePath.registration,
-				element: <RegistrationPage />,
+				element: <RegistrationPageAsync />,
 			},
 			{
 				path: routePath.login,
-				element: <LoginPage />,
+				element: <LoginPageAsync />,
 			},
 		],
 	},
