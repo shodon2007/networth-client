@@ -18,6 +18,7 @@ interface SidebarProps {}
 const Sidebar: FC<SidebarProps> = () => {
 	const {t} = useTranslation();
 	const user = useUser();
+	console.log("sidebar rerender");
 
 	const {data: userData} = user ?? {};
 

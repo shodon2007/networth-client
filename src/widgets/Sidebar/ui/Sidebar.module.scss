@@ -6,6 +6,10 @@
 	overflow: hidden;
 	transition: all 0.5s ease;
 	background: var(--main-bg-color);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
 
 	@include grid-background;
 
