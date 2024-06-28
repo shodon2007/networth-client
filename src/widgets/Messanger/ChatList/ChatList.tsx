@@ -1,6 +1,6 @@
 import {FC} from "react";
-import {SearchBar} from "src/shared/ui/searchbar/SearchBar";
 import {ChatCard} from "src/entities/messenger";
+import {SearchChat} from "src/features/Messanger/SearchChat";
 
 import cls from "./ChatList.module.scss";
 import {ChatListItems} from "./consts/ChatListItems";
@@ -10,7 +10,8 @@ interface ChatListProps {}
 export const ChatList: FC<ChatListProps> = () => {
 	return (
 		<section className={cls.ChatList}>
-			<SearchBar>find a chat . . .</SearchBar>
+			<SearchChat />
+			{/* <SearchBar>find a chat . . .</SearchBar> */}
 			{/* 
         // ToDo: 1. Think up how to retrieve users from the db  
         // ToDo: 2. Think up how to handle blcoked users

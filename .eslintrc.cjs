@@ -81,5 +81,4 @@ module.exports = {
 		],
 	},
 	ignorePatterns: ["*.svg", "*.svg?react"],
-	"react/display-name": 0
 };
