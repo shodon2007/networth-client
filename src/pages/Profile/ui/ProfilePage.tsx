@@ -2,7 +2,7 @@ import {UserDataCard} from "src/widgets/Profile/UserDataCard";
 
 import cls from "./ProfilePage.module.scss";
 
-export const ProfilePage = () => {
+const ProfilePage = () => {
 	return (
 		<div className={cls.profile}>
 			<UserDataCard />
@@ -14,3 +14,4 @@ export const ProfilePage = () => {
 		</div>
 	);
 };
+export default ProfilePage;
