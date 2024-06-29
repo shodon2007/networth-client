@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing UserDataCard should match the snapshot 1`] = `
+<div
+  data-testid="user-data-card"
+>
+  <div
+    class="block default userCard"
+    data-testid="block"
+  >
+    <div
+      class="userCardInfo"
+    >
+      <div
+        class="avatar"
+      >
+        <img
+          alt="Avatar"
+          class="avatarImg"
+        />
+        <div
+          class="avatarMenu"
+        >
+          <button
+            class="button"
+          >
+            Обновить фотографию
+          </button>
+        </div>
+      </div>
+      <ul
+        class="userCardUserInfo"
+      >
+        <li
+          class="userCardName"
+          data-testid="profile-fullname"
+        >
+          shodon asrorov
+        </li>
+        <li
+          class="userCardDetail"
+          data-testid="profile-email"
+        >
+          <img
+            src=""
+          />
+          shodon
+        </li>
+        <li
+          class="userCardDetail"
+        >
+          <img
+            alt=""
+            src=""
+          />
+          <h4>
+            Detils
+          </h4>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="userCardButtons"
+    >
+      <button
+        class="button small"
+        data-testid="editProfileButton"
+      >
+        Изменить профиль
+      </button>
+      <button
+        class="button small"
+        data-testid="changePasswordButton"
+      >
+        Изменить пароль
+      </button>
+      <button
+        class="button small"
+        data-testid="changeEmailButton"
+      >
+        Изменить почту
+      </button>
+    </div>
+  </div>
+</div>
+`;

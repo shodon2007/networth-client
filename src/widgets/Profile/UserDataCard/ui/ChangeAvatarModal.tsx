@@ -10,10 +10,9 @@ import cls from "./ChangeAvatar.module.scss";
 
 interface EditUserModalProps {
 	close: () => void;
-	isOpen: boolean;
 }
 
-const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
+const ChangeAvatarModal: FC<EditUserModalProps> = ({close}) => {
 	const [file, setFile] = useState<File | null>(null);
 	const imgRef = useRef<HTMLImageElement>(null);
 	const {t} = useTranslation();
@@ -42,7 +41,7 @@ const ChangeAvatarModal: FC<EditUserModalProps> = ({close, isOpen}) => {
 	};
 
 	return (
-		<Modal isOpen={isOpen} close={close}>
+		<Modal isOpen={true} close={close}>
 			<div {...getRootProps()} className={cls.body}>
 				<input {...getInputProps()} />
 				<div>

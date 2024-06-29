@@ -43,6 +43,16 @@
 	gap: 10px;
 }
 
+.modalButtomButtons {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+
+	& > button {
+		flex: 1 1 auto;
+	}
+}
+
 .avatar {
 	position: relative;
 }
@@ -72,7 +82,7 @@
 		opacity: 1;
 	}
 
-	&>button {
+	& > button {
 		width: 100%;
 	}
 }

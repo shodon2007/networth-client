@@ -17,7 +17,6 @@ const mockAuthStore: RootState = {
 			id: 1,
 			isActivated: 0,
 			name: "shodon",
-			password: "shodon2007",
 			phoneNumber: "321313",
 			surname: "shodon",
 			avatar: "https://avatars.githubusercontent.com/u/133156395?v=4",
@@ -62,7 +61,7 @@ describe("Testing ActivationPage.tsx", () => {
 		);
 	});
 	it("should navigate to home page when user is not auth", async () => {
-		const newMockStore = {...mockAuthStore};
+		const newMockStore = JSON.parse(JSON.stringify(mockAuthStore));
 		newMockStore.user.data.isActivated = 1;
 		const screen = renderWithProviders(routePath.activation, newMockStore);
 

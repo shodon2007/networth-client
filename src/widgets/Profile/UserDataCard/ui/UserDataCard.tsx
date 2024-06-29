@@ -24,29 +24,30 @@ export const UserDataCard = memo(() => {
 	if (!userData) {
 		return <div>Пожалуйста Зарегестрируйтесь</div>;
 	}
-	console.log("жесткий ререндер");
 
 	return (
-		<Block className={cls.userCard}>
-			<div className={cls.userCardInfo}>
-				<Avatar />
+		<div data-testid="user-data-card">
+			<Block className={cls.userCard}>
+				<div className={cls.userCardInfo}>
+					<Avatar />
 
-				<ul className={cls.userCardUserInfo}>
-					<li className={cls.userCardName}>
-						{`${userData.name} ${userData.surname}`}
-					</li>
-					<li className={cls.userCardDetail}>
-						<img src={Mailicon} />
-						{userData?.email}
-					</li>
-					<li className={cls.userCardDetail}>
-						<img src={DetailIcon} alt="" />
-						<h4>Detils</h4>
-					</li>
-				</ul>
-			</div>
-			<ModalButtons />
-		</Block>
+					<ul className={cls.userCardUserInfo}>
+						<li className={cls.userCardName} data-testid="profile-fullname">
+							{`${userData.name} ${userData.surname}`}
+						</li>
+						<li className={cls.userCardDetail} data-testid="profile-email">
+							<img src={Mailicon} />
+							{userData?.email}
+						</li>
+						<li className={cls.userCardDetail}>
+							<img src={DetailIcon} alt="" />
+							<h4>Detils</h4>
+						</li>
+					</ul>
+				</div>
+				<ModalButtons />
+			</Block>
+		</div>
 	);
 });
 
@@ -54,8 +55,6 @@ const Avatar = memo(() => {
 	const userData = useUserData();
 	const {t} = useTranslation();
 	const [changeAvatarModalOpen, setChangeAvatarModalOpen] = useState(false);
-
-	console.log("avatarMenu rerender");
 
 	return (
 		<div className={cls.avatar}>
@@ -65,10 +64,9 @@ const Avatar = memo(() => {
 					{t("profile.updateAvatar")}
 				</Button>
 			</div>
-			<ChangeAvatarModal
-				isOpen={changeAvatarModalOpen}
-				close={() => setChangeAvatarModalOpen(false)}
-			/>
+			{changeAvatarModalOpen ? (
+				<ChangeAvatarModal close={() => setChangeAvatarModalOpen(false)} />
+			) : null}
 		</div>
 	);
 });
@@ -82,16 +80,22 @@ const ModalButtons = memo(() => {
 
 	return (
 		<div className={cls.userCardButtons}>
-			<Button theme={ThemeButton.SMALL} onClick={() => setEditModalOpen(true)}>
+			<Button
+				data-testid="editProfileButton"
+				theme={ThemeButton.SMALL}
+				onClick={() => setEditModalOpen(true)}
+			>
 				{t("profile.editProfile")}
 			</Button>
 			<Button
 				theme={ThemeButton.SMALL}
+				data-testid="changePasswordButton"
 				onClick={() => setChangePasswordModalOpen(true)}
 			>
 				{t("profile.editPassword")}
 			</Button>
 			<Button
+				data-testid="changeEmailButton"
 				theme={ThemeButton.SMALL}
 				onClick={() => setChangeEmailModalOpen(true)}
 			>

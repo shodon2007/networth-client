@@ -34,43 +34,53 @@ const EditUserModal: FC<EditUserModalProps> = ({close}) => {
 	};
 
 	return (
-		<Modal isOpen={true} close={close}>
-			<Block>
-				<Title type={TitleType.SMALL}>{t("profile.editProfile")}</Title>
-				<Divider />
-				<form onSubmit={handleSubmit(submit)} className={cls.inputs}>
-					<Controller
-						control={control}
-						name="name"
-						render={({field}) => {
-							return (
-								<Input
-									placeholder={t("profile.editName")}
-									fontSize={InputSize.small}
-									{...field}
-									placeholderOutside
-								/>
-							);
-						}}
-					/>
-					<Controller
-						control={control}
-						name="surname"
-						render={({field}) => {
-							return (
-								<Input
-									placeholder={t("profile.editSurname")}
-									fontSize={InputSize.small}
-									{...field}
-									placeholderOutside
-								/>
-							);
-						}}
-					/>
-					<Button type="submit">{t("profile.editButton")}</Button>
-				</form>
-			</Block>
-		</Modal>
+		<div data-testid="editUserModal">
+			<Modal isOpen={true} close={close}>
+				<Block>
+					<Title type={TitleType.SMALL}>{t("profile.editProfile")}</Title>
+					<Divider />
+					<form onSubmit={handleSubmit(submit)} className={cls.inputs}>
+						<Controller
+							control={control}
+							name="name"
+							render={({field}) => {
+								return (
+									<Input
+										placeholder={t("profile.editName")}
+										fontSize={InputSize.small}
+										{...field}
+										placeholderOutside
+									/>
+								);
+							}}
+						/>
+						<Controller
+							control={control}
+							name="surname"
+							render={({field}) => {
+								return (
+									<Input
+										placeholder={t("profile.editSurname")}
+										fontSize={InputSize.small}
+										{...field}
+										placeholderOutside
+									/>
+								);
+							}}
+						/>
+						<div className={cls.modalButtomButtons}>
+							<Button type="submit">{t("profile.editButton")}</Button>
+							<Button
+								onClick={() => close()}
+								data-testid="profile-cancel-button"
+							>
+								{t("profile.cancelButton")}
+							</Button>
+						</div>
+					</form>
+				</Block>
+			</Modal>
+		</div>
 	);
 };
 
