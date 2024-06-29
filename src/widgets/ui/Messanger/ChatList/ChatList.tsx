@@ -4,6 +4,7 @@ import {ChatCard} from "src/shared/ui/sectionsBlocks/Messanger/chatCard";
 
 import cls from "./ChatList.module.scss";
 import {ChatListItems} from "./consts/ChatListItems";
+import { WSBtn } from "src/entities/messenger/ui/WSBtn";
 
 interface ChatListProps {}
 
