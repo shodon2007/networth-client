@@ -26,7 +26,7 @@ describe("Testing LoginPage.tsx", () => {
 		const loginBtn = await screen.findByTestId("login-button");
 		const loginEmailInput = await screen.findByTestId("email");
 		const loginPasswordInput = screen.getByTestId("password");
-		await user.type(loginEmailInput, "about@shodon.ru");
+		await user.type(loginEmailInput, "me@shodon.ru");
 		await user.type(loginPasswordInput, "shodon2007");
 
 		await user.click(loginBtn);

@@ -17,11 +17,13 @@ export const useRegistration = () => {
 			return getRegistration({email, password, name, surname});
 		},
 		onSuccess: (resp) => {
+			console.log(resp);
 			dispatch(setUser(resp.data.data));
 			toast.success(resp.data.message);
 			navigate("/activation");
 		},
 		onError: (resp: AxiosError<ErrorResponseType>) => {
+			console.log(resp);
 			toast.error(resp.response?.data.message);
 		},
 	});

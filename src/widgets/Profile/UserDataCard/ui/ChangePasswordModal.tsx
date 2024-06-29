@@ -25,8 +25,6 @@ const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close}) => {
 		},
 	});
 
-	console.log("rerender password");
-
 	useEffect(() => {
 		return () => {
 			reset();
@@ -43,45 +41,55 @@ const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close}) => {
 	}
 
 	return (
-		<Modal isOpen={true} close={close}>
-			<Block>
-				<Title type={TitleType.SMALL}>{t("profile.editPassword")}</Title>
-				<Divider />
-				<form onSubmit={handleSubmit(submit)} className={cls.inputs}>
-					<Controller
-						control={control}
-						name="oldPassword"
-						render={({field}) => {
-							return (
-								<Input
-									fontSize={InputSize.small}
-									placeholder={t("profile.oldPassword")}
-									type="password"
-									{...field}
-									placeholderOutside
-								/>
-							);
-						}}
-					/>
-					<Controller
-						control={control}
-						name="newPassword"
-						render={({field}) => {
-							return (
-								<Input
-									fontSize={InputSize.small}
-									placeholder={t("profile.newPassword")}
-									type="password"
-									{...field}
-									placeholderOutside
-								/>
-							);
-						}}
-					/>
-					<Button type="submit">{t("profile.editButton")}</Button>
-				</form>
-			</Block>
-		</Modal>
+		<div data-testid="changePasswordModal">
+			<Modal isOpen={true} close={close}>
+				<Block>
+					<Title type={TitleType.SMALL}>{t("profile.editPassword")}</Title>
+					<Divider />
+					<form onSubmit={handleSubmit(submit)} className={cls.inputs}>
+						<Controller
+							control={control}
+							name="oldPassword"
+							render={({field}) => {
+								return (
+									<Input
+										fontSize={InputSize.small}
+										placeholder={t("profile.oldPassword")}
+										type="password"
+										{...field}
+										placeholderOutside
+									/>
+								);
+							}}
+						/>
+						<Controller
+							control={control}
+							name="newPassword"
+							render={({field}) => {
+								return (
+									<Input
+										fontSize={InputSize.small}
+										placeholder={t("profile.newPassword")}
+										type="password"
+										{...field}
+										placeholderOutside
+									/>
+								);
+							}}
+						/>
+						<div className={cls.modalButtomButtons}>
+							<Button type="submit">{t("profile.editButton")}</Button>
+							<Button
+								onClick={() => close()}
+								data-testid="profile-cancel-button"
+							>
+								{t("profile.cancelButton")}
+							</Button>
+						</div>
+					</form>
+				</Block>
+			</Modal>
+		</div>
 	);
 };
 
