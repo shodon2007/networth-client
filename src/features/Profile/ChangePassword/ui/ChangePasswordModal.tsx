@@ -10,7 +10,7 @@ import {Title, TitleType} from "src/shared/ui/Title/Title";
 import Button from "src/shared/ui/Button/Button";
 import {useChangePassword} from "src/entities/user/hooks/useChangePassword";
 
-import cls from "./UserCardStyle.module.scss";
+import cls from "./ChangePasswordModal.module.scss";
 
 interface ChangePasswordModalProps {
 	close: () => void;

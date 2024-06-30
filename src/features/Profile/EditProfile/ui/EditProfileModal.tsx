@@ -11,13 +11,14 @@ import {Title, TitleType} from "src/shared/ui/Title/Title";
 
 import {useUpdateUserInfo} from "src/entities/user/hooks/useUpdateUserInfo";
 import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
-import cls from "./UserCardStyle.module.scss";
+
+import cls from "./EditProfileModal.module.scss";
 
 interface EditUserModalProps {
 	close: () => void;
 }
 
-const EditUserModal: FC<EditUserModalProps> = ({close}) => {
+const EditProfileModal: FC<EditUserModalProps> = ({close}) => {
 	const {data: userData} = useUser();
 
 	const updateUserInfo = useUpdateUserInfo(close).mutate;
@@ -84,4 +85,4 @@ const EditUserModal: FC<EditUserModalProps> = ({close}) => {
 	);
 };
 
-export default EditUserModal;
+export default EditProfileModal;
