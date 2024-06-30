@@ -13,7 +13,7 @@ import {
 	useSendCode,
 } from "src/entities/user/hooks/useChangeEmail";
 
-import cls from "./UserCardStyle.module.scss";
+import cls from "./ChangeEmailModal.module.scss";
 
 interface ChangeEmailModalProps {
 	close: () => void;

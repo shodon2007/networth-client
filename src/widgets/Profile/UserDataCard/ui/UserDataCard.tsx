@@ -5,10 +5,11 @@ import Block from "src/shared/ui/Block/Block";
 import Button, {ThemeButton} from "src/shared/ui/Button/Button";
 
 import {useUserData} from "src/entities/user/hooks/useUserData";
-import ChangeAvatarModal from "./ChangeAvatarModal";
-import ChangeEmailModal from "./ChangeEmailModal";
-import ChangePasswordModal from "./ChangePasswordModal";
-import EditUserModal from "./EditUserModal";
+import {ChangeEmailModal} from "src/features/Profile/ChangeEmail/";
+import {ChangeAvatarModal} from "src/features/Profile/ChangeAvatar/";
+import {ChangePasswordModal} from "src/features/Profile/ChangePassword/";
+import {EditProfileModal} from "src/features/Profile/EditProfile/";
+
 import cls from "./UserCardStyle.module.scss";
 import {useUser} from "src/entities/user";
 import {useTranslation} from "react-i18next";
@@ -102,7 +103,7 @@ const ModalButtons = memo(() => {
 				{t("profile.editEmail")}
 			</Button>
 			{editModalOpen ? (
-				<EditUserModal close={() => setEditModalOpen(false)} />
+				<EditProfileModal close={() => setEditModalOpen(false)} />
 			) : null}
 			{changePasswordModalOpen ? (
 				<ChangePasswordModal close={() => setChangePasswordModalOpen(false)} />

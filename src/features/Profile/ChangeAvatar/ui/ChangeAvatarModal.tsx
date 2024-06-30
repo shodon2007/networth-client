@@ -6,7 +6,7 @@ import {useChangeAvatar} from "src/entities/user/hooks/useChangeAvatar";
 import Button, {ThemeButton} from "src/shared/ui/Button/Button";
 import Modal from "src/shared/ui/Modal/Modal";
 
-import cls from "./ChangeAvatar.module.scss";
+import cls from "./ChangeAvatarModal.module.scss";
 
 interface EditUserModalProps {
 	close: () => void;

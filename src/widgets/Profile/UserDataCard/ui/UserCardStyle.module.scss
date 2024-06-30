@@ -37,22 +37,6 @@
 	column-gap: 6px;
 }
 
-.inputs {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-
-.modalButtomButtons {
-	display: flex;
-	justify-content: space-between;
-	gap: 10px;
-
-	& > button {
-		flex: 1 1 auto;
-	}
-}
-
 .avatar {
 	position: relative;
 }
