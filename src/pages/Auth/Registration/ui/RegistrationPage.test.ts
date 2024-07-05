@@ -16,7 +16,7 @@ describe("Testing RegistrationPage.tsx", () => {
 		const loginLink = await screen.findByTestId("login-link");
 
 		await user.click(loginLink);
-		expect(screen.getByTestId("login-form")).toBeInTheDocument();
+		expect(screen.getByTestId("login-page")).toBeInTheDocument();
 		expect(screen.queryByTestId("registration-form")).not.toBeInTheDocument();
 	});
 });
