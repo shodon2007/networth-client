@@ -2,19 +2,19 @@ import {FC} from "react";
 import {useSelector} from "react-redux";
 import {Navigate} from "react-router-dom";
 import {toast} from "react-toastify";
-import {RootState} from "src/app/providers/storeProvider";
 import Block from "src/shared/ui/Block/Block";
 import MyLink from "src/shared/ui/Link/Link";
 import {routePath} from "src/shared/config/routeConfig";
 
 import cls from "./ActivationPage.module.scss";
+import {useUser} from "src/entities/user";
 
 const ActivationPage: FC = () => {
-	const user = useSelector((state: RootState) => state.user);
+	const user = useUser();
 
-	if (!user) {
+	if (!user || !user.isAuth) {
 		toast.info("Пожалуйста авторизуйтесь");
-		return <Navigate to={"/login"} />;
+		return <Navigate to={routePath.login} />;
 	}
 
 	if (user.data?.isActivated === 1) {

@@ -48,16 +48,18 @@ describe("Testing ActivationPage.tsx", () => {
 			"mockEmail2007@youtube.com",
 		);
 	});
-	it("should navigate to login page when user is not auth", async () => {
-		const screen = renderWithProviders(routePath.activation, {
-			user: null,
-		});
+	it("should navigate to not found page when user is not auth", async () => {
+		const newMockStore = JSON.parse(JSON.stringify(mockAuthStore));
+		newMockStore.user.isAuth = false;
+		console.log("mockStore", newMockStore);
+
+		const screen = renderWithProviders(routePath.activation, newMockStore);
 
 		await waitFor(() =>
 			expect(screen.queryByTestId("activation-page")).not.toBeInTheDocument(),
 		);
 		await waitFor(() =>
-			expect(screen.getByTestId("login-page")).toBeInTheDocument(),
+			expect(screen.getByTestId("notFound-page")).toBeInTheDocument(),
 		);
 	});
 	it("should navigate to home page when user is not auth", async () => {

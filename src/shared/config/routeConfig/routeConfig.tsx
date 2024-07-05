@@ -4,6 +4,7 @@ import {LoginPageAsync} from "src/pages/Auth/Login";
 import {RegistrationPageAsync} from "src/pages/Auth/Registration";
 import {FeedPageAsync} from "src/pages/Feed";
 import {MessengerPageAsync} from "src/pages/Messenger";
+import {NotFoundPageAsync} from "src/pages/NotFound";
 import {ProfilePageAsync} from "src/pages/Profile";
 import {Layout} from "src/shared/ui/Layout/Layout";
 
@@ -15,6 +16,7 @@ export enum AppRoutes {
 	HOME = "home",
 	PROFILE = "profile",
 	MESSENGER = "messenger",
+	NOT_FOUND = "not_found",
 }
 
 export const routePath: Record<AppRoutes, string> = {
@@ -24,6 +26,7 @@ export const routePath: Record<AppRoutes, string> = {
 	[AppRoutes.REGISTRATION]: "/registration",
 	[AppRoutes.ACTIVATION]: "/activation",
 	[AppRoutes.MESSENGER]: "/messanger",
+	[AppRoutes.NOT_FOUND]: "/*",
 };
 
 export interface RouteItem {
@@ -33,38 +36,54 @@ export interface RouteItem {
 	children?: RouteItem[];
 }
 
-export const routes: RouteItem[] = [
+export const globalRoute: RouteItem = {
+	path: routePath.home,
+	element: <Layout />,
+	index: true,
+};
+
+export const privateRoutes: RouteItem[] = [
 	{
 		path: routePath.home,
-		element: <Layout />,
-		children: [
-			{
-				path: routePath.home,
-				element: <FeedPageAsync />,
-				index: true,
-			},
-			{
-				path: routePath.profile,
-				element: <ProfilePageAsync />,
-				index: true,
-			},
-			{
-				path: routePath.messenger,
-				element: <MessengerPageAsync />,
-				index: true,
-			},
-			{
-				path: routePath.activation,
-				element: <ActivationPageAsync />,
-			},
-			{
-				path: routePath.registration,
-				element: <RegistrationPageAsync />,
-			},
-			{
-				path: routePath.login,
-				element: <LoginPageAsync />,
-			},
-		],
+		element: <FeedPageAsync />,
+		index: true,
+	},
+	{
+		path: routePath.profile,
+		element: <ProfilePageAsync />,
+		index: true,
+	},
+	{
+		path: routePath.messenger,
+		element: <MessengerPageAsync />,
+		index: true,
+	},
+	{
+		path: routePath.activation,
+		element: <ActivationPageAsync />,
+	},
+	{
+		path: routePath.not_found,
+		element: <NotFoundPageAsync />,
+	},
+];
+
+export const publicRoutes: RouteItem[] = [
+	{
+		path: routePath.home,
+		element: <FeedPageAsync />,
+		index: true,
+	},
+	{
+		path: routePath.registration,
+		element: <RegistrationPageAsync />,
+	},
+	{
+		path: routePath.login,
+		element: <LoginPageAsync />,
+	},
+	{
+		path: routePath.not_found,
+		element: <NotFoundPageAsync />,
 	},
 ];
