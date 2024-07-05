@@ -33,16 +33,17 @@ const userSlice = createSlice({
 			if (action.payload.user) {
 				state.isUserDataLoading = false;
 			}
+			console.log("i am set isAuth true");
 			state.isAuth = true;
 		},
 		setUserInfo(state, action: PayloadAction<UserInfoTypes>) {
 			state.data = action.payload;
 			state.isUserDataLoading = false;
+			console.log("i am set isAuth true");
 			state.isAuth = true;
 		},
 		setUserInfoLoading(state, action: PayloadAction<boolean>) {
 			state.isUserDataLoading = action.payload;
-			state.isAuth = true;
 		},
 	},
 });

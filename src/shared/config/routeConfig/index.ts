@@ -1,2 +1,8 @@
-export {AppRoutes, routePath, routes} from "./routeConfig";
+export {
+	AppRoutes,
+	routePath,
+	globalRoute,
+	privateRoutes,
+	publicRoutes,
+} from "./routeConfig";
 export type {RouteItem} from "./routeConfig";
