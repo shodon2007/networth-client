@@ -24,7 +24,7 @@ const LoginPage: FC = () => {
 
 	return (
 		<form
-			data-testid="login-form"
+			data-testid="login-page"
 			onSubmit={handleSubmit((data) => loginFn.mutate(data))}
 		>
 			<Block className={cls.page}>

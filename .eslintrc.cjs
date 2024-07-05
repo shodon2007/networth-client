@@ -81,5 +81,5 @@ module.exports = {
 		],
 	},
 	ignorePatterns: ["*.svg", "*.svg?react"],
-	"react/display-name": "0"
+	"@typescript-eslint/no-namespace": 0,
 };

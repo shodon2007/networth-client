@@ -2,7 +2,7 @@
 
 exports[`Testing LoginPage.tsx snapshot testing 1`] = `
 <form
-  data-testid="login-form"
+  data-testid="login-page"
 >
   <div
     class="block default page"

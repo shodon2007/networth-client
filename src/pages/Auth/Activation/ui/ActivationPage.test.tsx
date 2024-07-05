@@ -57,7 +57,7 @@ describe("Testing ActivationPage.tsx", () => {
 			expect(screen.queryByTestId("activation-page")).not.toBeInTheDocument(),
 		);
 		await waitFor(() =>
-			expect(screen.getByTestId("login-form")).toBeInTheDocument(),
+			expect(screen.getByTestId("login-page")).toBeInTheDocument(),
 		);
 	});
 	it("should navigate to home page when user is not auth", async () => {
