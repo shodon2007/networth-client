@@ -76,7 +76,7 @@ const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close}) => {
 							value={code}
 							onChange={(e) => setCode(e.target.value)}
 						/>
-						<div className={cls.modalButtomButtons}>
+						<div className={cls.modalBottomButtons}>
 							<Button type="submit">{t("profile.editButton")}</Button>
 							<Button
 								onClick={() => close()}

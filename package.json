@@ -8,8 +8,8 @@
 		"start": "webpack serve --env mode=development --env port=3000",
 		"lint:ts": "eslint . --ext ts,tsx --report-unused-disable-directives",
 		"lint:ts:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --fix",
-		"lint:styles": "npx stylelint '**/*.scss'",
-		"lint:styles:fix": "npx stylelint '**/*.scss' --fix",
+		"lint:styles": "npx stylelint src/**/*.scss",
+		"lint:styles:fix": "npx stylelint src/**/*.scss --fix",
 		"test:unit": "jest --config ./config/jest/jest.config.ts",
 		"test:unit:u": "jest --config ./config/jest/jest.config.ts -- -u",
 		"test:e2e": "cypress open"

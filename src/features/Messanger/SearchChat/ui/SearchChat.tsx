@@ -10,7 +10,10 @@ const SearchChat = () => {
 		<div className={cls.stroke}>
 			<div className={cls.strokeBg}>
 				<img src={MagnifierIcon} alt="icon" className={cls.searchBarIcon} />
-				<input className={cls.searchBar} placeholder={t("messanger.findChat")} />
+				<input
+					className={cls.searchBar}
+					placeholder={t("messanger.findChat")}
+				/>
 			</div>
 		</div>
 	);

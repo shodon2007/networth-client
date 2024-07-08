@@ -71,7 +71,7 @@ const EditProfileModal: FC<EditUserModalProps> = ({close}) => {
 								);
 							}}
 						/>
-						<div className={cls.modalButtomButtons}>
+						<div className={cls.modalBottomButtons}>
 							<Button data-testid="profile-submit-button" type="submit">
 								{t("profile.editButton")}
 							</Button>

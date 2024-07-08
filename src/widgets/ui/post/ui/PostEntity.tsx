@@ -14,8 +14,6 @@ export const PostEntity: FC<PostEntityProps> = () => {
 	// Realize it as callback function hence return false/true boolean
 	// const [isComment, setIsComment] = useState(false);
 
-	console.log(watchIcon);
-
 	return (
 		<article className={cls.article}>
 			<header className={cls.header}>

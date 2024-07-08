@@ -77,7 +77,7 @@ const ChangePasswordModal: FC<ChangePasswordModalProps> = ({close}) => {
 								);
 							}}
 						/>
-						<div className={cls.modalButtomButtons}>
+						<div className={cls.modalBottomButtons}>
 							<Button type="submit">{t("profile.editButton")}</Button>
 							<Button
 								onClick={() => close()}

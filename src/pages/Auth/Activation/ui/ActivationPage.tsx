@@ -24,9 +24,9 @@ const ActivationPage: FC = () => {
 
 	return (
 		<div data-testid="activation-page">
-			<Block className={cls.MainBlock}>
+			<Block className={cls.mainBlock}>
 				<h1>Hello</h1>
-				<span className={cls.EmailNotification}>
+				<span className={cls.emailNotification}>
 					На почту{" "}
 					<span data-testid="activation-email" style={{fontWeight: "bold"}}>
 						{user.data?.email}
