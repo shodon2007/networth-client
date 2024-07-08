@@ -9,7 +9,7 @@ interface ChatListProps {}
 
 export const ChatList: FC<ChatListProps> = () => {
 	return (
-		<section className={cls.ChatList}>
+		<section className={cls.chatList}>
 			<SearchChat />
 			{/* <SearchBar>find a chat . . .</SearchBar> */}
 			{/* 
@@ -17,7 +17,7 @@ export const ChatList: FC<ChatListProps> = () => {
         // ToDo: 2. Think up how to handle blcoked users
         // ToDo: 3. Think up how to display the users
       */}
-			<ul className={cls.ChatList__chats}>
+			<ul className={cls.chatList__chats}>
 				{ChatListItems.map((_) => (
 					<ChatCard
 						key={_.nickname}

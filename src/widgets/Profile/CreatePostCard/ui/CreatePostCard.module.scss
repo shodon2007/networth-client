@@ -1,8 +1,8 @@
-.CreatePostForm {
-  display: flex;
-  flex-direction: column;
-  row-gap: 12px;
-  border-radius: var(--medium-border-radius);
-  padding: 32px 24px;
-  background: var(--main-gradient);
+.create-post-form {
+	display: flex;
+	flex-direction: column;
+	row-gap: 12px;
+	border-radius: var(--medium-border-radius);
+	padding: 32px 24px;
+	background: var(--main-gradient);
 }
