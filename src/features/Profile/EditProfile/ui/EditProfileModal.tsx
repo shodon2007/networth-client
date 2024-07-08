@@ -47,6 +47,7 @@ const EditProfileModal: FC<EditUserModalProps> = ({close}) => {
 							render={({field}) => {
 								return (
 									<Input
+										data-testid="editNameInput"
 										placeholder={t("profile.editName")}
 										fontSize={InputSize.small}
 										{...field}
@@ -61,6 +62,7 @@ const EditProfileModal: FC<EditUserModalProps> = ({close}) => {
 							render={({field}) => {
 								return (
 									<Input
+										data-testid="editSurnameInput"
 										placeholder={t("profile.editSurname")}
 										fontSize={InputSize.small}
 										{...field}
@@ -70,7 +72,9 @@ const EditProfileModal: FC<EditUserModalProps> = ({close}) => {
 							}}
 						/>
 						<div className={cls.modalButtomButtons}>
-							<Button type="submit">{t("profile.editButton")}</Button>
+							<Button data-testid="profile-submit-button" type="submit">
+								{t("profile.editButton")}
+							</Button>
 							<Button
 								onClick={() => close()}
 								data-testid="profile-cancel-button"

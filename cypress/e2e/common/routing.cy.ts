@@ -20,6 +20,24 @@ describe("Test routes", () => {
 		});
 		it("Check login page route", () => {
 			cy.visit("/login");
+			cy.get(selectByTestId("notFound-page")).should("exist");
+		});
+	});
+	describe("Testing routes with no auth", () => {
+		it("Check home page route", () => {
+			cy.visit("/");
+			cy.get(selectByTestId("home-page")).should("exist");
+		});
+		it("Check profile page route", () => {
+			cy.visit("/profile");
+			cy.get(selectByTestId("notFound-page")).should("exist");
+		});
+		it("Check messanger page route", () => {
+			cy.visit("/messanger");
+			cy.get(selectByTestId("notFound-page")).should("exist");
+		});
+		it("Check login page route", () => {
+			cy.visit("/login");
 			cy.get(selectByTestId("login-page")).should("exist");
 		});
 	});
