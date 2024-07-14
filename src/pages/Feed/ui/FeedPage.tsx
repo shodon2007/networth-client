@@ -1,11 +1,12 @@
 import { WSBtn } from "src/entities/messenger/ui/WSBtn";
 import {FeedWidget} from "src/widgets/ui/Feed/ui/FeedWidget";
 
-export const FeedPage = () => {
+const FeedPage = () => {
 	return (
-		<>
+		<div data-testid="home-page">
 			<FeedWidget />
-			<WSBtn />
-		</>
+		</div>
 	);
 };
+
+export default FeedPage;

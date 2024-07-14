@@ -7,7 +7,7 @@ import cls from "./Layout.module.scss";
 export const Layout = () => {
 	return (
 		<>
-			<div className={cls.gridLayout}>
+			<div className={cls.gridLayout} data-testid="layout">
 				<header className={cls.header}>
 					<Header />
 				</header>

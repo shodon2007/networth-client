@@ -1,29 +1,29 @@
-@import "src/shared/ui/styles/mixins/globalMixins.scss";
+@import "src/shared/ui/styles/mixins/globalMixins";
 
-.headerStroke {
-  width: 100%;
-  height: 100%;
-  background-image: var(--main-gradient);
-  padding-bottom: 2px;
+.header-stroke {
+	width: 100%;
+	height: 100%;
+	background-image: var(--main-gradient);
+	padding-bottom: 2px;
 }
 
 .header {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  grid-template-columns: 100px minmax(250px, 450px);
-  padding: 30px 0;
-  padding-left: var(--global-margin);
-  place-items: center start;
-  grid-column-gap: 48px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	grid-template-columns: 100px minmax(250px, 450px);
+	padding: 30px 0;
+	padding-left: var(--global-margin);
+	place-items: center start;
+	grid-column-gap: 48px;
 
-  @include grid-background;
+	@include grid-background;
 
-  background-color: var(--main-bg-color);
+	background-color: var(--main-bg-color);
 }
 
 .logo {
-  flex: 1 1 max-content;
-  width: 100%;
-  height: 100%;
+	flex: 1 1 max-content;
+	width: 100%;
+	height: 100%;
 }

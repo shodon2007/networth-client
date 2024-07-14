@@ -1,12 +1,12 @@
-.FeedPage {
-  display: grid;
-  grid: 125px 1fr / 1fr minmax(150px, 500px);
-}
+.feed-page {
+	display: grid;
+	grid: 125px 1fr / 1fr minmax(150px, 500px);
 
-.FeedPage__header {
-  display: flex;
-  column-gap: 178px;
-  grid-row-start: 1;
-  grid-column-start: 1;
-  background-color: red;
+	&__header {
+		display: flex;
+		column-gap: 178px;
+		grid-row-start: 1;
+		grid-column-start: 1;
+		background-color: red;
+	}
 }

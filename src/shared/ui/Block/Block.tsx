@@ -19,7 +19,10 @@ const Block: FC<BlockProps> = ({
 	className = "",
 }) => {
 	return (
-		<div className={classNames(cls.block, {}, [cls[type], className])}>
+		<div
+			data-testid="block"
+			className={classNames(cls.block, {}, [cls[type], className])}
+		>
 			{children}
 		</div>
 	);

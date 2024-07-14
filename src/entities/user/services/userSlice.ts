@@ -2,11 +2,12 @@ import {PayloadAction, createSlice} from "@reduxjs/toolkit";
 import {AuthResponse} from "src/entities/auth/model/authTypes";
 import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
 
-interface UserStateTypes {
+export interface UserStateTypes {
 	accessToken: string | null;
 	refreshToken: string | null;
 	isAuth: boolean;
 	data: UserInfoTypes | undefined;
+	isUserDataLoading: boolean;
 }
 
 const initialState: UserStateTypes = {
@@ -14,6 +15,7 @@ const initialState: UserStateTypes = {
 	refreshToken: null,
 	isAuth: false,
 	data: undefined,
+	isUserDataLoading: true,
 };
 
 const userSlice = createSlice({
@@ -27,12 +29,21 @@ const userSlice = createSlice({
 
 			state.accessToken = action.payload.accessToken;
 			state.refreshToken = action.payload.refreshToken;
-			state.data = action.payload.data;
+			state.data = action.payload.user ?? null;
+			if (action.payload.user) {
+				state.isUserDataLoading = false;
+			}
+			console.log("i am set isAuth true");
 			state.isAuth = true;
 		},
 		setUserInfo(state, action: PayloadAction<UserInfoTypes>) {
 			state.data = action.payload;
+			state.isUserDataLoading = false;
+			console.log("i am set isAuth true");
 			state.isAuth = true;
+		},
+		setUserInfoLoading(state, action: PayloadAction<boolean>) {
+			state.isUserDataLoading = action.payload;
 		},
 	},
 });
@@ -46,5 +57,5 @@ function getAccessTokenFromStorage() {
 	return accessToken;
 }
 
-export const {setUser, setUserInfo} = userSlice.actions;
+export const {setUser, setUserInfo, setUserInfoLoading} = userSlice.actions;
 export default userSlice.reducer;

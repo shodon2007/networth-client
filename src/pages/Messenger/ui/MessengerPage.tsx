@@ -1,8 +1,9 @@
-import { WSBtn } from "src/entities/messenger/ui/WSBtn";
-import { ChatList } from "src/widgets/ui/Messanger";
+import {ChatList} from "src/widgets/Messanger";
 
 export default function MessengerPage() {
-	return (<>
-		<ChatList />
-	</>);
+	return (
+		<div data-testid="messanger-page">
+			<ChatList />
+		</div>
+	);
 }

@@ -1,60 +1,54 @@
-.userCard {
+.user-card {
 	display: flex;
 	justify-content: space-between;
 	gap: 10px;
 	height: min-content;
 }
 
-.userCardInfo {
+.user-card-info {
 	display: flex;
 	column-gap: 24px;
 }
 
-.userCardButtons {
+.user-card-buttons {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 }
 
-.userCardUserInfo {
+.user-card-user-info {
 	display: flex;
 	flex-direction: column;
 	row-gap: 10px;
 }
 
-.userCardName {
-	font-family: var(--font-main-Blin);
+.user-card-name {
+	font-family: var(--font-main-blin);
 	font-size: var(--font-size-ll-desktop);
 	font-weight: bold;
 	color: var(--white-color);
 }
 
-.userCardDetail {
+.user-card-detail {
 	display: flex;
 	align-items: center;
 	font-size: var(--font-size-s-desktop);
-	font-family: var(--third-main-Leel);
+	font-family: var(--third-main-leel);
 	column-gap: 6px;
-}
-
-.inputs {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
 }
 
 .avatar {
 	position: relative;
 }
 
-.avatarImg {
+.avatar-img {
 	width: 150px;
 	height: 150px;
 	background: white;
 	border-radius: 100%;
 }
 
-.avatarMenu {
+.avatar-menu {
 	opacity: 0;
 	position: absolute;
 	transition: opacity 0.3s ease;

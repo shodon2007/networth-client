@@ -1,11 +1,11 @@
-import { RuleSetRule } from "webpack";
+import {RuleSetRule} from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { BuildOptions } from "./types/config";
+import {BuildOptions} from "./types/config";
 
-export const buildRules = ({ isDev }: BuildOptions): RuleSetRule[] => {
+export const buildRules = ({isDev}: BuildOptions): RuleSetRule[] => {
 	const svgFileLoader = {
 		test: /\.svg$/i,
-		resourceQuery: { not: [/react/] },
+		resourceQuery: {not: [/react/]},
 		use: ["url-loader"],
 	};
 	const svgReactLoader = {
@@ -39,5 +39,21 @@ export const buildRules = ({ isDev }: BuildOptions): RuleSetRule[] => {
 		use: "ts-loader",
 		exclude: /node_modules/,
 	};
-	return [svgFileLoader, svgReactLoader, styleLoader, typescriptLoader];
+	const babelLoader: RuleSetRule = {
+		test: /\.tsx?$/,
+		use: {
+			loader: "babel-loader",
+			options: {
+				presets: ["@babel/preset-env"],
+			},
+		},
+		exclude: /node_modules/,
+	};
+	return [
+		svgFileLoader,
+		svgReactLoader,
+		styleLoader,
+		babelLoader,
+		typescriptLoader,
+	];
 };

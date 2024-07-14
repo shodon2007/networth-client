@@ -5,8 +5,8 @@ import cls from "./Input.module.scss";
 
 export enum InputSize {
 	big = "BIG",
-	small = "SMALL",
-	medium = "MEDIUM",
+	small = "small",
+	medium = "medium",
 }
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -15,31 +15,27 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	placeholderOutside?: boolean;
 }
 
-const Input: FC<InputProps> = forwardRef(function Input({
-	classname = "",
-	fontSize = InputSize.medium,
-	placeholderOutside = false,
-	...props
-}: InputProps, ref: LegacyRef<HTMLInputElement> ) {
-	if (placeholderOutside) {
-		return (
-			<>
-				<div>{props.placeholder}</div>
-				<input
-					ref={ref}
-					className={classNames(cls.Input, {}, [classname, cls[fontSize]])}
-					{...props}
-				/>
-			</>
-		);
-	}
-
+const Input: FC<InputProps> = forwardRef(function Input(
+	{
+		classname = "",
+		fontSize = InputSize.medium,
+		placeholderOutside = false,
+		...props
+	}: InputProps,
+	ref: LegacyRef<HTMLInputElement>,
+) {
 	return (
-		<input
-			ref={ref}
-			className={classNames(cls.Input, {}, [classname, cls[fontSize]])}
-			{...props}
-		/>
+		<div data-testid={"input-parent"}>
+			{placeholderOutside ? (
+				<div data-testid="input-placeholder">{props.placeholder}</div>
+			) : null}
+			<input
+				data-testid={"input"}
+				ref={ref}
+				className={classNames(cls.input, {}, [classname, cls[fontSize]])}
+				{...props}
+			/>
+		</div>
 	);
 });
 
