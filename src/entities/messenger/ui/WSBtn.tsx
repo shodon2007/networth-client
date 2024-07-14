@@ -1,6 +1,6 @@
 import useWebSocket from "react-use-websocket";
 
-interface WSBtnProps {}
+interface WSBtnProps {}``
 
 export const WSBtn = ({}: WSBtnProps) => {
 
