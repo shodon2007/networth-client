@@ -1,13 +1,13 @@
-.AlbumSection {
-  display: flex;
-  flex-direction: column;
-  row-gap: 18px;
-  border-radius: var(--medium-border-radius);
-  padding: 32px 24px;
-  background: var(--main-gradient);
+.album-section {
+	display: flex;
+	flex-direction: column;
+	row-gap: 18px;
+	border-radius: var(--medium-border-radius);
+	padding: 32px 24px;
+	background: var(--main-gradient);
 
-  &__nav {
-    display: flex;
-    column-gap: 18px;
-  }
+	&__nav {
+		display: flex;
+		column-gap: 18px;
+	}
 }

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing ActivationPage.tsx should match the snapshot 1`] = `
+<div
+  data-testid="activation-page"
+>
+  <div
+    class="block default MainBlock"
+    data-testid="block"
+  >
+    <h1>
+      Hello
+    </h1>
+    <span
+      class="EmailNotification"
+    >
+      На почту
+       
+      <span
+        data-testid="activation-email"
+        style="font-weight: bold;"
+      >
+        mockEmail2007@youtube.com
+      </span>
+       
+      отправлена ссылка для подтветждения
+    </span>
+    <ul
+      class="LinksList"
+    >
+      <a
+        aria-current="page"
+        class="link active"
+        href="/activation"
+      >
+        Home
+      </a>
+      <a
+        class="link"
+        href="/profile"
+      >
+        Profile
+      </a>
+    </ul>
+  </div>
+</div>
+`;

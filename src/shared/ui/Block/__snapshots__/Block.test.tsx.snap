@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Block.tsx should be 1`] = `
+<div
+  class="block default"
+  data-testid="block"
+>
+  <div>
+    shodon
+  </div>
+</div>
+`;
