@@ -1,4 +1,4 @@
-.Input {
+.input {
 	border-radius: var(--medium-border-radius);
 	padding: 15px 20px;
 	color: var(--white-color);
@@ -15,13 +15,13 @@
 	}
 
 	&::placeholder {
-		font-family: var(--font-main-Blin);
+		font-family: var(--font-main-blin);
 		font-weight: 600;
 		color: rgb(255 255 255 / 80%);
 	}
 }
 
-.Input.SMALL {
+.small {
 	font-size: var(--font-size-ss);
 	border-radius: var(--small-border-radius);
 	padding: 10px 15px;

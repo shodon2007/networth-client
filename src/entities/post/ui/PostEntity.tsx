@@ -1,10 +1,7 @@
-import { FC } from "react";
+import {FC} from "react";
 
-interface PostEntityProps { }
+interface PostEntityProps {}
 
 export const PostEntity: FC<PostEntityProps> = () => {
-  
-	return (
-		<div>Holla</div>
-	);
+	return <div>Holla</div>;
 };

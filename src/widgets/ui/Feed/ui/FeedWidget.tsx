@@ -1,14 +1,13 @@
-import { FC } from "react";
-import { PostEntity } from "../..";
+import {FC} from "react";
+import {PostEntity} from "../..";
 
 import cls from "./Feed.module.scss";
 
-interface FeedWidgetProps { }
+interface FeedWidgetProps {}
 
 export const FeedWidget: FC<FeedWidgetProps> = () => {
-  
 	return (
-		<section className={cls.feedSection}>
+		<section className={cls["feed-widget"]} data-testid="feed-widget">
 			<PostEntity />
 		</section>
 	);

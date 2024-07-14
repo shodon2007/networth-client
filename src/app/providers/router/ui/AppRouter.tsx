@@ -1,14 +1,31 @@
-import {Suspense} from "react";
-import {Routes} from "react-router-dom";
+import {Suspense, memo} from "react";
+import {Route, Routes} from "react-router-dom";
+import {
+	globalRoute,
+	privateRoutes,
+	publicRoutes,
+} from "src/shared/config/routeConfig";
+import {renderRoutes} from "../model/renderRouter";
+import {useUser} from "src/entities/user";
 
-import {renderRoutes, routes} from "../model/router";
+const AppRouter = memo(() => {
+	const user = useUser();
 
-const AppRouter = () => {
+	if (user.isUserDataLoading) {
+		return <div>Loading</div>;
+	}
+
 	return (
 		<Suspense fallback={<div>бля.. загрузка</div>}>
-			<Routes>{routes && renderRoutes(routes)}</Routes>
+			<Routes>
+				<Route path={globalRoute.path} element={globalRoute.element}>
+					{user.isAuth
+						? renderRoutes(privateRoutes)
+						: renderRoutes(publicRoutes)}
+				</Route>
+			</Routes>
 		</Suspense>
 	);
-};
+});
 
 export default AppRouter;

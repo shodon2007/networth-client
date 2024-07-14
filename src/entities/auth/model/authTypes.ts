@@ -4,7 +4,7 @@ export interface AuthResponse {
 	isAuth: boolean;
 	accessToken: string | null;
 	refreshToken: string | null;
-	data?: UserInfoTypes;
+	user?: UserInfoTypes;
 }
 
 export interface AuthRequest {

@@ -1,4 +1,4 @@
-@import "src/shared/ui/styles/mixins/globalMixins.scss";
+@import "src/shared/ui/styles/mixins/globalMixins";
 
 .sidebar {
 	width: var(--sidebar-close-width);
@@ -6,6 +6,10 @@
 	overflow: hidden;
 	transition: all 0.5s ease;
 	background: var(--main-bg-color);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
 
 	@include grid-background;
 
@@ -21,7 +25,7 @@
 	padding: 10px 15px;
 }
 
-.header_links {
+.header-links {
 	display: none;
 	flex-direction: column;
 }
@@ -45,7 +49,7 @@
 	display: none;
 }
 
-.navLink {
+.nav-link {
 	white-space: nowrap;
 	justify-content: center;
 	text-align: center;
@@ -54,7 +58,7 @@
 	display: flex;
 	gap: 0;
 	padding: 5px 15px;
-	font-family: var(--third-main-Leel);
+	font-family: var(--third-main-leel);
 	font-size: var(--font-size-m);
 	user-select: none;
 	background-image: var(--main-cool-gradient);
@@ -62,9 +66,16 @@
 	background-clip: text;
 	transition: all 0.3s ease;
 	align-items: center;
+
+	.logo > svg {
+		width: 45px;
+		height: 45px;
+		fill: var(--primary-color);
+		transition: all 0.5s ease;
+	}
 }
 
-.navLinkActive {
+.nav-link-active {
 	background-clip: border-box;
 	background-color: var(--primary-color);
 	color: var(--primary-color);
@@ -82,13 +93,6 @@
 	transition: all 0.3s ease;
 }
 
-.logo > svg {
-	width: 45px;
-	height: 45px;
-	fill: var(--primary-color);
-	transition: all 0.5s ease;
-}
-
 .sidebar:hover {
 	width: var(--sidebar-open-width);
 	align-items: start;
@@ -97,7 +101,7 @@
 		display: flex;
 	}
 
-	.header_links {
+	.header-links {
 		display: flex;
 	}
 
@@ -109,22 +113,19 @@
 		align-items: start;
 	}
 
-	.navLink {
+	.nav-link {
 		justify-content: start;
 		text-align: left;
 		gap: 10px;
 	}
 
-	.navLinkActive > .logo > svg {
+	.nav-link-active > .logo > svg {
 		width: 45px;
 		height: 45px;
 	}
 }
 
 @media (width <= 1440px) {
-	.username {
-	}
-
 	.sidebar {
 		gap: 30px;
 	}
@@ -139,12 +140,7 @@
 		height: 30px;
 	}
 
-	.logo > svg {
-		width: 30px;
-		height: 30px;
-	}
-
-	.navLinkActive {
+	.nav-link-active {
 		.logo > svg {
 			width: 45px;
 			height: 45px;
@@ -152,7 +148,7 @@
 	}
 
 	.sidebar:hover {
-		.navLinkActive {
+		.nav-link-active {
 			.logo > svg {
 				width: 30px;
 				height: 30px;

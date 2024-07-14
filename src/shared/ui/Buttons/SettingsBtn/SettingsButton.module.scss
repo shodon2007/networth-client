@@ -1,4 +1,4 @@
-.Button {
+.button {
 	width: 32px;
 	height: 32px;
 	display: flex;
@@ -7,7 +7,7 @@
 	justify-content: center;
 	background-color: transparent;
 	transition: 0.3s all;
-  cursor: pointer;
+	cursor: pointer;
 
 	&__point {
 		border-radius: 100%;
