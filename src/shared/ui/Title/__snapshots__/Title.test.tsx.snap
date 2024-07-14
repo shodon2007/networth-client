@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Title.test.tsx Testing types testing big type 1`] = `
+<h1
+  class="title BIG"
+>
+  hello
+</h1>
+`;
+
+exports[`Testing Title.test.tsx Testing types testing middle type 1`] = `
+<h1
+  class="title MIDDLE"
+>
+  hello
+</h1>
+`;
+
+exports[`Testing Title.test.tsx Testing types testing small type 1`] = `
+<h1
+  class="title SMALL"
+>
+  hello
+</h1>
+`;
+
+exports[`Testing Title.test.tsx testing default styles 1`] = `
+<h1
+  class="title MIDDLE"
+>
+  hello
+</h1>
+`;

@@ -17,7 +17,9 @@ interface SidebarProps {}
 
 const Sidebar: FC<SidebarProps> = () => {
 	const {t} = useTranslation();
-	const {data: userData} = useUser();
+	const user = useUser();
+
+	const {data: userData} = user ?? {};
 
 	return (
 		<aside className={cls.sidebar}>
@@ -29,7 +31,7 @@ const Sidebar: FC<SidebarProps> = () => {
 						<span>{userData.surname}</span>
 					</h1>
 				) : (
-					<div className={cls.header_links}>
+					<div className={cls.headerLinks}>
 						<MyLink to={"/login"}>Войти</MyLink>
 						<MyLink to={"/login"}>Зарегестрироваться</MyLink>
 					</div>

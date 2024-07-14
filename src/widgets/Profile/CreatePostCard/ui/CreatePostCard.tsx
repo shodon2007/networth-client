@@ -1,5 +1,5 @@
 // import { MInput } from 'src/shared/ui/inputs/levelsInputs/mInput/MInput'
-import { FC } from "react";
+import {FC} from "react";
 import cls from "./CreatePostCard.module.scss";
 // import { LBtn } from 'src/shared/ui/Buttons/LevelsBtn/lBtn/LBtn'
 // import { SBtn } from 'src/shared/ui/Buttons/LevelsBtn/sBtn/SBtn'
@@ -10,7 +10,7 @@ interface CreatePostCardProps {}
 
 export const CreatePostCard: FC<CreatePostCardProps> = () => {
 	return (
-		<form onSubmit={(e) => e.preventDefault()} className={cls.CreatePostForm}>
+		<form onSubmit={(e) => e.preventDefault()} className={cls.createPostForm}>
 			{/* <MInput>Add a content</MInput>
       <PostModifies />
       <LBtn primary={true}>Public</LBtn> */}

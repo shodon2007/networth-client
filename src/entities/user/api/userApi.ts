@@ -12,7 +12,8 @@ interface AvatarData {
 }
 
 export const getUserInfo = async () => {
-	return await authInstance.get("/api/user/user_info");
+	const userInfo = await authInstance.get<UserInfoTypes>("/api/user/user_info");
+	return userInfo;
 };
 
 export const updateUserInfo = async (data: Partial<UserInfoTypes>) => {
@@ -25,6 +26,10 @@ export const updatePassword = async (data: ChangePasswordTypes) => {
 
 export const updateEmail = async (data: ChangeEmailTypes) => {
 	return await authInstance.post("/api/user/change_email", data);
+};
+
+export const deleteUser = async () => {
+	return await authInstance.post("/api/user/delete");
 };
 
 export const updateAvatar = async (data: FormData) => {

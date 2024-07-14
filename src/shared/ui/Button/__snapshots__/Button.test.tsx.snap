@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Button.test.tsx Testing themes testing clear theme 1`] = `
+<button
+  class="button clear"
+>
+  hello
+</button>
+`;
+
+exports[`Testing Button.test.tsx Testing themes testing red theme 1`] = `
+<button
+  class="button red"
+>
+  hello
+</button>
+`;
+
+exports[`Testing Button.test.tsx Testing themes testing small theme 1`] = `
+<button
+  class="button small"
+>
+  hello
+</button>
+`;
+
+exports[`Testing Button.test.tsx Testing themes testing submit theme 1`] = `
+<button
+  class="button submit"
+>
+  hello
+</button>
+`;
+
+exports[`Testing Button.test.tsx testing default styles 1`] = `
+<button
+  class="button"
+>
+  hello
+</button>
+`;
