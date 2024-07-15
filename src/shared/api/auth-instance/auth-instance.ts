@@ -18,3 +18,11 @@ authInstance.interceptors.request.use((config) => {
 	}
 	return config;
 });
+
+authInstance.interceptors.request.use((config) => {
+	if (config.headers.SendRefreshToken) {
+		const refreshToken = store.getState().user.refreshToken;
+		config.headers.refresh = refreshToken;
+	}
+	return config;
+});
