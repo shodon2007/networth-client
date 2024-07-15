@@ -28,6 +28,14 @@ export const updateEmail = async (data: ChangeEmailTypes) => {
 	return await authInstance.post("/api/user/change_email", data);
 };
 
+export const refreshToken = async () => {
+	return await authInstance.get("/api/user/refresh", {
+		headers: {
+			SendRefreshToken: true
+		}
+	});
+};
+
 export const deleteUser = async () => {
 	return await authInstance.post("/api/user/delete");
 };

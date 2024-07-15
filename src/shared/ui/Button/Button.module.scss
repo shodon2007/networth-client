@@ -1,13 +1,13 @@
 .button {
 	cursor: pointer;
-	background: var(--main-black-02);
+	background: var(--main-color-02);
 	color: var(--primary-color);
 	transition: all 0.3s ease;
 	padding: 8px 14px;
 	border-radius: var(--small-border-radius);
 
 	&:hover {
-		background: var(--main-black-04);
+		background: var(--main-color-04);
 	}
 }
 
@@ -20,12 +20,12 @@
 	font-weight: 600;
 	font-size: var(--font-size-mm-desktop);
 	color: var(--white-color);
-	background: var(--main-black-02);
+	background: var(--main-color-02);
 	transition: 0.5s;
 
 	&:hover {
 		transform: translateY(-10px) scale(1.02);
-		background: var(--main-black-04);
+		background: var(--main-color-04);
 	}
 }
 

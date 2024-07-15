@@ -9,7 +9,7 @@ interface SettingsButtonProps {
 export const SettingsButton = ({border}: SettingsButtonProps) => {
 	return (
 		<button
-			className={classNames(cls.vutton, {[cls.button__border]: !!border}, [])}
+			className={classNames(cls.button, {[cls.button__border]: !!border}, [])}
 		>
 			<div className={cls.button__point} />
 			<div className={cls.button__point} />

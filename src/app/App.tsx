@@ -10,11 +10,19 @@ import {useTheme} from "src/shared/lib/theme/hooks/useTheme";
 import {useGetUserInfo} from "src/entities/user/hooks/useGetUserInfo";
 
 import {AppRouter} from "./providers/router";
+import { useRefreshToken, useUser } from "src/entities/user";
 
 const App: FC = () => {
+	const user = useUser();
 	const {theme} = useTheme();
 	const dispatch = useAppDispatch();
-	const {data, isLoading, isError} = useGetUserInfo();
+	const {data, isLoading, isError, error} = useGetUserInfo(user.accessToken);
+	const refreshToken = useRefreshToken();
+
+	useEffect(() => {
+		refreshToken.mutate(error);
+	}, [error])
+
 
 	useEffect(() => {
 		if (isError) {
