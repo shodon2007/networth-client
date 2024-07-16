@@ -1,9 +1,10 @@
 import {Suspense, memo} from "react";
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {
 	globalRoute,
 	privateRoutes,
 	publicRoutes,
+	routePath,
 } from "src/shared/config/routeConfig";
 import {renderRoutes} from "../model/renderRouter";
 import {useUser} from "src/entities/user";

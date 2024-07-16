@@ -1,0 +1,17 @@
+.aside {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.link {
+	background-color: rgba($color: #000000, $alpha: 0.3);
+	padding: 15px 20px;
+	font-size: var(--font-size-s);
+	border: 3px solid transparent;
+	border-radius: 15px;
+}
+
+.link-active {
+	border: 3px solid rgba(255, 255, 255, 0.7);
+}

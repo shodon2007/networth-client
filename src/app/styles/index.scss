@@ -5,6 +5,11 @@
 @import "src/shared/ui/styles/mixins/globalMixins";
 @import "react-toastify/dist/ReactToastify.css";
 
+@font-face {
+	font-family: Leelawadee;
+	src: url("./fonts/Leelawadee.ttf");
+}
+
 .app {
 	@include grid-background;
 
@@ -21,4 +26,5 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Leelawadee";
 }

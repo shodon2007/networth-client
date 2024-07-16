@@ -3,14 +3,21 @@
 	flex-direction: column;
 	gap: 30px;
 	text-align: center;
+	width: max-content;
+	margin: 0 auto;
 }
 
 .inputs {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
 	gap: 10px;
 	width: 400px;
+
+	& * {
+		width: 100%;
+	}
 }
 
 .bottom {
