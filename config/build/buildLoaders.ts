@@ -15,6 +15,11 @@ export const buildRules = ({isDev}: BuildOptions): RuleSetRule[] => {
 		use: ["@svgr/webpack"],
 	};
 
+	const fontLoader = {
+		test: /\.(woff|woff2|eot|ttf|otf)$/i,
+		type: "asset/resource",
+	};
+
 	const styleLoader: RuleSetRule = {
 		test: /\.scss$/,
 		use: [
@@ -50,6 +55,7 @@ export const buildRules = ({isDev}: BuildOptions): RuleSetRule[] => {
 		exclude: /node_modules/,
 	};
 	return [
+		fontLoader,
 		svgFileLoader,
 		svgReactLoader,
 		styleLoader,

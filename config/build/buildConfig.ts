@@ -1,9 +1,9 @@
-import { Configuration } from "webpack";
-import { BuildOptions } from "./types/config";
-import { buildPlugins } from "./buildPlugins";
-import { buildRules } from "./buildLoaders";
-import { buildResolvers } from "./buildResolvers";
-import { buildServer } from "./buildServer";
+import {Configuration} from "webpack";
+import {BuildOptions} from "./types/config";
+import {buildPlugins} from "./buildPlugins";
+import {buildRules} from "./buildLoaders";
+import {buildResolvers} from "./buildResolvers";
+import {buildServer} from "./buildServer";
 
 const buildConfig = (options: BuildOptions): Configuration => {
 	const config: Configuration = {
@@ -13,6 +13,7 @@ const buildConfig = (options: BuildOptions): Configuration => {
 		output: {
 			path: options.paths.output,
 			filename: "[name].[contenthash].js",
+			publicPath: "/",
 			clean: true,
 		},
 		module: {

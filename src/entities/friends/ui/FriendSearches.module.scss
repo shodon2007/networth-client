@@ -1,0 +1,25 @@
+.search-bar {
+	width: 100%;
+	border-radius: 16px;
+	overflow: hidden;
+	display: flex;
+	align-items: stretch;
+}
+
+.search-input {
+	background-color: transparent;
+	font-size: 16px;
+	background-color: rgba($color: #000000, $alpha: 0.3);
+	padding: 18px 22px;
+	flex: 1 1 auto;
+}
+
+.search-button {
+	cursor: pointer;
+	padding: 15px 20px;
+
+	& svg {
+		width: 25px;
+		height: 25px;
+	}
+}

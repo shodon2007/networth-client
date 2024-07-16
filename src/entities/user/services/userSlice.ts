@@ -1,8 +1,8 @@
 import {PayloadAction, createSlice} from "@reduxjs/toolkit";
 import {AuthResponse} from "src/entities/auth/model/authTypes";
-import { authInstance } from "src/shared/api/auth-instance/auth-instance";
+import {authInstance} from "src/shared/api/auth-instance/auth-instance";
 import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
-import { refreshToken } from "../api/userApi";
+import {refreshToken} from "../api/userApi";
 
 export interface UserStateTypes {
 	accessToken: string | null;
@@ -25,9 +25,10 @@ const userSlice = createSlice({
 	initialState,
 	reducers: {
 		setUser(state, action: PayloadAction<AuthResponse>) {
+			console.log("update user, setUser");
 			const accessToken = action.payload.accessToken;
 			const refreshToken = action.payload.refreshToken;
-			document.cookie = `user=${JSON.stringify({accessToken, refreshToken})}`
+			document.cookie = `user=${JSON.stringify({accessToken, refreshToken})}`;
 			localStorage.setItem("user", JSON.stringify({accessToken, refreshToken}));
 
 			state.accessToken = action.payload.accessToken;
@@ -39,16 +40,19 @@ const userSlice = createSlice({
 			state.isAuth = true;
 		},
 		setUserInfo(state, action: PayloadAction<UserInfoTypes>) {
+			console.log("update user, setUserInfo");
 			state.data = action.payload;
 			state.isUserDataLoading = false;
 			state.isAuth = true;
 		},
 		setUserInfoLoading(state, action: PayloadAction<boolean>) {
+			console.log("update user, setUserLoading");
 			state.isUserDataLoading = action.payload;
 		},
-		updateAccessToken(state, action: PayloadAction<string>){
+		updateAccessToken(state, action: PayloadAction<string>) {
+			console.log("update user, updateAccessToken");
 			state.accessToken = action.payload;
-		}
+		},
 	},
 });
 
@@ -70,5 +74,6 @@ function getRefreshTokenFromStorage() {
 	return refreshToken;
 }
 
-export const {setUser, setUserInfo, setUserInfoLoading, updateAccessToken} = userSlice.actions;
+export const {setUser, setUserInfo, setUserInfoLoading, updateAccessToken} =
+	userSlice.actions;
 export default userSlice.reducer;
