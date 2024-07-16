@@ -6,13 +6,21 @@
 	display: grid;
 	gap: 3px;
 	background: var(--main-gradient);
-	grid-template: 100px 1fr / 1fr auto;
+	grid-template-rows: 100px 1fr;
+	grid-template-columns: 1fr;
 }
 
 .header {
-  grid-row-start: 1;
-  grid-column-start: 1;
+	grid-column-start: 1;
+	grid-column-end: 3;
 }
+
+// .header {
+// 	grid-row-start: 1;
+// 	grid-row-end: 2;
+// 	grid-column-start: 1;
+// 	grid-column-end: 2;
+// }
 
 .main {
 	background: var(--main-bg-color);
