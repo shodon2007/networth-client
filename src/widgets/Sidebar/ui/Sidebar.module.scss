@@ -2,13 +2,12 @@
 
 .sidebar {
 	width: var(--sidebar-close-width);
-	height: 100%;
+	height: calc(100% - var(--header-height));
 	overflow: hidden;
 	transition: all 0.5s ease;
 	background: var(--main-bg-color);
 	position: fixed;
-	top: 0;
-	bottom: 0;
+	top: var(--header-height);
 	right: 0;
 
 	@include grid-background;
@@ -17,24 +16,6 @@
 	flex-direction: column;
 	gap: 50px;
 	align-items: center;
-}
-
-.header {
-	display: flex;
-	gap: 10px;
-	padding: 10px 15px;
-}
-
-.header-links {
-	display: none;
-	flex-direction: column;
-}
-
-.username {
-	display: none;
-	align-items: left;
-	flex-direction: column;
-	font-size: var(--font-size-ll);
 }
 
 .navbar {
