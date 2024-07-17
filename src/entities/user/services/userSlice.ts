@@ -52,6 +52,13 @@ const userSlice = createSlice({
 		updateAccessToken(state, action: PayloadAction<string>) {
 			console.log("update user, updateAccessToken");
 			state.accessToken = action.payload;
+			localStorage.setItem(
+				"user",
+				JSON.stringify({
+					accessToken: state.accessToken,
+					refreshToken: state.refreshToken,
+				}),
+			);
 		},
 	},
 });
