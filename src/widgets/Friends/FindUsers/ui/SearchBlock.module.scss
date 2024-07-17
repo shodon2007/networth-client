@@ -1,0 +1,44 @@
+.user-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.user-item {
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+.search-page {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.user-avatar {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+}
+
+.user-bottom {
+	padding: 10px 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.user-left {
+	display: flex;
+	flex-direction: column;
+}
+
+.user-right {
+	align-self: flex-end;
+}
+
+.send-request-button {
+	width: 100%;
+}

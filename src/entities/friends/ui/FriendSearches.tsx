@@ -1,4 +1,4 @@
-import {Dispatch, FC, SetStateAction, useState} from "react";
+import {Dispatch, FC, memo, SetStateAction, useState} from "react";
 import cls from "./FriendSearches.module.scss";
 import SearchIcon from "src/shared/assets/magnifier.svg?react";
 
@@ -9,32 +9,29 @@ interface FriendSEarchesProps {
 	onSubmit: () => void;
 }
 
-const FriendSearches: FC<FriendSEarchesProps> = ({
-	placeholder,
-	value,
-	setValue,
-	onSubmit,
-}) => {
-	return (
-		<form className={cls.searchBar}>
-			<input
-				className={cls.searchInput}
-				placeholder={placeholder}
-				value={value}
-				onChange={(e) => setValue(e.target.value)}
-			/>
-			<button
-				type="submit"
-				className={cls.searchButton}
-				onClick={(e) => {
-					e.preventDefault();
-					onSubmit();
-				}}
-			>
-				<SearchIcon />
-			</button>
-		</form>
-	);
-};
+const FriendSearches: FC<FriendSEarchesProps> = memo(
+	({placeholder, value, setValue, onSubmit}) => {
+		return (
+			<form className={cls.searchBar}>
+				<input
+					className={cls.searchInput}
+					placeholder={placeholder}
+					value={value}
+					onChange={(e) => setValue(e.target.value)}
+				/>
+				<button
+					type="submit"
+					className={cls.searchButton}
+					onClick={(e) => {
+						e.preventDefault();
+						onSubmit();
+					}}
+				>
+					<SearchIcon />
+				</button>
+			</form>
+		);
+	},
+);
 
 export default FriendSearches;
