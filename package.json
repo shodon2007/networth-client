@@ -11,7 +11,7 @@
 		"lint:styles": "npx stylelint src/**/*.scss",
 		"lint:styles:fix": "npx stylelint src/**/*.scss --fix",
 		"test:unit": "jest --config ./config/jest/jest.config.ts",
-		"test:unit:u": "jest --config ./config/jest/jest.config.ts -- -u",
+		"test:unit:u": "jest --config ./config/jest/jest.config.ts -u",
 		"test:e2e": "cypress open"
 	},
 	"keywords": [],

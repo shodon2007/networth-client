@@ -1,11 +1,8 @@
 .search-bar {
-	border-radius: 50px;
 	width: 100%;
-	height: 100%;
 	display: flex;
 	background: var(--main-color);
 	color: var(--our-gray-color);
-	font-family: var(--font-main-blin);
 	font-size: var(--font-size-m);
 }
 
@@ -19,10 +16,12 @@
 	height: 60px;
 	background-image: var(--colorful-gradient);
 	padding: 2px;
+	overflow: hidden;
 	border-radius: 50px;
 }
 
 .stroke-bg {
+	overflow: hidden;
 	width: 100%;
 	height: 100%;
 	background: var(--main-color);
@@ -30,5 +29,12 @@
 	align-items: center;
 	padding-left: 19px;
 	column-gap: 7px;
-	border-radius: 50px;
+	border-radius: inherit;
+}
+
+@media (width <= 1440px) {
+	.stroke {
+		height: 50px;
+		border-radius: 20px;
+	}
 }

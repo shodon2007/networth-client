@@ -17,7 +17,7 @@ const AppRouter = memo(() => {
 	}
 
 	return (
-		<Suspense fallback={<div>бля.. загрузка</div>}>
+		<Suspense fallback={<div data-testid="loader">бля.. загрузка</div>}>
 			<Routes>
 				<Route path={globalRoute.path} element={globalRoute.element}>
 					{user.isAuth

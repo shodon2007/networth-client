@@ -13,6 +13,7 @@ const mockAuthStore: RootState = {
 		accessToken: "меега пачка чипсонов",
 		refreshToken: "со вкусом краба",
 		data: {
+			code: 123123,
 			email: "mockEmail2007@youtube.com",
 			id: 1,
 			isActivated: 0,

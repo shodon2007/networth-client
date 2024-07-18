@@ -3,7 +3,8 @@ export interface UserInfoTypes {
 	name: string;
 	surname: string;
 	email: string;
-	phoneNumber: number | string;
+	phoneNumber?: number | string;
 	avatar?: string;
 	isActivated: number;
+	code?: number;
 }
