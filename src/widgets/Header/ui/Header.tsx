@@ -19,8 +19,8 @@ export const Header = () => {
 				<img src={NetWorth} className={cls.logo} />
 				<SearchBar />
 			</div>
-			{/* <ThemeSwitcher />
-			<ToggleLanguage /> */}
+			<ThemeSwitcher />
+			<ToggleLanguage />
 			<div className={cls.rightAvatar}>
 				<img src={userData?.avatar} alt="avatar" className={cls.avatar} />
 				{!userData && (

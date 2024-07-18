@@ -1,5 +1,6 @@
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {render} from "@testing-library/react";
+import {Suspense} from "react";
 import {Provider} from "react-redux";
 import {MemoryRouter} from "react-router-dom";
 import App from "src/app/App";
@@ -14,11 +15,11 @@ export function renderTestApp(
 
 	return render(
 		<QueryClientProvider client={new QueryClient()}>
-			<MemoryRouter initialEntries={[initUrl]}>
-				<Provider store={store}>
+			<Provider store={store}>
+				<MemoryRouter initialEntries={[initUrl]}>
 					<App />
-				</Provider>
-			</MemoryRouter>
+				</MemoryRouter>
+			</Provider>
 		</QueryClientProvider>,
 	);
 }

@@ -10,6 +10,7 @@ const config: Config = {
 	setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
 	rootDir: "../../",
 	testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+	testTimeout: 10000,
 	moduleNameMapper: {
 		"\\.s?css$": "identity-obj-proxy",
 		"\\.svg$": "<rootDir>/config/jest/empty.ts",

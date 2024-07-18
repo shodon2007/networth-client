@@ -76,7 +76,6 @@
 
 .sidebar:hover {
 	width: var(--sidebar-open-width);
-	align-items: start;
 
 	.username {
 		display: flex;
@@ -135,5 +134,12 @@
 				height: 30px;
 			}
 		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.sidebar {
+		width: 100dvw;
+		height: 50px;
 	}
 }

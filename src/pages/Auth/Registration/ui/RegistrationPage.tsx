@@ -39,7 +39,7 @@ const RegistrationPage: FC = () => {
 						render={({field}) => {
 							return (
 								<Input
-									data-testid="reigstration-name-input"
+									data-testid="registration-name-input"
 									placeholder={t("registration.name")}
 									{...field}
 								/>
@@ -52,7 +52,7 @@ const RegistrationPage: FC = () => {
 						render={({field}) => {
 							return (
 								<Input
-									data-testid="reigstration-surname-input"
+									data-testid="registration-surname-input"
 									placeholder={t("registration.surname")}
 									{...field}
 								/>
@@ -65,7 +65,7 @@ const RegistrationPage: FC = () => {
 						render={({field}) => {
 							return (
 								<Input
-									data-testid="reigstration-email-input"
+									data-testid="registration-email-input"
 									placeholder={t("registration.email")}
 									{...field}
 								/>
@@ -78,7 +78,7 @@ const RegistrationPage: FC = () => {
 						render={({field}) => {
 							return (
 								<Input
-									data-testid="reigstration-password-input"
+									data-testid="registration-password-input"
 									type="password"
 									placeholder={t("registration.password")}
 									{...field}
@@ -89,7 +89,7 @@ const RegistrationPage: FC = () => {
 				</div>
 				<div className={cls.bottom}>
 					<Button
-						data-testid="register-button"
+						data-testid="registration-button"
 						type="submit"
 						theme={ThemeButton.SUBMIT}
 					>
