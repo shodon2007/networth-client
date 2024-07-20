@@ -1,41 +1,56 @@
 @import "src/shared/ui/styles/mixins/globalMixins";
 
-.grid-layout {
+.layout {
 	width: 100%;
-	height: 100dvh;
+	min-height: 100dvh;
 	display: flex;
 	flex-direction: column;
 	background: var(--main-bg-color);
+	position: relative;
 }
 
 .header {
-	grid-column-start: 1;
-	grid-column-end: 3;
+	position: relative;
+	height: var(--header-height);
 }
 
-.mainBg {
-	grid-row-start: 2;
-	grid-column-start: 1;
-	flex-shrink: 2;
+.main-bg {
+	width: 100%;
 	padding: 48px 0;
+	margin: 0 auto;
 	@include grid-background;
+	flex: 1 1 auto;
+	display: flex;
+}
+
+.aside-wrapper {
+	position: absolute;
+	width: 100%;
 }
 
 .main {
-	display: grid;
-	grid-template-rows: 1fr;
-	width: 1200px;
+	max-width: 1200px;
+	width: 100%;
 	margin: 0 auto;
-	min-height: 100%;
 }
 
-.aside {
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: var(--sidebar-close-width);
-	height: 100%;
+@media (max-width: 1440px) {
+	.main-bg {
+		padding-left: 10px;
+		padding-right: calc(var(--sidebar-close-width) + 10px);
+	}
+	.main {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 }
 
 @media (max-width: 1200px) {
+	.main-bg {
+		padding: 20px 10px;
+	}
+	.aside-wrapper {
+		height: var(--sidebar-close-width);
+		position: relative;
+	}
 }

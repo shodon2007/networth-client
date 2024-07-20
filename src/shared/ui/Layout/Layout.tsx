@@ -3,22 +3,25 @@ import {Header} from "src/widgets/Header";
 import {Sidebar} from "src/widgets/Sidebar";
 
 import cls from "./Layout.module.scss";
+import {Suspense} from "react";
 
 export const Layout = () => {
 	return (
 		<>
-			<div className={cls.gridLayout} data-testid="layout">
+			<div className={cls.layout} data-testid="layout">
 				<header className={cls.header}>
 					<Header />
 				</header>
 				<div className={cls.mainBg}>
 					<main className={cls.main}>
-						<Outlet />
+						<Suspense fallback={<div>офигеть загрузка</div>}>
+							<Outlet />
+						</Suspense>
 					</main>
 				</div>
-				<aside className={cls.aside}>
+				<div className={cls.asideWrapper}>
 					<Sidebar />
-				</aside>
+				</div>
 			</div>
 		</>
 	);

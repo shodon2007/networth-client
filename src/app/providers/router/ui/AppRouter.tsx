@@ -1,10 +1,9 @@
-import {Suspense, memo} from "react";
-import {Navigate, Route, Routes} from "react-router-dom";
+import {memo, Suspense, useEffect} from "react";
+import {Route, Routes} from "react-router-dom";
 import {
 	globalRoute,
 	privateRoutes,
 	publicRoutes,
-	routePath,
 } from "src/shared/config/routeConfig";
 import {renderRoutes} from "../model/renderRouter";
 import {useUser} from "src/entities/user";
@@ -17,15 +16,13 @@ const AppRouter = memo(() => {
 	}
 
 	return (
-		<Suspense fallback={<div data-testid="loader">бля.. загрузка</div>}>
-			<Routes>
-				<Route path={globalRoute.path} element={globalRoute.element}>
-					{user.isAuth
-						? renderRoutes(privateRoutes)
-						: renderRoutes(publicRoutes)}
-				</Route>
-			</Routes>
-		</Suspense>
+		// <Suspense>
+		<Routes>
+			<Route path={globalRoute.path} element={globalRoute.element}>
+				{user.isAuth ? renderRoutes(privateRoutes) : renderRoutes(publicRoutes)}
+			</Route>
+		</Routes>
+		// </Suspense>
 	);
 });
 

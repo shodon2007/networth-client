@@ -1,42 +1,52 @@
 .user-list {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
+	height: 100%;
+}
+
+.user-list-wrapper {
+	gap: 10px;
+	height: 100%;
+}
+
+.user-item-wrapper {
+	padding: 10px 0;
+	padding-right: 5px;
+	display: flex;
 }
 
 .user-item {
 	display: flex;
-	flex-direction: column;
 	background-color: rgba(0, 0, 0, 0.3);
 	border-radius: 15px;
 	overflow: hidden;
+	justify-content: space-between;
+	width: 100%;
 }
 
 .search-page {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	height: 100%;
 }
 
 .user-avatar {
-	width: 100%;
+	height: 100%;
 	aspect-ratio: 1 / 1;
 }
 
-.user-bottom {
+.user-right {
 	padding: 10px 10px;
 	display: flex;
-	flex-direction: column;
+	align-items: center;
 	gap: 5px;
 }
 
 .user-left {
 	display: flex;
-	flex-direction: column;
-}
-
-.user-right {
-	align-self: flex-end;
+	flex-direction: right;
+	align-items: center;
+	gap: 10px;
 }
 
 .send-request-button {
