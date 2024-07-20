@@ -1,4 +1,4 @@
-import {NavLink, NavLinkRenderProps, useLocation} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 import Block from "src/shared/ui/Block/Block";
 import cls from "./FriendsNavbar.module.scss";
 import classNames from "src/shared/lib/classNames";
