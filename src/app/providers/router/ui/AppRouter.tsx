@@ -16,13 +16,15 @@ const AppRouter = memo(() => {
 	}
 
 	return (
-		// <Suspense>
-		<Routes>
-			<Route path={globalRoute.path} element={globalRoute.element}>
-				{user.isAuth ? renderRoutes(privateRoutes) : renderRoutes(publicRoutes)}
-			</Route>
-		</Routes>
-		// </Suspense>
+		<Suspense fallback={<h1>Loading</h1>}>
+			<Routes>
+				<Route path={globalRoute.path} element={globalRoute.element}>
+					{user.isAuth
+						? renderRoutes(privateRoutes)
+						: renderRoutes(publicRoutes)}
+				</Route>
+			</Routes>
+		</Suspense>
 	);
 });
 
