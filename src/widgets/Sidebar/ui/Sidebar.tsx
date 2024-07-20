@@ -26,23 +26,21 @@ const Sidebar: FC<SidebarProps> = () => {
 	}, [user]);
 	return (
 		<aside className={cls.sidebar}>
-			<nav className={cls.navbar}>
-				{userLinks.map((link) => {
-					const to = link.to.replace("/*", "");
-					return (
-						<NavLink
-							to={to}
-							key={to}
-							className={({isActive}) =>
-								classNames(cls.navLink, {[cls.navLinkActive]: isActive})
-							}
-						>
-							<div className={cls.logo}>{link.icon}</div>
-							<span className={cls.title}>{t(link.title)}</span>
-						</NavLink>
-					);
-				})}
-			</nav>
+			{userLinks.map((link) => {
+				const to = link.to.replace("/*", "");
+				return (
+					<NavLink
+						to={to}
+						key={to}
+						className={({isActive}) =>
+							classNames(cls.navLink, {[cls.navLinkActive]: isActive})
+						}
+					>
+						<div className={cls.logo}>{link.icon}</div>
+						<span className={cls.title}>{t(link.title)}</span>
+					</NavLink>
+				);
+			})}
 		</aside>
 	);
 };

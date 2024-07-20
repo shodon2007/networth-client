@@ -1,4 +1,5 @@
 import {ReactNode} from "react";
+import {LoaderFunction} from "react-router-dom";
 import {ActivationPageAsync} from "src/pages/Auth/Activation";
 import {LoginPageAsync} from "src/pages/Auth/Login";
 import {RegistrationPageAsync} from "src/pages/Auth/Registration";
@@ -36,6 +37,7 @@ export interface RouteItem {
 	element: ReactNode;
 	index?: boolean;
 	children?: RouteItem[];
+	loader?: LoaderFunction;
 }
 
 const privateRoutes: RouteItem[] = [

@@ -7,10 +7,9 @@ import cls from "./SearchBlock.module.scss";
 
 const FindUsers = memo(() => {
 	const [searchText, setSearchText] = useState("");
-	const {refetch, data, isFetching} = useFindUsers(searchText);
+	const {data, isFetching} = useFindUsers(searchText);
 
 	const onSubmit = useCallback((value: string) => {
-		console.log(value);
 		setSearchText(() => value);
 	}, []);
 

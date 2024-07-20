@@ -6,7 +6,9 @@ const FriendsPage = () => {
 	return (
 		<div className={cls.friendsPage}>
 			<FriendRoutes />
-			<FriendsNavbar />
+			<div className={cls.navbarWrapper}>
+				<FriendsNavbar />
+			</div>
 		</div>
 	);
 };

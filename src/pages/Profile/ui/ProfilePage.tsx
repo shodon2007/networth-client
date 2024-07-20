@@ -12,13 +12,13 @@ const ProfilePage = () => {
 		<div className={cls.profile} data-testid="profile-page">
 			<div className={cls.leftColumns}>
 				<UserDataCard />
-				{/* <AlbumSectionCard /> */}
-				{/* <CreatePostCard /> */}
+				<AlbumSectionCard />
+				<CreatePostCard />
 			</div>
 			<div className={cls.rightColumns}>
-				{/* <FriendsListCard /> */}
-				{/* <ChannelsListCard /> */}
-				{/* <SpecializedCard /> */}
+				<FriendsListCard />
+				<ChannelsListCard />
+				<SpecializedCard />
 			</div>
 		</div>
 	);

@@ -1,6 +1,8 @@
 .aside {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	flex: 1 1 auto;
 	gap: 10px;
 }
 
@@ -14,4 +16,10 @@
 
 .link-active {
 	border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 1200px) {
+	.aside {
+		flex-direction: row;
+	}
 }

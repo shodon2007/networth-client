@@ -7,7 +7,6 @@ interface SearchBlockProps {
 
 const SearchBlock: FC<SearchBlockProps> = memo(({onSubmit}) => {
 	const [value, setValue] = useState("");
-	console.log("rerender searchblock");
 	return (
 		<FriendSearches
 			placeholder="Search users"
