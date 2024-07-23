@@ -20,7 +20,7 @@ const mockRegistration: Partial<AxiosResponse<ResponseType<AuthResponse>>> = {
 				surname: "sdfsdf",
 				id: 125,
 				isActivated: 0,
-				avatar: "https://networth.shodon.ru/api/file/avatar/default.png",
+				avatar: `${process.env.API_URL}/api/file/avatar/default.png`,
 			},
 		},
 	},

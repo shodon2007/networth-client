@@ -25,7 +25,7 @@ const UserList = memo(({data, isFetching}: UserListProps) => {
 		const user = data[index];
 
 		user.avatar =
-			user.avatar ?? "https://networth.shodon.ru/api/file/avatar/default.png";
+			user.avatar ?? `${process.env.API_URL}/api/file/avatar/default.png`;
 		return (
 			<div style={style} className={cls.userItemWrapper}>
 				<div className={cls.userItem}>
@@ -73,21 +73,6 @@ const UserList = memo(({data, isFetching}: UserListProps) => {
 					);
 				}}
 			</AutoSizer>
-			{/* {data.map((el) => {
-				el.avatar =
-					el.avatar ?? "https://networth.shodon.ru/api/file/avatar/default.png";
-				return (
-					<div key={el.id} className={cls.userItem}>
-						<img src={el.avatar} className={cls.userAvatar} />
-						<div className={cls.userBottom}>
-							<span>{`${el.name} ${el.surname}`}</span>
-							<Button className={cls.sendRequestButton}>
-								Отправить запрос
-							</Button>
-						</div>
-					</div>
-				);
-			})} */}
 		</div>
 	);
 });
