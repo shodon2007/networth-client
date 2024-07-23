@@ -13,6 +13,7 @@ import {EditProfileModal} from "src/features/Profile/EditProfile/";
 import cls from "./UserCardStyle.module.scss";
 import {useUser} from "src/entities/user";
 import {useTranslation} from "react-i18next";
+import getAvatarUrl from "src/shared/lib/getAvatar/getAvatar";
 
 export const UserDataCard = memo(() => {
 	const {isUserDataLoading} = useUser();
@@ -59,7 +60,11 @@ const Avatar = memo(() => {
 
 	return (
 		<div className={cls.avatar}>
-			<img src={userData.avatar} alt="Avatar" className={cls.avatarImg} />
+			<img
+				src={getAvatarUrl(userData.avatar)}
+				alt="Avatar"
+				className={cls.avatarImg}
+			/>
 			<div className={cls.avatarMenu}>
 				<Button onClick={() => setChangeAvatarModalOpen(true)}>
 					{t("profile.updateAvatar")}
