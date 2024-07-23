@@ -10,7 +10,7 @@ export default (env: BuildEnv): Configuration => {
 		output: path.resolve(__dirname, "dist"),
 		env: path.resolve(__dirname, ".env"),
 	};
-	const PORT = 3000;
+	const PORT = env.port ?? 9889;
 	const options: BuildOptions = {
 		mode: env.mode ?? "development",
 		paths: paths,
