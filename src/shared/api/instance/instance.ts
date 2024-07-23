@@ -1,8 +1,9 @@
 import axios from "axios";
+import globalEnv from "src/shared/config/global-variables";
 import i18n from "src/shared/config/i18n/i18n";
 
 export const instance = axios.create({
-	baseURL: "https://networth.shodon.ru",
+	baseURL: globalEnv.API_URL,
 });
 
 instance.interceptors.request.use((config) => {

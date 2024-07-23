@@ -1,5 +1,6 @@
 export interface BuildEnv {
 	mode: BuildMode;
+	port: number;
 }
 
 export type BuildMode = "development" | "production";
