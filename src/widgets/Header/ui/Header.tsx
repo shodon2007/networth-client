@@ -7,6 +7,7 @@ import {ToggleLanguage} from "src/features/ToggleLanguage";
 import {useUser} from "src/entities/user";
 import MyLink from "src/shared/ui/Link/Link";
 import {routePath} from "src/shared/config/routeConfig";
+import getAvatarUrl from "src/shared/lib/getAvatar/getAvatar";
 
 export const Header = () => {
 	const user = useUser();
@@ -22,7 +23,11 @@ export const Header = () => {
 			{/* <ThemeSwitcher /> */}
 			{/* <ToggleLanguage /> */}
 			<div className={cls.rightAvatar}>
-				<img src={userData?.avatar} alt="avatar" className={cls.avatar} />
+				<img
+					src={getAvatarUrl(userData.avatar)}
+					alt="avatar"
+					className={cls.avatar}
+				/>
 				{!userData && (
 					<div className={cls.headerLinks}>
 						<MyLink to={routePath.login}>Войти</MyLink>
