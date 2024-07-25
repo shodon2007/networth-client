@@ -80,8 +80,6 @@ const UserList = memo(({data, fetchNextPage}: UserListProps) => {
 									return false;
 								}
 								return true;
-								// console.log(index);
-								// return !!data[index];
 							}}
 							itemCount={getPageLength()}
 							loadMoreItems={loadMoreItems}
