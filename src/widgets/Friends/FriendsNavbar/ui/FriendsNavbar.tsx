@@ -4,27 +4,11 @@ import cls from "./FriendsNavbar.module.scss";
 import classNames from "src/shared/lib/classNames";
 import {useMemo, useState} from "react";
 import {friendRoutes} from "src/entities/friends";
-// const routes = [
-// 	{
-// 		to: "",
-// 		title: "My friends",
-// 	},
-// 	{
-// 		to: "requests",
-// 		title: "Requests",
-// 	},
-// 	{
-// 		to: "searchUsers",
-// 		title: "Search Friends",
-// 	},
-// ];
+
 const FriendsNavbar = () => {
 	const {pathname} = useLocation();
-	// const [selectedMenu, setSelectedMenu] = useState<{to: string; title: string}>(
-	// 	routes.find((el) => el.to === pathname),
-	// );
+
 	const routeLinks = useMemo(() => {
-		// setSelectedMenu(routes.find((el) => el.to === pathname));
 		return friendRoutes
 			.filter((el) => el.title !== undefined)
 			.map(({title, path}) => (
