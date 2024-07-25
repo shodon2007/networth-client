@@ -6,11 +6,7 @@ export const useFindUsers = (searchText: string) => {
 		queryKey: ["search_user", searchText],
 		queryFn: async () => {
 			const resp = await getSearchUsers(searchText);
-			let r = [];
-			while (r.length < 100000) {
-				r.push(...resp.data);
-			}
-			return r;
+			return resp.data;
 		},
 		retry: false,
 	});

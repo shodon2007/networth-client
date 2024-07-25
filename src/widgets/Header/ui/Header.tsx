@@ -23,12 +23,13 @@ export const Header = () => {
 			{/* <ThemeSwitcher /> */}
 			{/* <ToggleLanguage /> */}
 			<div className={cls.rightAvatar}>
-				<img
-					src={getAvatarUrl(userData.avatar)}
-					alt="avatar"
-					className={cls.avatar}
-				/>
-				{!userData && (
+				{userData ? (
+					<img
+						src={getAvatarUrl(userData.avatar)}
+						alt="avatar"
+						className={cls.avatar}
+					/>
+				) : (
 					<div className={cls.headerLinks}>
 						<MyLink to={routePath.login}>Войти</MyLink>
 						<MyLink to={routePath.registration}>Зарегестрироваться</MyLink>
