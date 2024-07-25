@@ -1,29 +1,45 @@
-import {ComponentType, memo} from "react";
-import {
-	FixedSizeList,
-	FixedSizeListProps,
-	ListChildComponentProps,
-} from "react-window";
+import {ComponentType, memo, useEffect, useState} from "react";
+import {FixedSizeList, ListChildComponentProps} from "react-window";
 import InfiniteLoader from "react-window-infinite-loader";
 import AutoSizer from "react-virtualized-auto-sizer";
 import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
-import cls from "./SearchBlock.module.scss";
+import cls from "./SearchUsers.module.scss";
 import Button from "src/shared/ui/Button/Button";
 import globalEnv from "src/shared/config/global-variables";
+import {
+	FetchNextPageOptions,
+	InfiniteData,
+	InfiniteQueryObserverResult,
+} from "@tanstack/react-query";
 interface UserListProps {
-	data: UserInfoTypes[];
-	isFetching: boolean;
+	data?: InfiniteData<UserInfoTypes[]>;
+	fetchNextPage: (
+		options?: FetchNextPageOptions,
+	) => Promise<InfiniteQueryObserverResult<InfiniteData<any, unknown>, Error>>;
 }
-const UserList = memo(({data, isFetching}: UserListProps) => {
-	if (isFetching) {
-		return "loading...";
-	}
-	if (!data || data.length === 0) {
+const UserList = memo(({data, fetchNextPage}: UserListProps) => {
+	if (!data || data.pages.length === 0) {
 		return <div>Empty</div>;
 	}
 
+	const getPageLength = () =>
+		data.pages.reduce((acc, el) => {
+			acc += el.length;
+			return acc;
+		}, 0);
+
 	const Row: ComponentType<ListChildComponentProps> = ({index, style}) => {
-		const user = data[index];
+		let user: UserInfoTypes | null = null;
+		if (index < 20) {
+			user = data.pages[0][index];
+		} else {
+			user = data.pages[Math.floor((index - 10) / 10)][index % 10];
+		}
+		const df = data.pages[0][0];
+		// const user = userList[index];
+		if (!user) {
+			return null;
+		}
 
 		const isAvatarNotUrl =
 			user.avatar && !user.avatar.includes(globalEnv.API_URL);
@@ -47,7 +63,10 @@ const UserList = memo(({data, isFetching}: UserListProps) => {
 	};
 
 	const loadMoreItems = (start: number, end: number) => {
-		return;
+		if (end >= getPageLength() - 1) {
+			const res = fetchNextPage();
+			return res as unknown as Promise<void>;
+		}
 	};
 
 	return (
@@ -57,15 +76,20 @@ const UserList = memo(({data, isFetching}: UserListProps) => {
 					return (
 						<InfiniteLoader
 							isItemLoaded={(index) => {
-								return !!data[index];
+								if (index === getPageLength() - 1) {
+									return false;
+								}
+								return true;
+								// console.log(index);
+								// return !!data[index];
 							}}
-							itemCount={data.length}
+							itemCount={getPageLength()}
 							loadMoreItems={loadMoreItems}
 						>
 							{({onItemsRendered, ref}) => (
 								<FixedSizeList
 									height={height}
-									itemCount={data.length}
+									itemCount={getPageLength()}
 									itemSize={120}
 									width={width}
 									onItemsRendered={onItemsRendered}

@@ -13,5 +13,21 @@
 		display: flex;
 		flex-direction: column-reverse;
 		justify-content: start;
+		gap: 20px;
+		background: var(--bg-gradient-color);
+	}
+
+	.navbar-wrapper {
+		& > div {
+			background: transparent !important;
+		}
+	}
+
+	.friends-route {
+		height: 100%;
+		& > div {
+			background: transparent !important;
+			padding: 0 10px;
+		}
 	}
 }

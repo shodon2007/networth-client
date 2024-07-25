@@ -1,5 +1,4 @@
 .user-list {
-	gap: 10px;
 	height: 100%;
 }
 
@@ -51,4 +50,10 @@
 
 .send-request-button {
 	width: 100%;
+}
+
+@media (max-width: 1200px) {
+	.user-item-wrapper {
+		padding: 5px 0;
+	}
 }

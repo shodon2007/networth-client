@@ -4,7 +4,7 @@ const FriendRoutes = () => {
 	return (
 		<Routes>
 			{friendRoutes.map((item) => (
-				<Route key={item.path} {...item} />
+				<Route key={item.path} element={item.element} path={item.path} />
 			))}
 		</Routes>
 	);

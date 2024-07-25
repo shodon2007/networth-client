@@ -1,14 +1,21 @@
-import {useQuery} from "@tanstack/react-query";
+import {
+	DefinedInitialDataInfiniteOptions,
+	useInfiniteQuery,
+	useQuery,
+} from "@tanstack/react-query";
 import {getSearchUsers} from "../api/friendsApi";
 
 export const useFindUsers = (searchText: string) => {
-	const query = useQuery({
+	const query = useInfiniteQuery({
 		queryKey: ["search_user", searchText],
-		queryFn: async () => {
-			const resp = await getSearchUsers(searchText);
+		queryFn: async ({pageParam}) => {
+			const resp = await getSearchUsers(searchText, pageParam);
 			return resp.data;
 		},
-		retry: false,
+		initialPageParam: 0,
+		getNextPageParam: (lastPage, allPages) => {
+			return allPages.length;
+		},
 	});
 
 	return query;
