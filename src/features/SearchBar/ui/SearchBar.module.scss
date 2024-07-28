@@ -2,6 +2,7 @@
 	width: 100%;
 	display: flex;
 	background: transparent;
+
 	// background: var(--main-bg-color);
 	color: color-mix(in srgb, var(--primary-color) 70%, var(--primary-color) 30%);
 	font-size: var(--font-size-s);
@@ -38,7 +39,7 @@
 	border-radius: inherit;
 }
 
-@media (max-width: 1440px) {
+@media (width <= 1440px) {
 	.stroke {
 		height: 50px;
 		border-radius: 20px;

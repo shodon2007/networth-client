@@ -7,7 +7,7 @@
 }
 
 .link {
-	background-color: rgba($color: #000000, $alpha: 0.3);
+	background-color: rgba($color: #000, $alpha: 30%);
 	padding: 15px 20px;
 	font-size: var(--font-size-s);
 	border: 3px solid transparent;
@@ -31,10 +31,10 @@
 }
 
 .link-active {
-	border: 3px solid rgba(255, 255, 255, 0.7);
+	border: 3px solid rgb(255 255 255 / 70%);
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
 	.aside {
 		display: none;
 		flex-direction: row;
@@ -43,6 +43,7 @@
 	.aside-mobile {
 		display: flex;
 	}
+
 	.friendNavbar {
 		padding: 5px 10px;
 	}

@@ -18,7 +18,9 @@
 	width: 100%;
 	padding: 48px 0;
 	margin: 0 auto;
+
 	@include grid-background;
+
 	flex: 1 1 auto;
 	display: flex;
 }
@@ -34,21 +36,23 @@
 	margin: 0 auto;
 }
 
-@media (max-width: 1440px) {
+@media (width <= 1440px) {
 	.main-bg {
 		padding-left: 10px;
 		padding-right: calc(var(--sidebar-close-width) + 10px);
 	}
+
 	.main {
 		max-width: 1200px;
 		margin: 0 auto;
 	}
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
 	.main-bg {
 		padding: 0;
 	}
+
 	.aside-wrapper {
 		height: var(--sidebar-close-width);
 		position: relative;

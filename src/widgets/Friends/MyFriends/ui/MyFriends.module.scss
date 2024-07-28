@@ -19,7 +19,7 @@
 
 .user-item {
 	height: 100%;
-	background: rgba($color: #000000, $alpha: 0.3);
+	background: rgba($color: #000, $alpha: 30%);
 	border-radius: 15px;
 	overflow: hidden;
 	display: flex;
@@ -39,7 +39,7 @@
 .more-menu-items {
 	display: flex;
 	flex-direction: column;
-	background-color: rgba($color: #000000, $alpha: 0.3);
+	background-color: rgba($color: #000, $alpha: 30%);
 	padding: 10px;
 	border-radius: 15px;
 	gap: 5px;

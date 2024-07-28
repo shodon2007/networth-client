@@ -46,17 +46,18 @@
 	border-radius: 50%;
 }
 
-@media (max-width: 1440px) {
+@media (width <= 1440px) {
 	.header {
 		padding: 10px;
 	}
+
 	.avatar {
 		width: 60px;
 		height: 60px;
 	}
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
 	.left {
 		gap: 10px;
 	}

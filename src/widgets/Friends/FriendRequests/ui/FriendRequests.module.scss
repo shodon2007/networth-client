@@ -6,12 +6,15 @@
 	gap: 10px;
 	height: 100%;
 }
+
 .friend-request-page {
 	height: 100%;
 }
+
 .friend-request-page-wrapper {
 	height: 100%;
 }
+
 .tab-buttons {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -53,7 +56,7 @@
 
 .user-item {
 	display: flex;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgb(0 0 0 / 30%);
 	border-radius: 15px;
 	overflow: hidden;
 	height: 100%;
@@ -95,13 +98,13 @@
 	grid-template-rows: 1fr 1fr;
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
 	.user-item-wrapper {
 		padding: 10px 0;
 	}
 }
 
-@media (max-width: 550px) {
+@media (width <= 550px) {
 	.user-item {
 		flex-direction: column;
 	}

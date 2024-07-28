@@ -6,7 +6,7 @@
 
 .user-item {
 	display: flex;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgb(0 0 0 / 30%);
 	border-radius: 15px;
 	overflow: hidden;
 	justify-content: space-between;
@@ -19,7 +19,7 @@
 }
 
 .user-right {
-	padding: 10px 10px;
+	padding: 10px;
 	display: flex;
 	align-items: center;
 	gap: 5px;
@@ -55,13 +55,13 @@
 	width: 100%;
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
 	.user-item-wrapper {
 		padding: 10px 0;
 	}
 }
 
-@media (max-width: 550px) {
+@media (width <= 550px) {
 	.user-item {
 		display: flex;
 		flex-direction: column;
