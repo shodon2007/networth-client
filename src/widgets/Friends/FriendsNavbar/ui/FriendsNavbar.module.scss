@@ -14,12 +14,36 @@
 	border-radius: 15px;
 }
 
+.aside-mobile {
+	display: none;
+	font-size: var(--font-size-ll);
+	width: 100%;
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	padding: 10px 20px;
+	color: var(--primary-color);
+}
+
+.aside-mobile:focus {
+	color: var(--primary-color);
+	background-color: var(--main-bg-color);
+}
+
 .link-active {
 	border: 3px solid rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 1200px) {
 	.aside {
+		display: none;
 		flex-direction: row;
+	}
+
+	.aside-mobile {
+		display: flex;
+	}
+	.friendNavbar {
+		padding: 5px 10px;
 	}
 }

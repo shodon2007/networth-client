@@ -16,7 +16,7 @@
 	--third-main-leel: "Leelawadee", sans-serif;
 }
 
-@media (width <= 1440px) {
+@media (max-width: 1440px) {
 	:root {
 		--header-height: 80px;
 		--font-size-ll: 32px;
@@ -24,6 +24,20 @@
 		--font-size-m: 20px;
 		--font-size-s: 16px;
 		--font-size-ss: 12px;
+		--sidebar-close-width: 70px;
+		--sidebar-open-width: 250px;
+		--global-margin: 100px;
+	}
+}
+
+@media (max-width: 550px) {
+	:root {
+		--header-height: 80px;
+		--font-size-ll: 24px;
+		--font-size-l: 20px;
+		--font-size-m: 16px;
+		--font-size-s: 14px;
+		--font-size-ss: 11px;
 		--sidebar-close-width: 70px;
 		--sidebar-open-width: 250px;
 		--global-margin: 100px;

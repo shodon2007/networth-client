@@ -32,3 +32,8 @@
 .button.red {
 	background-color: #f00;
 }
+
+.button.active {
+	color: var(--main-bg-color);
+	background-color: var(--primary-color);
+}

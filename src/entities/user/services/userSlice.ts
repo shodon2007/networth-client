@@ -45,6 +45,12 @@ const userSlice = createSlice({
 			state.isUserDataLoading = false;
 			state.isAuth = true;
 		},
+		logout(state) {
+			state.isAuth = false;
+			state.data = undefined;
+			state.accessToken = undefined;
+			state.refreshToken = undefined;
+		},
 		setUserInfoLoading(state, action: PayloadAction<boolean>) {
 			console.log("update user, setUserLoading");
 			state.isUserDataLoading = action.payload;
@@ -81,6 +87,11 @@ function getRefreshTokenFromStorage() {
 	return refreshToken;
 }
 
-export const {setUser, setUserInfo, setUserInfoLoading, updateAccessToken} =
-	userSlice.actions;
+export const {
+	setUser,
+	setUserInfo,
+	setUserInfoLoading,
+	updateAccessToken,
+	logout,
+} = userSlice.actions;
 export default userSlice.reducer;

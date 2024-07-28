@@ -4,27 +4,29 @@ import SearchIcon from "src/shared/assets/magnifier.svg?react";
 
 interface FriendSEarchesProps {
 	placeholder: string;
-	value: string;
-	setValue: Dispatch<SetStateAction<string>>;
-	onSubmit: () => void;
+	onSubmit: (value: string) => void;
 }
 
 const FriendSearches: FC<FriendSEarchesProps> = memo(
-	({placeholder, value, setValue, onSubmit}) => {
+	({placeholder, onSubmit}) => {
+		const [value, setValue] = useState("");
+
 		return (
 			<form className={cls.searchBar}>
 				<input
 					className={cls.searchInput}
 					placeholder={placeholder}
+					data-testid="search-users-input"
 					value={value}
 					onChange={(e) => setValue(e.target.value)}
 				/>
 				<button
 					type="submit"
+					data-testid="search-users-button"
 					className={cls.searchButton}
 					onClick={(e) => {
 						e.preventDefault();
-						onSubmit();
+						onSubmit(value);
 					}}
 				>
 					<SearchIcon />

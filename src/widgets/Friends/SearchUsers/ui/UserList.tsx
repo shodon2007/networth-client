@@ -11,6 +11,8 @@ import {
 	InfiniteData,
 	InfiniteQueryObserverResult,
 } from "@tanstack/react-query";
+import {SearchUsersItem, sendFriendRequest} from "src/entities/friends";
+import {useTranslation} from "react-i18next";
 interface UserListProps {
 	data?: InfiniteData<UserInfoTypes[]>;
 	fetchNextPage: (
@@ -18,8 +20,9 @@ interface UserListProps {
 	) => Promise<InfiniteQueryObserverResult<InfiniteData<any, unknown>, Error>>;
 }
 const UserList = memo(({data, fetchNextPage}: UserListProps) => {
+	const {t} = useTranslation();
 	if (!data || data.pages.length === 0) {
-		return <div>Empty</div>;
+		return <div>{t("friends.searchPageEmpty")}</div>;
 	}
 
 	const getPageLength = () =>
@@ -33,10 +36,8 @@ const UserList = memo(({data, fetchNextPage}: UserListProps) => {
 		if (index < 20) {
 			user = data.pages[0][index];
 		} else {
-			user = data.pages[Math.floor((index - 10) / 10)][index % 10];
+			user = data.pages[Math.floor(index / 20)][index % 20];
 		}
-		const df = data.pages[0][0];
-		// const user = userList[index];
 		if (!user) {
 			return null;
 		}
@@ -47,19 +48,8 @@ const UserList = memo(({data, fetchNextPage}: UserListProps) => {
 		if (isAvatarNotUrl || isNotAvatar) {
 			user.avatar = `${globalEnv.API_URL}/api/file/avatar/${user.avatar ?? "default.png"}`;
 		}
-		return (
-			<div style={style} className={cls.userItemWrapper}>
-				<div className={cls.userItem}>
-					<div className={cls.userLeft}>
-						<img src={user.avatar} className={cls.userAvatar} />
-						<span>{`${user.name} ${user.surname}`}</span>
-					</div>
-					<div className={cls.userRight}>
-						<Button className={cls.sendRequestButton}>Отправить запрос</Button>
-					</div>
-				</div>
-			</div>
-		);
+
+		return <SearchUsersItem style={style} user={user} />;
 	};
 
 	const loadMoreItems = (start: number, end: number) => {

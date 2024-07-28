@@ -1,4 +1,5 @@
 import {FC, memo, useState} from "react";
+import {useTranslation} from "react-i18next";
 import {FriendSearches} from "src/entities/friends";
 
 interface SearchBlockProps {
@@ -6,13 +7,11 @@ interface SearchBlockProps {
 }
 
 const SearchBlock: FC<SearchBlockProps> = memo(({onSubmit}) => {
-	const [value, setValue] = useState("");
+	const {t} = useTranslation();
 	return (
 		<FriendSearches
-			placeholder="Search users"
-			setValue={setValue}
-			value={value}
-			onSubmit={() => onSubmit(value)}
+			placeholder={t("friends.searchUsers")}
+			onSubmit={(value) => onSubmit(value)}
 		/>
 	);
 });

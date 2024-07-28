@@ -2,26 +2,6 @@
 	height: 100%;
 }
 
-.user-list-wrapper {
-	gap: 10px;
-	height: 100%;
-}
-
-.user-item-wrapper {
-	padding: 10px 0;
-	padding-right: 5px;
-	display: flex;
-}
-
-.user-item {
-	display: flex;
-	background-color: rgba(0, 0, 0, 0.3);
-	border-radius: 15px;
-	overflow: hidden;
-	justify-content: space-between;
-	width: 100%;
-}
-
 .search-page {
 	display: flex;
 	flex-direction: column;
@@ -29,31 +9,6 @@
 	height: 100%;
 }
 
-.user-avatar {
-	height: 100%;
-	aspect-ratio: 1 / 1;
-}
-
-.user-right {
-	padding: 10px 10px;
-	display: flex;
-	align-items: center;
-	gap: 5px;
-}
-
-.user-left {
-	display: flex;
-	flex-direction: right;
-	align-items: center;
-	gap: 10px;
-}
-
 .send-request-button {
 	width: 100%;
-}
-
-@media (max-width: 1200px) {
-	.user-item-wrapper {
-		padding: 10px 0;
-	}
 }

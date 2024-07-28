@@ -15,7 +15,10 @@ const SearchUsers = memo(() => {
 	}, []);
 
 	return (
-		<Block className={classNames(cls.searchPage)}>
+		<Block
+			className={classNames(cls.searchPage)}
+			data-testid="friends-searchUsers-page"
+		>
 			<SearchBlock onSubmit={onSubmit} />
 			<UserList data={data} fetchNextPage={fetchNextPage} />
 		</Block>
