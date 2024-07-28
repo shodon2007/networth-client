@@ -1,10 +1,10 @@
 import {Tab, TabGroup, TabList, TabPanel, TabPanels} from "@headlessui/react";
+import {useTranslation} from "react-i18next";
 import Block from "src/shared/ui/Block/Block";
-import cls from "./FriendRequests.module.scss";
 import Button from "src/shared/ui/Button/Button";
+import cls from "./FriendRequests.module.scss";
 import GetFriendRequestList from "./GetFriendRequestList";
 import SendFriendRequestList from "./SendFriendRequestList";
-import {useTranslation} from "react-i18next";
 const FriendRequests = () => {
 	const {t} = useTranslation();
 

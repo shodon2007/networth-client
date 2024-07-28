@@ -1,6 +1,6 @@
 import {Layout} from "src/shared/ui/Layout/Layout";
-import {RouteItem} from "./routeConfig";
-import routeConfig from "./routeConfig";
+import routeConfig, {RouteItem} from "./routeConfig";
+
 
 const globalRoute: RouteItem = {
 	path: routeConfig.routePath.home,

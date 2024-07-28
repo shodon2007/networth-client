@@ -1,10 +1,10 @@
 import {CSSProperties, FC, memo, useState} from "react";
-import cls from "./SearchUsersItem.module.scss";
-import Button from "src/shared/ui/Button/Button";
-import {rejectFriendRequest, sendFriendRequest} from "../api/friendsApi";
-import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
 import {toast} from "react-toastify";
 import {useTranslation} from "react-i18next";
+import Button from "src/shared/ui/Button/Button";
+import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
+import {rejectFriendRequest, sendFriendRequest} from "../api/friendsApi";
+import cls from "./SearchUsersItem.module.scss";
 
 interface SearchUsersItemProps {
 	style: CSSProperties;
@@ -55,7 +55,7 @@ const SearchUsersItem: FC<SearchUsersItemProps> = memo(({style, user}) => {
 					{isButtonActive ? (
 						<Button
 							className={cls.sendRequestButton}
-							data-testid={`search-users-sendRequest-button`}
+							data-testid={"search-users-sendRequest-button"}
 							onClick={() => sendSearchButtonClick(+user.id)}
 						>
 							{t("friends.searchPageSendRequest")}

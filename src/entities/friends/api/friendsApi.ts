@@ -19,7 +19,7 @@ export const getSearchUsers = async (
 };
 
 export const getFriends = async (searchText: string = "") => {
-	const resp = await authInstance.get(`/api/friends/all`, {
+	const resp = await authInstance.get("/api/friends/all", {
 		params: {
 			searchText: searchText,
 		},
@@ -28,14 +28,14 @@ export const getFriends = async (searchText: string = "") => {
 };
 
 export const sendFriendRequest = async (sendId: number) => {
-	const resp = await authInstance.post(`/api/friends/send_request`, {
+	const resp = await authInstance.post("/api/friends/send_request", {
 		sendId,
 	});
 	return resp.data;
 };
 
 export const rejectFriendRequest = async (sendId: number) => {
-	const resp = await authInstance.post(`/api/friends/reject_request`, {
+	const resp = await authInstance.post("/api/friends/reject_request", {
 		sendId,
 	});
 	return resp.data;
@@ -43,13 +43,13 @@ export const rejectFriendRequest = async (sendId: number) => {
 
 export const getSendFriendRequestList = async () => {
 	const resp: AxiosResponse<ResponseType<UserInfoTypes[]>> =
-		await authInstance.get(`/api/friends/send_request/all`);
+		await authInstance.get("/api/friends/send_request/all");
 	return resp.data;
 };
 
 export const getGetFriendRequestList = async () => {
 	const resp: AxiosResponse<ResponseType<UserInfoTypes[]>> =
-		await authInstance.get(`/api/friends/get_request/all`);
+		await authInstance.get("/api/friends/get_request/all");
 	return resp.data;
 };
 
@@ -62,7 +62,7 @@ export const acceptFriendRequest = async (friendId: number) => {
 
 export const deleteFriend = async (friendId: number) => {
 	const resp: AxiosResponse<ResponseType<boolean>> = await authInstance.delete(
-		`/api/friends`,
+		"/api/friends",
 		{
 			params: {
 				friendId,

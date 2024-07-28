@@ -1,12 +1,12 @@
-import {Navigate, NavLink, useLocation, useNavigate} from "react-router-dom";
-import Block from "src/shared/ui/Block/Block";
-import cls from "./FriendsNavbar.module.scss";
-import classNames from "src/shared/lib/classNames";
-import {useCallback, useMemo, useState} from "react";
-import {friendRoutes} from "src/entities/friends";
+import {NavLink, useLocation, useNavigate} from "react-router-dom";
+import {useCallback, useMemo} from "react";
 import {Select} from "@headlessui/react";
 import {useTranslation} from "react-i18next";
+import {friendRoutes} from "src/entities/friends";
+import classNames from "src/shared/lib/classNames";
+import Block from "src/shared/ui/Block/Block";
 import i18n from "src/shared/config/i18n/i18n";
+import cls from "./FriendsNavbar.module.scss";
 
 const FriendsNavbar = () => {
 	const {pathname} = useLocation();
@@ -34,8 +34,9 @@ const FriendsNavbar = () => {
 							[cls.linkActive]: getFriendPageName() === path,
 						})}
 						to={path}
-						children={t(title)}
-					/>
+					>
+						{t(title)}
+					</NavLink>
 				);
 			});
 	}, [pathname, i18n.language]);

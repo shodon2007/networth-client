@@ -8,9 +8,9 @@ import {useAppDispatch} from "src/shared/lib/store";
 import {useTheme} from "src/shared/lib/theme/hooks/useTheme";
 import {useGetUserInfo} from "src/entities/user/hooks/useGetUserInfo";
 
-import {AppRouter} from "./providers/router";
 import {useRefreshToken} from "src/entities/user";
 import {useUserAccessToken} from "src/entities/user/hooks/useGetAccessToken";
+import {AppRouter} from "./providers/router";
 
 const App: FC = () => {
 	const accessToken = useUserAccessToken();

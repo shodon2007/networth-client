@@ -5,8 +5,8 @@ import {
 	privateRoutes,
 	publicRoutes,
 } from "src/shared/config/routeConfig";
-import {renderRoutes} from "../model/renderRouter";
 import {useUser} from "src/entities/user";
+import {renderRoutes} from "../model/renderRouter";
 
 const AppRouter = memo(() => {
 	const user = useUser();

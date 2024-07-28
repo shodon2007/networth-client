@@ -1,11 +1,11 @@
 import {CSSProperties, FC, useState} from "react";
-import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
-import cls from "./MyFriends.module.scss";
 import {Menu, MenuButton, MenuItem, MenuItems} from "@headlessui/react";
 import MoreIcon from "src/shared/assets/MoreIcon.svg?react";
+import {useTranslation} from "react-i18next";
 import Button from "src/shared/ui/Button/Button";
 import useDeleteFriend from "src/entities/friends/hooks/useDeleteFriend";
-import {useTranslation} from "react-i18next";
+import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
+import cls from "./MyFriends.module.scss";
 
 interface FriendItemProps {
 	style: CSSProperties;

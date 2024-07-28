@@ -1,23 +1,24 @@
-import {ComponentType, memo, useEffect, useState} from "react";
+import {ComponentType, memo} from "react";
 import {FixedSizeList, ListChildComponentProps} from "react-window";
 import InfiniteLoader from "react-window-infinite-loader";
 import AutoSizer from "react-virtualized-auto-sizer";
-import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
-import cls from "./SearchUsers.module.scss";
-import Button from "src/shared/ui/Button/Button";
-import globalEnv from "src/shared/config/global-variables";
 import {
 	FetchNextPageOptions,
 	InfiniteData,
 	InfiniteQueryObserverResult,
 } from "@tanstack/react-query";
-import {SearchUsersItem, sendFriendRequest} from "src/entities/friends";
 import {useTranslation} from "react-i18next";
+import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
+import globalEnv from "src/shared/config/global-variables";
+import {SearchUsersItem} from "src/entities/friends";
+import cls from "./SearchUsers.module.scss";
 interface UserListProps {
 	data?: InfiniteData<UserInfoTypes[]>;
 	fetchNextPage: (
 		options?: FetchNextPageOptions,
-	) => Promise<InfiniteQueryObserverResult<InfiniteData<any, unknown>, Error>>;
+	) => Promise<
+		InfiniteQueryObserverResult<InfiniteData<unknown, unknown>, Error>
+	>;
 }
 const UserList = memo(({data, fetchNextPage}: UserListProps) => {
 	const {t} = useTranslation();

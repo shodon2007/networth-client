@@ -1,11 +1,11 @@
 import {useMutation} from "@tanstack/react-query";
-import {refreshToken} from "../api/userApi";
 import {AxiosError} from "axios";
-import {ErrorResponseType} from "src/shared/types/response/responseType";
-import {useUser} from "./useUser";
-import {updateAccessToken} from "../services/userSlice";
-import {useAppDispatch} from "src/shared/lib/store";
 import {memo} from "react";
+import {ErrorResponseType} from "src/shared/types/response/responseType";
+import {useAppDispatch} from "src/shared/lib/store";
+import {refreshToken} from "../api/userApi";
+import {updateAccessToken} from "../services/userSlice";
+import {useUser} from "./useUser";
 
 export const useRefreshToken = () => {
 	const user = useUser();

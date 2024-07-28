@@ -2,10 +2,10 @@ import {ComponentType, FC} from "react";
 import AutoSizer from "react-virtualized-auto-sizer";
 
 import {FixedSizeList, ListChildComponentProps} from "react-window";
+import {useTranslation} from "react-i18next";
 import globalEnv from "src/shared/config/global-variables";
 import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
 import FriendItem from "./FriendItem";
-import {useTranslation} from "react-i18next";
 
 interface FriendListProps {
 	data: UserInfoTypes[];

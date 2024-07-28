@@ -3,11 +3,11 @@ import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router-dom";
 import classNames from "src/shared/lib/classNames";
 
+import {useUser} from "src/entities/user";
+import {privateRoutes, publicRoutes} from "src/shared/config/routeConfig";
 import links from "../model/Links";
 
 import cls from "./Sidebar.module.scss";
-import {useUser} from "src/entities/user";
-import {privateRoutes, publicRoutes} from "src/shared/config/routeConfig";
 
 export interface LinksData {
 	title: string;

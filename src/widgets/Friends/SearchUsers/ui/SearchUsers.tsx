@@ -1,10 +1,10 @@
 import {memo, useCallback, useState} from "react";
 import {useFindUsers} from "src/entities/friends";
 import Block from "src/shared/ui/Block/Block";
+import classNames from "src/shared/lib/classNames";
 import UserList from "./UserList";
 import SearchBlock from "./SearchInput";
 import cls from "./SearchUsers.module.scss";
-import classNames from "src/shared/lib/classNames";
 
 const SearchUsers = memo(() => {
 	const [searchText, setSearchText] = useState("");

@@ -10,7 +10,7 @@ describe("Test profile page", () => {
 	beforeEach(() => {
 		const login = Cypress.env("TEST_USER_EMAIL");
 		const password = Cypress.env("TEST_USER_PASSWORD");
-		console.log(`yes`, login, password);
+		console.log("yes", login, password);
 		cy.login(login, password);
 	});
 	it("Check edit user is working", async () => {

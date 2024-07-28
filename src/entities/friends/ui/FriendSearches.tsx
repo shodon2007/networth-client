@@ -1,6 +1,6 @@
 import {Dispatch, FC, memo, SetStateAction, useState} from "react";
-import cls from "./FriendSearches.module.scss";
 import SearchIcon from "src/shared/assets/magnifier.svg?react";
+import cls from "./FriendSearches.module.scss";
 
 interface FriendSEarchesProps {
 	placeholder: string;

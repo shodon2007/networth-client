@@ -1,16 +1,16 @@
 import {ComponentType, CSSProperties, FC, useState} from "react";
 import AutoSizer from "react-virtualized-auto-sizer";
 import {FixedSizeList, ListChildComponentProps} from "react-window";
+import {useTranslation} from "react-i18next";
 import {
 	useGetFriendRequestList,
 	useRejectFriendRequest,
 } from "src/entities/friends";
 import globalEnv from "src/shared/config/global-variables";
 import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
-import cls from "./FriendRequests.module.scss";
 import Button from "src/shared/ui/Button/Button";
 import {useAcceptFriendRequest} from "src/entities/friends/hooks/useAcceptFriendRequest";
-import {useTranslation} from "react-i18next";
+import cls from "./FriendRequests.module.scss";
 
 const GetFriendRequestList = () => {
 	const {data, isFetching} = useGetFriendRequestList();

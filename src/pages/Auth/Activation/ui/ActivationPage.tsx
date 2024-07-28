@@ -1,13 +1,12 @@
 import {FC} from "react";
-import {useSelector} from "react-redux";
 import {Navigate} from "react-router-dom";
 import {toast} from "react-toastify";
 import Block from "src/shared/ui/Block/Block";
 import MyLink from "src/shared/ui/Link/Link";
 import {routePath} from "src/shared/config/routeConfig";
 
-import cls from "./ActivationPage.module.scss";
 import {useUser} from "src/entities/user";
+import cls from "./ActivationPage.module.scss";
 
 const ActivationPage: FC = () => {
 	const user = useUser();

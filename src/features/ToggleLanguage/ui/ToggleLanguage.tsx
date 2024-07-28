@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import {useCallback, useState} from "react";
 import i18n from "src/shared/config/i18n/i18n";
 import Button from "src/shared/ui/Button/Button";
 

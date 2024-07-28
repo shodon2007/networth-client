@@ -1,8 +1,8 @@
 import {useMutation} from "@tanstack/react-query";
-import {acceptFriendRequest} from "../api/friendsApi";
 import {toast} from "react-toastify";
-import {ErrorResponseType} from "src/shared/types/response/responseType";
 import {AxiosError} from "axios";
+import {ErrorResponseType} from "src/shared/types/response/responseType";
+import {acceptFriendRequest} from "../api/friendsApi";
 
 export const useAcceptFriendRequest = (onSuccess?: () => void) => {
 	return useMutation({

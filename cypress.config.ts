@@ -1,6 +1,6 @@
+import path from "path";
 import {defineConfig} from "cypress";
 import * as dotenv from "dotenv";
-import path from "path";
 
 export default defineConfig({
 	e2e: {

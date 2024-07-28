@@ -1,11 +1,11 @@
 import {UserDataCard} from "src/widgets/Profile/UserDataCard";
 
-import cls from "./ProfilePage.module.scss";
 import {FriendsListCard} from "src/widgets/Profile/FriendsListCard";
 import {AlbumSectionCard} from "src/widgets/Profile/AlbumSectionCard";
 import {ChannelsListCard} from "src/widgets/Profile/ChannelsListCard";
 import {CreatePostCard} from "src/widgets/Profile/CreatePostCard";
 import {SpecializedCard} from "src/widgets/Profile/SpecializedCard";
+import cls from "./ProfilePage.module.scss";
 
 const ProfilePage = () => {
 	return (

@@ -1,10 +1,9 @@
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {render} from "@testing-library/react";
-import {Suspense} from "react";
 import {Provider} from "react-redux";
 import {MemoryRouter} from "react-router-dom";
 import App from "src/app/App";
-import {RootState, StoreProvider} from "src/app/providers/storeProvider";
+import {RootState} from "src/app/providers/storeProvider";
 import {setupStore} from "src/shared/lib/store/config/reducer";
 
 export function renderTestApp(

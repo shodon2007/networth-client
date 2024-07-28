@@ -1,9 +1,9 @@
 import {Outlet} from "react-router-dom";
+import {Suspense} from "react";
 import {Header} from "src/widgets/Header";
 import {Sidebar} from "src/widgets/Sidebar";
 
 import cls from "./Layout.module.scss";
-import {Suspense} from "react";
 
 export const Layout = () => {
 	return (

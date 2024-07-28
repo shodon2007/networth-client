@@ -51,9 +51,7 @@ describe("Testing RegistrationPage.tsx", () => {
 		expect(screen.queryByTestId("registration-form")).not.toBeInTheDocument();
 	});
 	it("should registration when click registration button", async () => {
-		const {findByTestId, getByTestId, debug} = renderTestApp(
-			routePath.registration,
-		);
+		const {findByTestId} = renderTestApp(routePath.registration);
 		const user = userEvent.setup();
 		const nameInput = await findByTestId("registration-name-input");
 		const surnameInput = await findByTestId("registration-surname-input");

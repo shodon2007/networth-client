@@ -1,9 +1,9 @@
 import {useState} from "react";
+import {useTranslation} from "react-i18next";
 import {FriendSearches, useGetFriends} from "src/entities/friends";
 import Block from "src/shared/ui/Block/Block";
 import FriendList from "./FriendList";
 import cls from "./MyFriends.module.scss";
-import {useTranslation} from "react-i18next";
 
 const MyFriends = () => {
 	const [searchText, setSearchText] = useState("");

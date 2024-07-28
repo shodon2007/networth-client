@@ -1,7 +1,7 @@
 import { FC } from "react";
 import {SearchBar} from "src/shared/ui/searchbar/SearchBar";
 import { ChatCard } from "src/entities/messenger";
-import cls from './chatList.module.scss'
+import cls from "./chatList.module.scss";
 import { ChatListItems } from "./consts/chatListItems";
 
 interface ChatListProps {}

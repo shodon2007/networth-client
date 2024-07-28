@@ -1,8 +1,8 @@
 import {useMutation} from "@tanstack/react-query";
-import {deleteFriend} from "../api/friendsApi";
 import {toast} from "react-toastify";
 import {AxiosError} from "axios";
 import {ErrorResponseType} from "src/shared/types/response/responseType";
+import {deleteFriend} from "../api/friendsApi";
 
 const useDeleteFriend = (onSuccess?: () => void) => {
 	return useMutation({

@@ -1,8 +1,7 @@
-import {renderTestApp} from "src/shared/tests";
-import {UserDataCard} from "./UserDataCard";
-import {routePath} from "src/shared/config/routeConfig";
 import {waitFor} from "@testing-library/dom";
 import userEvent from "@testing-library/user-event";
+import {renderTestApp} from "src/shared/tests";
+import {routePath} from "src/shared/config/routeConfig";
 
 const initialStore = {
 	user: {

@@ -1,4 +1,4 @@
-import {FC, memo, useState} from "react";
+import {FC, memo} from "react";
 import {useTranslation} from "react-i18next";
 import {FriendSearches} from "src/entities/friends";
 
