@@ -1,8 +1,4 @@
-import {
-	DefinedInitialDataInfiniteOptions,
-	useInfiniteQuery,
-	useQuery,
-} from "@tanstack/react-query";
+import {useInfiniteQuery} from "@tanstack/react-query";
 import {getSearchUsers} from "../api/friendsApi";
 
 export const useFindUsers = (searchText: string) => {

@@ -1,12 +1,12 @@
-.Link{
-  font-family: var(--third-main-Leel);
-  font-weight: 400;
-  font-size: var(--font-size-ss-desktop);
-  background: linear-gradient(112deg, var(--colorful-gradient));
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.link {
+	font-family: var(--third-main-leel);
+	font-weight: 400;
+	font-size: var(--font-size-ss-desktop);
+	background: linear-gradient(112deg, var(--colorful-gradient));
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 
-  &:hover{
-    font-size: var(--font-size-mm-desktop);
-  }
+	&:hover {
+		font-size: var(--font-size-mm-desktop);
+	}
 }

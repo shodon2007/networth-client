@@ -1,4 +1,4 @@
-import {memo, Suspense, useEffect} from "react";
+import {memo, Suspense} from "react";
 import {Route, Routes} from "react-router-dom";
 import {
 	globalRoute,

@@ -1,4 +1,4 @@
-import {Dispatch, FC, memo, SetStateAction, useState} from "react";
+import {FC, memo, useState} from "react";
 import SearchIcon from "src/shared/assets/magnifier.svg?react";
 import cls from "./FriendSearches.module.scss";
 

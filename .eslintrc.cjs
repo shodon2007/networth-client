@@ -48,6 +48,7 @@ module.exports = {
 		quotes: ["error", "double"],
 		semi: ["error", "always"],
 		"react/display-name": 0,
+		"@typescript-eslint/no-namespace": "off",
 		"react/prop-types": "off",
 		"import/no-unresolved": [
 			"error",

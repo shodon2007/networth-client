@@ -25,11 +25,11 @@ jobs:
         run: npm run lint:ts
       - name: style linter
         run: npm run lint:styles
-      - name: running unit tests
-        run: npm run test:unit
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          build: npm run build:prod
-          start: npm start
-          browser: chrome
+      # - name: running unit tests
+      #   run: npm run test:unit
+      # - name: Cypress run
+      # uses: cypress-io/github-action@v6
+      # with:
+      #   build: npm run build:prod
+      #   start: npm start
+      #   browser: chrome

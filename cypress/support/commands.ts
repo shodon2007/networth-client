@@ -6,7 +6,10 @@ Cypress.Commands.add("login", login);
 declare global {
 	namespace Cypress {
 		interface Chainable {
-			login(email: string, password: string): Chainable<Cypress.Response<any>>;
+			login(
+				email: string,
+				password: string,
+			): Chainable<Cypress.Response<unknown>>;
 			drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>;
 			dismiss(
 				subject: string,
