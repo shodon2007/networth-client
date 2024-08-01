@@ -1,0 +1,35 @@
+name: Linting, testing, building
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push: 
+    branches: [ main ],
+  pull_requests:
+    branches: [ main ]
+jobs:
+  Pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with: 
+          node-version: ${{matrix.node-version}}
+      - name: install modules
+        run: npm install
+      - name: build project
+        run: npm run build:prod
+      - name: typescript linter
+        run: npm run lint:ts
+      - name: style linter
+        run: npm run lint:styles
+      - name: running unit tests
+        run: npm run test:unit
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build:prod
+          start: npm start
+          browser: chrome
