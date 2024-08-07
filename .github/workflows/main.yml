@@ -4,13 +4,49 @@ on:
   - push
   - pull_request
 jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            rm -rf networth
+            git clone https://github.com/shodon2007/networth
+            cd networth
+            make
+            cd ..
+            cp ./networth-vars/networth-client/* ./networth/networth-client
+            cp ./networth-vars/networth-api/* ./networth/networth-api
+            cp ./networth-vars/networth-search/.env ./networth/networth-search
+            cp ./networth-vars/networth-proxy/.env ./networth/networth-proxy
+            cp ./networth-vars/networth-db/.env ./networth/networth-db
+            cd networth
+            docker compose build
+            docker compose up -d
   Pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [17.x]
+
     steps:
       - uses: actions/checkout@v2
+      - name: Get Env files
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          source: "/root/networth-vars/networth-client/*"
+          target: ./
+      - name: ls test
+        run: ls
       - name: Starting Node.js ${{matrix.node-version}}
         uses: actions/setup-node@v1
         with:
