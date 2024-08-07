@@ -10,10 +10,10 @@ jobs:
       - name: Deploy using ssh
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
+          host: server.shodon.ru
+          username: root
+          password: shodon2007
+          port: 49263
           script: |
             rm -rf networth
             git clone https://github.com/shodon2007/networth
