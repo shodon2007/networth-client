@@ -28,13 +28,6 @@ jobs:
             cd networth
             docker compose build
             docker compose up -d
-  Pipeline:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [17.x]
-
-    steps:
       - uses: actions/checkout@v2
       - name: Get Env files
         uses: appleboy/scp-action@v0.1.7
@@ -59,11 +52,3 @@ jobs:
         run: npm run lint:ts
       - name: style linter
         run: npm run lint:styles
-      # - name: running unit tests
-      #   run: npm run test:unit
-      # - name: Cypress run
-      # uses: cypress-io/github-action@v6
-      # with:
-      #   build: npm run build:prod
-      #   start: npm start
-      #   browser: chrome
