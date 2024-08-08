@@ -39,10 +39,10 @@ jobs:
       - name: Get Env files
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
+          host: server.shodon.ru
+          username: root
+          password: shodon2007
+          port: 49263
           source: "/root/networth-vars/networth-client/*"
           target: ./
       - name: ls test
