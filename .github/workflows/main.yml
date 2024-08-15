@@ -1,4 +1,4 @@
-name: Linting, testing, building
+name: Linting, testing, building 2
 run-name: ${{ github.actor }} is testing out GitHub Actions
 on:
   - push
