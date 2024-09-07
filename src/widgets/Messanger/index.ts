@@ -1,2 +1,1 @@
-import { ChatList } from "./ChatList/ChatList";
-export { ChatList };  
+export { ChatList } from "./ChatList";  

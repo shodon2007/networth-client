@@ -1,9 +1,9 @@
-import {ChatList} from "src/widgets/Messanger";
+import { ChatList } from "src/widgets/Messanger";
 
 export default function MessengerPage() {
 	return (
-		<div data-testid="messanger-page">
+		// <div>
 			<ChatList />
-		</div>
+		// </div>
 	);
 }

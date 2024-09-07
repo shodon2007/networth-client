@@ -1,8 +1,12 @@
 import {Link} from "react-router-dom";
 import {SettingsButton} from "src/shared/ui/Buttons/SettingsBtn/SettingsButton";
 import cls from "./ChatCard.module.scss";
-import { ChatCardProps } from "src/shared/types/messenger/ChatType";
 
+interface ChatCardProps {
+	nickname: string;
+	icon: string;
+	href: string;
+}
 
 export const ChatCard = ({nickname, icon, href}: ChatCardProps) => {
 	return (
