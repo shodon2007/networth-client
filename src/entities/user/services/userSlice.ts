@@ -1,8 +1,6 @@
 import {PayloadAction, createSlice} from "@reduxjs/toolkit";
 import {AuthResponse} from "src/entities/auth/model/authTypes";
-import {authInstance} from "src/shared/api/auth-instance/auth-instance";
 import {UserInfoTypes} from "src/shared/types/user/userInfoTypes";
-import {refreshToken} from "../api/userApi";
 
 export interface UserStateTypes {
 	accessToken: string | null;

@@ -1,34 +1,34 @@
-.searchBar {
-  border-radius: 50px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background: var(--main-color);
-  color: var(--our-gray-color);
-  font-family: var(--font-main-Blin);
-  font-size: var(--font-size-l-mobile);
+.search-bar {
+	border-radius: 50px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	background: var(--main-color);
+	color: var(--our-gray-color);
+	font-family: var(--font-main-blin);
+	font-size: var(--font-size-l-mobile);
 }
 
-.searchBarIcon {
-  width: 40px;
-  height: 42px;
+.search-bar-icon {
+	width: 40px;
+	height: 42px;
 }
 
 .stroke {
-  width: 100%;
-  height: 60px;
-  background-image: var(--colorful-gradient);
-  padding: 2px;
-  border-radius: 50px;
+	width: 100%;
+	height: 60px;
+	background-image: var(--colorful-gradient);
+	padding: 2px;
+	border-radius: 50px;
 }
 
-.strokeBg {
-  width: 100%;
-  height: 100%;
-  background: var(--main-color);
-  display: flex;
-  align-items: center;
-  padding-left: 19px;
-  column-gap: 7px;
-  border-radius: 50px;
+.stroke-bg {
+	width: 100%;
+	height: 100%;
+	background: var(--main-color);
+	display: flex;
+	align-items: center;
+	padding-left: 19px;
+	column-gap: 7px;
+	border-radius: 50px;
 }

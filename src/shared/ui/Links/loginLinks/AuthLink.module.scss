@@ -1,11 +1,11 @@
-.AuthLink {
-  font-family: var(--font-main-Blin);
-  font-weight: 600;
-  font-size: var(--font-size-m-mobile);
-  color: var(--our-gray-color-05);
-  transition: .3s;
+.auth-link {
+	font-family: var(--font-main-blin);
+	font-weight: 600;
+	font-size: var(--font-size-m-mobile);
+	color: var(--our-gray-color-05);
+	transition: 0.3s;
 
-  &:hover{
-    color: var(--our-gray-color);
-  }
+	&:hover {
+		color: var(--our-gray-color);
+	}
 }

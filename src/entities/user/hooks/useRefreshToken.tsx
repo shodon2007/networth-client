@@ -1,6 +1,5 @@
 import {useMutation} from "@tanstack/react-query";
 import {AxiosError} from "axios";
-import {memo} from "react";
 import {ErrorResponseType} from "src/shared/types/response/responseType";
 import {useAppDispatch} from "src/shared/lib/store";
 import {refreshToken} from "../api/userApi";

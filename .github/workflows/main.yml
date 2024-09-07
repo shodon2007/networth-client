@@ -1,0 +1,54 @@
+name: Linting, testing, building 2
+run-name: ${{ github.actor }} is testing out GitHub Actions
+on:
+  - push
+  - pull_request
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: server.shodon.ru
+          username: root
+          password: shodon2007
+          port: 49263
+          script: |
+            rm -rf networth
+            git clone https://github.com/shodon2007/networth
+            cd networth
+            make
+            cd ..
+            cp ./networth-vars/networth-client/* ./networth/networth-client
+            cp ./networth-vars/networth-api/* ./networth/networth-api
+            cp ./networth-vars/networth-search/.env ./networth/networth-search
+            cp ./networth-vars/networth-proxy/.env ./networth/networth-proxy
+            cp ./networth-vars/networth-db/.env ./networth/networth-db
+            cd networth
+            docker compose build
+            docker compose up -d
+      - uses: actions/checkout@v2
+      - name: Get Env files
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: server.shodon.ru
+          username: root
+          password: shodon2007
+          port: 49263
+          source: "/root/networth-vars/networth-client/*"
+          target: ./
+      - name: ls test
+        run: ls
+      - name: Starting Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: install modules
+        run: npm ci
+      - name: build project
+        run: npm run build:prod
+      - name: typescript linter
+        run: npm run lint:ts
+      - name: style linter
+        run: npm run lint:styles
