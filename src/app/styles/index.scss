@@ -5,10 +5,15 @@
 @import "src/shared/ui/styles/mixins/globalMixins";
 @import "react-toastify/dist/ReactToastify.css";
 
+@font-face {
+	font-family: Leelawadee;
+	src: url("./fonts/Leelawadee.ttf");
+}
+
 .app {
 	@include grid-background;
 
-	min-height: 100svh;
+	min-height: 100dvh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -21,4 +26,5 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: Leelawadee, sans-serif;
 }

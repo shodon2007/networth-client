@@ -1,4 +1,5 @@
 import {memo, useState} from "react";
+import {useTranslation} from "react-i18next";
 import DetailIcon from "src/shared/assets/DetailIcon.svg";
 import Mailicon from "src/shared/assets/MailIcon.svg";
 import Block from "src/shared/ui/Block/Block";
@@ -10,9 +11,9 @@ import {ChangeAvatarModal} from "src/features/Profile/ChangeAvatar/";
 import {ChangePasswordModal} from "src/features/Profile/ChangePassword/";
 import {EditProfileModal} from "src/features/Profile/EditProfile/";
 
-import cls from "./UserCardStyle.module.scss";
 import {useUser} from "src/entities/user";
-import {useTranslation} from "react-i18next";
+import getAvatarUrl from "src/shared/lib/getAvatar/getAvatar";
+import cls from "./UserCardStyle.module.scss";
 
 export const UserDataCard = memo(() => {
 	const {isUserDataLoading} = useUser();
@@ -59,7 +60,11 @@ const Avatar = memo(() => {
 
 	return (
 		<div className={cls.avatar}>
-			<img src={userData.avatar} alt="Avatar" className={cls.avatarImg} />
+			<img
+				src={getAvatarUrl(userData.avatar)}
+				alt="Avatar"
+				className={cls.avatarImg}
+			/>
 			<div className={cls.avatarMenu}>
 				<Button onClick={() => setChangeAvatarModalOpen(true)}>
 					{t("profile.updateAvatar")}

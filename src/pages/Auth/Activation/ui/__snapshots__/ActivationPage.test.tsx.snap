@@ -5,14 +5,14 @@ exports[`Testing ActivationPage.tsx should match the snapshot 1`] = `
   data-testid="activation-page"
 >
   <div
-    class="block default MainBlock"
+    class="block default mainBlock"
     data-testid="block"
   >
     <h1>
       Hello
     </h1>
     <span
-      class="EmailNotification"
+      class="emailNotification"
     >
       На почту
        
@@ -29,15 +29,14 @@ exports[`Testing ActivationPage.tsx should match the snapshot 1`] = `
       class="LinksList"
     >
       <a
-        aria-current="page"
-        class="link active"
-        href="/activation"
+        class="link"
+        href="/"
       >
         Home
       </a>
       <a
         class="link"
-        href="/profile"
+        href="/profile/*"
       >
         Profile
       </a>

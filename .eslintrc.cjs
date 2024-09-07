@@ -47,6 +47,9 @@ module.exports = {
 		indent: ["error", "tab"],
 		quotes: ["error", "double"],
 		semi: ["error", "always"],
+		"react/display-name": 0,
+		"@typescript-eslint/no-namespace": "off",
+		"react/prop-types": "off",
 		"import/no-unresolved": [
 			"error",
 			{
@@ -81,5 +84,4 @@ module.exports = {
 		],
 	},
 	ignorePatterns: ["*.svg", "*.svg?react"],
-	"@typescript-eslint/no-namespace": 0,
 };

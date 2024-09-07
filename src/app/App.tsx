@@ -1,5 +1,4 @@
 import {FC, useEffect} from "react";
-import {ToastContainer} from "react-toastify";
 import {
 	setUserInfo,
 	setUserInfoLoading,
@@ -9,25 +8,34 @@ import {useAppDispatch} from "src/shared/lib/store";
 import {useTheme} from "src/shared/lib/theme/hooks/useTheme";
 import {useGetUserInfo} from "src/entities/user/hooks/useGetUserInfo";
 
+import {useRefreshToken} from "src/entities/user";
+import {useUserAccessToken} from "src/entities/user/hooks/useGetAccessToken";
 import {AppRouter} from "./providers/router";
 
 const App: FC = () => {
+	const accessToken = useUserAccessToken();
 	const {theme} = useTheme();
 	const dispatch = useAppDispatch();
-	const {data, isLoading, isError} = useGetUserInfo();
+	const {data, isLoading, isError, error} = useGetUserInfo(accessToken);
+	const refreshToken = useRefreshToken();
 
 	useEffect(() => {
 		if (isError) {
-			dispatch(setUserInfoLoading(false));
+			refreshToken.mutate(error);
 		}
+	}, [error]);
+
+	useEffect(() => {
 		if (data) {
 			dispatch(setUserInfo(data));
+		}
+		if (!isLoading && !data) {
+			dispatch(setUserInfoLoading(false));
 		}
 	}, [isLoading]);
 
 	return (
 		<div className={classNames("app", {}, [theme])}>
-			<ToastContainer />
 			<AppRouter />
 		</div>
 	);

@@ -3,6 +3,8 @@
 	flex-direction: column;
 	gap: 30px;
 	text-align: center;
+	width: max-content;
+	margin: 0 auto;
 }
 
 .inputs {
@@ -11,6 +13,10 @@
 	align-items: center;
 	gap: 10px;
 	width: 400px;
+
+	& * {
+		width: 100%;
+	}
 }
 
 .bottom {

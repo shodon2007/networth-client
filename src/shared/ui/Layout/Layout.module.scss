@@ -1,35 +1,60 @@
 @import "src/shared/ui/styles/mixins/globalMixins";
 
-.grid-layout {
+.layout {
 	width: 100%;
-	height: 100svh;
-	display: grid;
-	gap: 3px;
-	background: var(--main-gradient);
-	grid-template: 100px 1fr / 1fr auto;
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	background: var(--main-bg-color);
+	position: relative;
 }
 
 .header {
-  grid-row-start: 1;
-  grid-column-start: 1;
+	position: relative;
+	height: var(--header-height);
 }
 
-.main {
-	background: var(--main-bg-color);
+.main-bg {
+	width: 100%;
+	padding: 48px 0;
+	margin: 0 auto;
 
 	@include grid-background;
 
-	grid-row-start: 2;
-	grid-column-start: 1;
-	flex-shrink: 2;
+	flex: 1 1 auto;
 	display: flex;
-	padding: 48px 0;
-	justify-content: center;
 }
 
-.aside {
-	width: var(--sidebar-close-width);
-	height: 100%;
-	grid-row: span 2;
-	grid-column-start: 2;
+.aside-wrapper {
+	position: absolute;
+	width: 100%;
+}
+
+.main {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+@media (width <= 1440px) {
+	.main-bg {
+		padding-left: 10px;
+		padding-right: calc(var(--sidebar-close-width) + 10px);
+	}
+
+	.main {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
+
+@media (width <= 1200px) {
+	.main-bg {
+		padding: 0;
+	}
+
+	.aside-wrapper {
+		height: var(--sidebar-close-width);
+		position: relative;
+	}
 }

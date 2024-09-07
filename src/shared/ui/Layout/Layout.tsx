@@ -1,22 +1,27 @@
-import { Outlet } from "react-router-dom";
-import { Header } from "src/widgets/Header";
-import { Sidebar } from "src/widgets/Sidebar";
+import {Outlet} from "react-router-dom";
+import {Suspense} from "react";
+import {Header} from "src/widgets/Header";
+import {Sidebar} from "src/widgets/Sidebar";
 
 import cls from "./Layout.module.scss";
 
 export const Layout = () => {
 	return (
 		<>
-			<div className={cls.gridLayout} data-testid="layout">
+			<div className={cls.layout} data-testid="layout">
 				<header className={cls.header}>
 					<Header />
 				</header>
-				<main className={cls.main}>
-					<Outlet />
-				</main>
-				<aside className={cls.aside}>
+				<div className={cls.mainBg}>
+					<main className={cls.main}>
+						<Suspense fallback={<div>офигеть загрузка</div>}>
+							<Outlet />
+						</Suspense>
+					</main>
+				</div>
+				<div className={cls.asideWrapper}>
 					<Sidebar />
-				</aside>
+				</div>
 			</div>
 		</>
 	);

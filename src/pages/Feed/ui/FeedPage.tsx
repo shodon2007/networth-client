@@ -1,5 +1,4 @@
-import { WSBtn } from "src/entities/messenger/ui/WSBtn";
-import {FeedWidget} from "src/widgets/ui/Feed/ui/FeedWidget";
+import { FeedWidget } from "src/widgets/Feed";
 
 const FeedPage = () => {
 	return (

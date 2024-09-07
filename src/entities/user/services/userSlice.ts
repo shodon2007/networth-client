@@ -12,7 +12,7 @@ export interface UserStateTypes {
 
 const initialState: UserStateTypes = {
 	accessToken: getAccessTokenFromStorage(),
-	refreshToken: null,
+	refreshToken: getRefreshTokenFromStorage(),
 	isAuth: false,
 	data: undefined,
 	isUserDataLoading: true,
@@ -23,8 +23,10 @@ const userSlice = createSlice({
 	initialState,
 	reducers: {
 		setUser(state, action: PayloadAction<AuthResponse>) {
+			console.log("update user, setUser");
 			const accessToken = action.payload.accessToken;
 			const refreshToken = action.payload.refreshToken;
+			document.cookie = `user=${JSON.stringify({accessToken, refreshToken})}`;
 			localStorage.setItem("user", JSON.stringify({accessToken, refreshToken}));
 
 			state.accessToken = action.payload.accessToken;
@@ -33,17 +35,34 @@ const userSlice = createSlice({
 			if (action.payload.user) {
 				state.isUserDataLoading = false;
 			}
-			console.log("i am set isAuth true");
 			state.isAuth = true;
 		},
 		setUserInfo(state, action: PayloadAction<UserInfoTypes>) {
+			console.log("update user, setUserInfo");
 			state.data = action.payload;
 			state.isUserDataLoading = false;
-			console.log("i am set isAuth true");
 			state.isAuth = true;
 		},
+		logout(state) {
+			state.isAuth = false;
+			state.data = undefined;
+			state.accessToken = undefined;
+			state.refreshToken = undefined;
+		},
 		setUserInfoLoading(state, action: PayloadAction<boolean>) {
+			console.log("update user, setUserLoading");
 			state.isUserDataLoading = action.payload;
+		},
+		updateAccessToken(state, action: PayloadAction<string>) {
+			console.log("update user, updateAccessToken");
+			state.accessToken = action.payload;
+			localStorage.setItem(
+				"user",
+				JSON.stringify({
+					accessToken: state.accessToken,
+					refreshToken: state.refreshToken,
+				}),
+			);
 		},
 	},
 });
@@ -57,5 +76,20 @@ function getAccessTokenFromStorage() {
 	return accessToken;
 }
 
-export const {setUser, setUserInfo, setUserInfoLoading} = userSlice.actions;
+function getRefreshTokenFromStorage() {
+	const user = localStorage.getItem("user");
+	if (!user) {
+		return null;
+	}
+	const {refreshToken} = JSON.parse(user);
+	return refreshToken;
+}
+
+export const {
+	setUser,
+	setUserInfo,
+	setUserInfoLoading,
+	updateAccessToken,
+	logout,
+} = userSlice.actions;
 export default userSlice.reducer;

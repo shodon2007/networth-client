@@ -1,14 +1,15 @@
 import {ReactNode} from "react";
+import {LoaderFunction} from "react-router-dom";
 import {ActivationPageAsync} from "src/pages/Auth/Activation";
 import {LoginPageAsync} from "src/pages/Auth/Login";
 import {RegistrationPageAsync} from "src/pages/Auth/Registration";
 import {FeedPageAsync} from "src/pages/Feed";
+import {FriendsPageAsync} from "src/pages/Friends";
 import {MessengerPageAsync} from "src/pages/Messenger";
 import {NotFoundPageAsync} from "src/pages/NotFound";
 import {ProfilePageAsync} from "src/pages/Profile";
-import {Layout} from "src/shared/ui/Layout/Layout";
 
-export enum AppRoutes {
+enum AppRoutes {
 	REGISTRATION = "registration",
 	LOGIN = "login",
 	ACTIVATION = "activation",
@@ -16,17 +17,19 @@ export enum AppRoutes {
 	HOME = "home",
 	PROFILE = "profile",
 	MESSENGER = "messenger",
+	FRIENDS = "friends",
 	NOT_FOUND = "not_found",
 }
 
-export const routePath: Record<AppRoutes, string> = {
-	[AppRoutes.HOME]: "",
-	[AppRoutes.PROFILE]: "/profile",
-	[AppRoutes.LOGIN]: "/login",
-	[AppRoutes.REGISTRATION]: "/registration",
-	[AppRoutes.ACTIVATION]: "/activation",
-	[AppRoutes.MESSENGER]: "/messanger",
-	[AppRoutes.NOT_FOUND]: "/*",
+const routePath: Record<AppRoutes, string> = {
+	[AppRoutes.HOME]: "/",
+	[AppRoutes.PROFILE]: "/profile/*",
+	[AppRoutes.LOGIN]: "/login/*",
+	[AppRoutes.REGISTRATION]: "/registration/*",
+	[AppRoutes.ACTIVATION]: "/activation/*",
+	[AppRoutes.MESSENGER]: "/messanger/*",
+	[AppRoutes.FRIENDS]: "/friends/*",
+	[AppRoutes.NOT_FOUND]: "*",
 };
 
 export interface RouteItem {
@@ -34,15 +37,10 @@ export interface RouteItem {
 	element: ReactNode;
 	index?: boolean;
 	children?: RouteItem[];
+	loader?: LoaderFunction;
 }
 
-export const globalRoute: RouteItem = {
-	path: routePath.home,
-	element: <Layout />,
-	index: true,
-};
-
-export const privateRoutes: RouteItem[] = [
+const privateRoutes: RouteItem[] = [
 	{
 		path: routePath.home,
 		element: <FeedPageAsync />,
@@ -63,12 +61,16 @@ export const privateRoutes: RouteItem[] = [
 		element: <ActivationPageAsync />,
 	},
 	{
+		path: routePath.friends,
+		element: <FriendsPageAsync />,
+	},
+	{
 		path: routePath.not_found,
 		element: <NotFoundPageAsync />,
 	},
 ];
 
-export const publicRoutes: RouteItem[] = [
+const publicRoutes: RouteItem[] = [
 	{
 		path: routePath.home,
 		element: <FeedPageAsync />,
@@ -87,3 +89,10 @@ export const publicRoutes: RouteItem[] = [
 		element: <NotFoundPageAsync />,
 	},
 ];
+
+export default {
+	publicRoutes,
+	privateRoutes,
+	routePath,
+	AppRoutes,
+};

@@ -8,6 +8,7 @@
 	--medium-border-radius: 14px;
 	--small-border-radius: 7px;
 	--chat-message-border-radius: 30px;
+	--header-height: 100px;
 	--sidebar-close-width: 150px;
 	--sidebar-open-width: 400px;
 	--global-margin: 178px;
@@ -17,11 +18,26 @@
 
 @media (width <= 1440px) {
 	:root {
+		--header-height: 80px;
 		--font-size-ll: 32px;
 		--font-size-l: 28px;
 		--font-size-m: 20px;
 		--font-size-s: 16px;
 		--font-size-ss: 12px;
+		--sidebar-close-width: 70px;
+		--sidebar-open-width: 250px;
+		--global-margin: 100px;
+	}
+}
+
+@media (width <= 550px) {
+	:root {
+		--header-height: 80px;
+		--font-size-ll: 24px;
+		--font-size-l: 20px;
+		--font-size-m: 16px;
+		--font-size-s: 14px;
+		--font-size-ss: 11px;
 		--sidebar-close-width: 70px;
 		--sidebar-open-width: 250px;
 		--global-margin: 100px;

@@ -10,10 +10,12 @@ export enum ThemeButton {
 	RED = "red",
 }
 
+type themeButton = "clear" | "small" | "submit" | "red" | "active" | "";
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
 	children: ReactNode;
-	theme?: ThemeButton;
+	theme?: themeButton;
 }
 
 const Button: FC<ButtonProps> = memo((props) => {

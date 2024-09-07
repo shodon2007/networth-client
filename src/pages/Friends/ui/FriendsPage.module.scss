@@ -1,0 +1,35 @@
+.friends-page {
+	display: grid;
+	grid-template-columns: 700px 1fr;
+	gap: 48px;
+	height: 100%;
+}
+
+.navbar-wrapper {
+	position: relative;
+}
+
+@media (width <= 1200px) {
+	.friends-page {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: start;
+		gap: 10px;
+		background: var(--bg-gradient-color);
+	}
+
+	.navbar-wrapper {
+		& > div {
+			background: transparent !important;
+		}
+	}
+
+	.friends-route {
+		height: 100%;
+
+		& > div {
+			background: transparent !important;
+			padding: 0 10px;
+		}
+	}
+}

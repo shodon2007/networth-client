@@ -55,7 +55,13 @@ const ChangeEmailModal: FC<ChangeEmailModalProps> = ({close}) => {
 				<Block>
 					<Title type={TitleType.SMALL}>{t("profile.editEmail")}</Title>
 					<Divider />
-					<form className={cls.inputs} onSubmit={(e) => e.preventDefault()}>
+					<form
+						className={cls.inputs}
+						onSubmit={(e) => {
+							e.preventDefault();
+							changeEmail();
+						}}
+					>
 						<span>
 							{t("profile.editEmailPrevText")}
 							<span style={{fontWeight: "bold"}}>{userData.email}</span>

@@ -1,14 +1,10 @@
 import {Link} from "react-router-dom";
 import {SettingsButton} from "src/shared/ui/Buttons/SettingsBtn/SettingsButton";
 import cls from "./ChatCard.module.scss";
+import { ChatCardProps } from "src/shared/types/messenger/ChatType";
 
-interface ChatCardProps {
-	nikcname: string;
-	icon: string;
-	href: string;
-}
 
-export const ChatCard = ({nikcname, icon, href}: ChatCardProps) => {
+export const ChatCard = ({nickname, icon, href}: ChatCardProps) => {
 	return (
 		<div className={cls.chatCard}>
 			<header className={cls.header}>
@@ -20,7 +16,7 @@ export const ChatCard = ({nikcname, icon, href}: ChatCardProps) => {
 						width="60"
 						height="60"
 					/>
-					<h1 className={cls.user__nickname}>{nikcname}</h1>
+					<h1 className={cls.user__nickname}>{nickname}</h1>
 				</div>
 				<SettingsButton border={true} />
 			</header>
