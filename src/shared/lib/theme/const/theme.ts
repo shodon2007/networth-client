@@ -1,4 +1,4 @@
 export enum Themes {
-	DARK = "dark",
-	LIGHT = "light",
+    DARK = "app_global_dark_theme",
+    LIGHT = "app_global_light_theme",
 }

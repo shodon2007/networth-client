@@ -7,6 +7,7 @@ import {useUser} from "src/entities/user";
 import MyLink from "src/shared/ui/Link/Link";
 import {routePath} from "src/shared/config/routeConfig";
 import getAvatarUrl from "src/shared/lib/getAvatar/getAvatar";
+import {AvatarDropdown} from "src/features/AvatarDropdown";
 import cls from "./Header.module.scss";
 
 export const Header = () => {
@@ -21,20 +22,7 @@ export const Header = () => {
 			</div>
 			<ThemeSwitcher />
 			<ToggleLanguage />
-			<div className={cls.rightAvatar}>
-				{userData ? (
-					<img
-						src={getAvatarUrl(userData.avatar)}
-						alt="avatar"
-						className={cls.avatar}
-					/>
-				) : (
-					<div className={cls.headerLinks}>
-						<MyLink to={routePath.login}>Войти</MyLink>
-						<MyLink to={routePath.registration}>Зарегестрироваться</MyLink>
-					</div>
-				)}
-			</div>
+			<AvatarDropdown />
 		</div>
 	);
 };
